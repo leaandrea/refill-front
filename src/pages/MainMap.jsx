@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Btn from ".././Components/Btn";
-import GoogleMap from ".././Components/GoogleMap";
+import Btn from "../components/Btn";
+import GoogleMap from "../components/GoogleMap";
 import { geolocated } from 'react-geolocated';
 
 const mapStyles = {

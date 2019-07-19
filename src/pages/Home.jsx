@@ -1,9 +1,9 @@
 import React from "react";
-import NavMain from "../Components/NavMain";
-import AboutSection from "../Components/AboutSection";
-import HomeMap from "../Components/HomeMap";
-import ProSection from "../Components/ProSection";
-import Footer from "../Components/Footer";
+import NavMain from "../components/NavMain";
+import AboutSection from ".././components/AboutSection";
+import HomeMap from "../components/HomeMap";
+import ProSection from "../components/ProSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
