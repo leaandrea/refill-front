@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from "google-maps-react";
+import Btn from ".././Components/Btn";
 
 const mapStyles = {
   width: "50%",
@@ -8,16 +9,24 @@ const mapStyles = {
 
 export class MapContainer extends Component {
   render() {
+    let geolocBtn = "Get my Location";
     return (
-      <Map
-        google={this.props.google}
-        zoom={15}
-        style={mapStyles}
-        initialCenter={{
-          lat: 48.857803,
-          lng: 2.380286
-        }}
-      />
+      <>
+        <div>
+          <Map
+            google={this.props.google}
+            zoom={15}
+            style={mapStyles}
+            initialCenter={{
+              lat: 48.857803,
+              lng: 2.380286
+            }}
+          />
+        </div>
+        <div>
+          <Btn>{geolocBtn}</Btn>
+        </div>
+      </>
     );
   }
 }

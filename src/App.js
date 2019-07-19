@@ -13,22 +13,13 @@ import PageHome from "./Pages/Home";
 import PageMainMap from "./Pages/MainMap";
 import PageQualityInfos from "./Pages/QualityInfos";
 
-//---------------------------------------
-//COMPONENTS
-//---------------------------------------
-import Btn from "./Components/Btn";
-import MainMap from "./Components/GoogleMap";
-import Footer from "./Components/Footer";
-
 // getMyPosition = () => (
 
 // )
 
 function App() {
-  let geolocBtn = "Get my Location";
   return (
     <div className="App">
-      <MainMap />
       {/* <header className="App-header" />
       <h1>Hello this is Refill</h1> */}
       <Switch>
@@ -38,9 +29,6 @@ function App() {
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
       </Switch>
-
-      <Footer />
-      <Btn>{geolocBtn}</Btn>
     </div>
   );
 }
