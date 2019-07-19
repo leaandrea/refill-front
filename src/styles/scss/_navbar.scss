@@ -73,3 +73,19 @@
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
+#btn-burger {
+  outline: none;
+  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+}
+
+#btn-burger:hover {
+  cursor: pointer;
+  border-color: #003557;
+  transform: scale(1.2, 1.2);
+}
+
+#btn-burger:active {
+  border-color: #003557;
+  background-color: #fff;
+}
