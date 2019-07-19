@@ -34,7 +34,6 @@
 #arr_1:hover,
 #arr_2:hover,
 #arr_3:hover,
-#arr_4:hover,
 #arr_5:hover,
 #arr_6:hover,
 #arr_7:hover,
@@ -51,6 +50,11 @@
 #arr_18:hover,
 #arr_19:hover,
 #arr_20:hover {
+  fill: rgb(162, 247, 218);
+  cursor: pointer;
+}
+
+.cls-3:hover {
   fill: rgb(162, 247, 218);
   cursor: pointer;
 }

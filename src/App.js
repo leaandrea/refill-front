@@ -14,6 +14,8 @@ import PageMainMap from "./pages/MainMap";
 import PageQualityInfos from "./pages/QualityInfos";
 import Fountains from "./pages/Fountains";
 import AdminForm from "./components/forms/AdminForm";
+import ContributeForm from "./components/forms/ContributeForm";
+import ContactForm from "./components/forms/ContactForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
@@ -35,6 +37,8 @@ function App() {
         <Route path="/quality-info" component={PageQualityInfos} />
         <Route path="/fountains" component={Fountains} />
         <Route path="/edit-fountain" component={AdminForm} />
+        <Route path="/contribute" component={ContributeForm} />
+        <Route path="/contact" component={ContactForm} />
       </Switch>
     </div>
   );

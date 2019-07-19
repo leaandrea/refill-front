@@ -10,8 +10,8 @@ const mapStyles = {
 
 class MapContainer extends Component {
   render() {
-    // console.log(mapStyles);
-    // console.log(this.props)
+    console.log(mapStyles);
+    console.log(this.props);
     let geolocBtn = "Get my Location";
     return !this.props.isGeolocationAvailable ? (
       <div>Your browser does not support Geolocation</div>
