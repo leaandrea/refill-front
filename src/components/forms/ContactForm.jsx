@@ -18,14 +18,14 @@ export default class ContactForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     axios
-      .post(`${process.env.SITE_URL}/send-email`, this.state.form)
+      .post(`${process.env.SITE_URL}/contact`, this.state.form)
       .then(serverRes => console.log(serverRes))
       .catch(serverErr => console.log(serverErr));
   };
 
   render() {
     return (
-      <div>
+      <div className="contact-form-borders">
         <form
           className="contact-form"
           onChange={this.handleChange}
