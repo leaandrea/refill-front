@@ -1,44 +1,7 @@
-
-
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import axios from "axios";
 
-
-
-//MONTRUC
-// export class GoogleMap extends Component {
-//   render() {
-
-//     // console.log("here", this.props)
-
-
-
-//     return (
-//       <>
-//         <div>
-//           <Map
-//             google={this.props.google}
-//             zoom={15}
-//             style={mapStyles}
-//             initialCenter={{
-//               // lat: this.props.initialCenter.lat,
-//               // lng: this.props.initialCenter.lng
-//               lat: this.props.initialCenter.lat,
-//               lng: this.props.initialCenter.lng
-//             }}
-//           />
-//         </div>
-
-//       </>
-//     );
-//   }
-// }
-
-
-
-
-//SONTRUC
 
 const mapStyles = {
   width: "75%",
