@@ -1,15 +1,28 @@
 import React, { Component } from "react";
-import { Map } from "google-maps-react";
-import Btn from ".././Components/Btn";
+import { Map, GoogleApiWrapper } from "google-maps-react";
+
+
 
 const mapStyles = {
   width: "50%",
   height: "50%"
 };
 
-export default class GoogleMap extends Component {
+export class GoogleMap extends Component {
+
+
+  // static getDerivedStateFromProps(newProps, newState) {
+  //   console.log("new props", newProps);
+  //   console.log("newState", newState);
+  //   return null;
+  // }
+
   render() {
-    let geolocBtn = "Get my Location";
+
+    // console.log("here", this.props)
+
+
+
     return (
       <>
         <div>
@@ -18,15 +31,20 @@ export default class GoogleMap extends Component {
             zoom={15}
             style={mapStyles}
             initialCenter={{
-              lat: 48.857803,
-              lng: 2.380286
+              // lat: this.props.initialCenter.lat,
+              // lng: this.props.initialCenter.lng
+              lat: this.props.initialCenter.lat,
+              lng: this.props.initialCenter.lng
             }}
           />
         </div>
-        <div>
-          <Btn>{geolocBtn}</Btn>
-        </div>
+
       </>
     );
   }
 }
+
+
+export default GoogleApiWrapper({
+  apiKey: `AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo`
+})(GoogleMap);

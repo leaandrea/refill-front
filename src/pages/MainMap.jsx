@@ -1,37 +1,60 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
 import Btn from ".././Components/Btn";
+import GoogleMap from ".././Components/GoogleMap";
+import { geolocated } from 'react-geolocated';
 
 const mapStyles = {
   width: "50%",
   height: "50%"
 };
 
-export class MapContainer extends Component {
+class MapContainer extends Component {
+
+
+
   render() {
     console.log(mapStyles);
+    console.log(this.props)
     let geolocBtn = "Get my Location";
     return (
-      <>
-        <div>
-          <Map
-            google={this.props.google}
-            zoom={15}
-            style={mapStyles}
-            initialCenter={{
-              lat: 48.857803,
-              lng: 2.380286
-            }}
-          />
-        </div>
-        <div>
-          <Btn>{geolocBtn}</Btn>
-        </div>
-      </>
+
+
+      !this.props.isGeolocationAvailable
+        ? <div>Your browser does not support Geolocation</div>
+        : !this.props.isGeolocationEnabled
+          ? <div>Geolocation is not enabled</div>
+          : this.props.coords
+            ?
+
+            <GoogleMap initialCenter={{
+              lat: this.props.coords.latitude,
+              lng: this.props.coords.longitude
+            }} />
+
+
+            : <div>Getting the location data&hellip; </div>
+      /* <div>
+        <Btn>{geolocBtn}</Btn>
+      </div> */
+
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo"
-})(MapContainer);
+export { MapContainer };
+
+
+
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false
+  },
+  apiKey: `AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo`,
+  userDecisionTimeout: 5000
+})(MapContainer)
+
+
+
+
+
+
