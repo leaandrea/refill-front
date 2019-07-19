@@ -12,9 +12,13 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import PageHome from "./pages/Home";
 import PageMainMap from "./pages/MainMap";
 import PageQualityInfos from "./pages/QualityInfos";
+import Fountains from "./pages/Fountains";
+import AdminForm from "./components/forms/AdminForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-library.add(faBars);
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+library.add(faBars, faEdit, faTrash);
 
 // getMyPosition = () => (
 
@@ -31,6 +35,8 @@ function App() {
         {/* <Route path="/about" component={PageAbout} /> */}
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
+        <Route path="/fountains" component={Fountains} />
+        <Route path="/edit-fountain" component={AdminForm} />
       </Switch>
     </div>
   );
