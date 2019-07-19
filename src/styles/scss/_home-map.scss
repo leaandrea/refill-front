@@ -4,4 +4,53 @@
   align-items: center;
   width: 100vw;
   height: 80vh;
+  .cls-1 {
+    fill: none;
+    stroke-width: 3.5px;
+  }
+
+  .cls-1,
+  .cls-3 {
+    stroke: #002a00;
+    stroke-miterlimit: 10;
+  }
+
+  .cls-2 {
+    fill: #0593d1;
+  }
+
+  .cls-3 {
+    fill: #f7f9f2;
+    stroke-width: 2px;
+  }
+}
+// [data-name="1er"] {
+//   fill: rgb(162, 247, 218);
+//   background: rgb(162, 247, 218);
+//   background-color: rgb(162, 247, 218);
+//   cursor: pointer;
+// }
+
+#arr_1:hover,
+#arr_2:hover,
+#arr_3:hover,
+#arr_4:hover,
+#arr_5:hover,
+#arr_6:hover,
+#arr_7:hover,
+#arr_8:hover,
+#arr_9:hover,
+#arr_10:hover,
+#arr_11:hover,
+#arr_12:hover,
+#arr_13:hover,
+#arr_14:hover,
+#arr_15:hover,
+#arr_16:hover,
+#arr_17:hover,
+#arr_18:hover,
+#arr_19:hover,
+#arr_20:hover {
+  fill: rgb(162, 247, 218);
+  cursor: pointer;
 }

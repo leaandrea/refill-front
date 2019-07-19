@@ -1,6 +1,6 @@
 import React from "react";
 import NavMain from "../components/NavMain";
-import AboutSection from ".././components/AboutSection";
+import AboutSection from "../components/AboutSection";
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
 import Footer from "../components/Footer";
