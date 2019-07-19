@@ -9,6 +9,7 @@ const mapStyles = {
 
 export class MapContainer extends Component {
   render() {
+    console.log(mapStyles);
     let geolocBtn = "Get my Location";
     return (
       <>

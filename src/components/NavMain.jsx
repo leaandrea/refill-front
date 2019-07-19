@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavMain() {
   return (
@@ -10,7 +11,7 @@ function NavMain() {
         </NavLink>
 
         <div className="burger">
-          <button className="btn-nav">BURGER</button>
+          <FontAwesomeIcon icon="bars" className="btn-burger" />
         </div>
       </nav>
     </div>

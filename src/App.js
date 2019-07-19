@@ -12,6 +12,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import PageHome from "./Pages/Home";
 import PageMainMap from "./Pages/MainMap";
 import PageQualityInfos from "./Pages/QualityInfos";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+library.add(faBars);
 
 // getMyPosition = () => (
 
