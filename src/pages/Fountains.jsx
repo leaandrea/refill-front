@@ -92,7 +92,7 @@ export default class Foutains extends Component {
                 </tr>
               </tbody>
 
-              <Link to='/api/fontaines/edit-fountain'> <button className="editButton">
+              <Link to='/edit-fountain'> <button className="editButton">
                 <FontAwesomeIcon icon="edit" /> </button>
               </Link>
 
