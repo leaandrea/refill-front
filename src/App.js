@@ -20,8 +20,6 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 library.add(faBars, faEdit, faTrash);
 
-// getMyPosition = () => (
-
 // )
 
 function App() {
