@@ -2,7 +2,8 @@
   position: relative;
   width: 100%;
   padding: 1rem 3rem;
-  background-color: rgb(250, 253, 253);
+  // background-color: rgb(250, 253, 253);
+  height: 13%;
 }
 .nav {
   display: flex;
@@ -15,6 +16,7 @@
 .btn-burger {
   cursor: pointer;
   font-size: 2rem;
+  color: rgb(255, 255, 255);
 }
 
 #btn-burger {

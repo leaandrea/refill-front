@@ -25,10 +25,14 @@ import ContactForm from "./components/forms/ContactForm";
 //FONTAWESOME
 //---------------------------------------
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faTrash,
+  faTimes,
+  faEdit,
+  faBars
+} from "@fortawesome/free-solid-svg-icons";
+
 library.add(faBars, faEdit, faTrash, faTimes);
 
 // )

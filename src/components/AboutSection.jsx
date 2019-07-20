@@ -1,51 +1,48 @@
 import React from "react";
-// import NavMain from "../components/NavMain";
+import NavMain from "../components/NavMain";
 
 export default function AboutSection() {
   return (
     <>
       <section className="about">
-        {/* <NavMain /> */}
+        <div className="inner-border">
+          <NavMain />
+          <h3 className="about-title">
+            With Refill, you can easily help the environement and save money !
+          </h3>
 
-        <h3 className="about-title">
-          Plastic bottles pollutes and kill animals. We can avoid this thanks to
-          many free spots in Paris that allows you to refill your water bottle.
-        </h3>
+          <div className="articles-container">
+            <article className="art1">
+              <div className="why-text-container">
+                <h2>Why</h2>
+                <p>
+                  Plastic bottles pollutes and kill animals. We can reduce
+                  plastic waste. There are many free spots in Paris where you
+                  can refill your reusable water bottle.
+                </p>
+              </div>
+            </article>
 
-        <div className="articles-container">
-          <article className="art1">
-            <p>
-              De l’eau pétillante gratuite et en libre-service, ça vous tente ?
-              Une solution utile mais également écologique car il s'agit là
-              d'une bonne alternative à la bouteille plastique, jetée une fois
-              finie. En la matière, la France fait partie des plus gros
-              consommateurs mondiaux.
-            </p>
-          </article>
+            <article className="art2">
+              <div className="who-text-container">
+                <h2>Who</h2>
+                <p>
+                  Everyone who's in Paris! You're a tourits in holidays, a
+                  jogger, a family out for an afternoon.
+                </p>
+              </div>
+            </article>
 
-          <article className="art2">
-            <div className="icone-fish-container">
-              <img src="../../../images/deadfish.png" alt="dead" />
-            </div>
-            <div className="fish-text-container">
-              <p>
-                Plastic bottles are the most common waste found in seas and
-                oceans
-              </p>
-            </div>
-          </article>
-
-          <article className="art3">
-            <p>
-              L'eau en bouteille coûte 400 fois plus cher que l'eau du robinet
-            </p>
-          </article>
-          <article className="art4">
-            <p>
-              En France 150 gobelets sont jetés par seconde. 80% des déchets
-              retrouvés en mer sont jetés sur terre
-            </p>
-          </article>
+            <article className="art3">
+              <div className="who-text-container">
+                <h2>How</h2>
+                <p>
+                  Use our map to find a free spot near you. Don't forget to take
+                  your water bottle!
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </>

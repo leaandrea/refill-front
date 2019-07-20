@@ -1,6 +1,6 @@
 .top-home-line {
   border: none;
-  height: 3px;
+  height: 5px;
   background-color: rgb(162, 247, 218);
 }
 .top-home-thin-line {
@@ -10,22 +10,57 @@
   margin-bottom: 2px;
 }
 .home-map-section {
+  border-top: 1px solid rgb(162, 247, 218);
   background-color: rgb(250, 253, 253);
+  // background: linear-gradient(#e9f9fa, #a1eee1);
+  background-image: radial-gradient(
+    circle,
+    #e9f9fa,
+    #e0f9f9,
+    #d7f8f6,
+    #cef8f3,
+    #c6f7ef
+  );
+  // background-image: url("./../../../src/images/50-Beautiful-and-Minimalist-Presentation-Backgrounds-08.jpg");
+  background-size: cover;
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
+// .home-map-wrapper {
+//   margin-bottom: 2rem;
+// }
 .home-map-container {
-  margin-bottom: 2rem;
+  // border: 3px solid salmon;
+
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+
+  height: 70%;
+  // background-color: rgba(250, 253, 253, 0.4);
+}
+.title-home-map-container {
+  border: 1px solid rgb(162, 247, 218);
+  // margin: 2rem auto 0 auto;
+  margin: 2rem 0 0 5rem;
+  height: 10%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(250, 253, 253, 0.8);
 }
 .title-home-map {
   text-align: center;
-  padding: 2.5rem;
   font-size: 1.5rem;
-  width: 25%;
-  margin: auto;
 }
 .btn-geoloc-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10%;
 }
 
 .geoloc-btn {

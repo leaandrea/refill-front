@@ -1,9 +1,9 @@
 .home-map {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   width: 100vw;
-  height: 73vh;
+  // height: 73vh;
   .cls-1 {
     fill: none;
     stroke-width: 3.5px;
@@ -20,7 +20,9 @@
   }
 
   .cls-3 {
-    fill: #f7f9f2;
+    // fill: #f7f9f2;
+    // fill: #e9f5fa;
+    fill: rgb(250, 253, 253);
     stroke-width: 2px;
   }
 }

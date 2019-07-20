@@ -11,16 +11,22 @@
   .articles-container {
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 100%;
+    height: 70%;
   }
   .art1,
   .art2,
   .art3,
   .art4 {
-    width: 70%;
+    width: 90%;
+    padding: 5px;
   }
   .about {
     min-height: 100vh;
+  }
+  .about-title {
+    padding: 1rem;
+    font-size: 1.1rem;
+    height: 13%;
   }
   .first-gif-container,
   .third-gif-container {
@@ -37,5 +43,11 @@
   }
   .number-container {
     display: none;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  h2 {
+    font-size: 1.1rem;
   }
 }
