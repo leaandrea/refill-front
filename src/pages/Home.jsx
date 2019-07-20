@@ -14,17 +14,20 @@ const Home = () => {
       <NavMain />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
+      <hr className="top-home-thin-line" />
+      <hr className="top-home-thin-line" />
+      <section className="home-map-section">
+        <div className="home-map-container">
+          <h1 className="title-home-map">Choose an arrondissement</h1>
+          <HomeMap />
+        </div>
+        <div className="btn-geoloc-container">
+          <Btn>{geolocBtn}</Btn>
+        </div>
+      </section>
       {/* <hr className="top-home-line" /> */}
-      <div className="home-map-container">
-        <h1 className="title-home-map">Select an arrondissement</h1>
-        <HomeMap />
-      </div>
-      <div className="btn-geoloc-container">
-        <Btn>{geolocBtn}</Btn>
-      </div>
-      <hr className="top-home-line" />
       <ProSection />
-      <hr className="top-home-line" />
+      {/* <hr className="top-home-line" /> */}
       <Footer />
     </>
   );

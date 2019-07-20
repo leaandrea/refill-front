@@ -3,17 +3,31 @@
   height: 3px;
   background-color: rgb(162, 247, 218);
 }
+.top-home-thin-line {
+  border: none;
+  height: 1px;
+  background-color: rgb(162, 247, 218);
+  margin-bottom: 2px;
+}
+.home-map-section {
+  background-color: rgb(250, 253, 253);
+}
+.home-map-container {
+  margin-bottom: 2rem;
+}
 .title-home-map {
   text-align: center;
+  padding: 2.5rem;
+  font-size: 1.5rem;
+  width: 25%;
+  margin: auto;
 }
 .btn-geoloc-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home-map-container {
-  margin-bottom: 2rem;
-}
+
 .geoloc-btn {
   font-size: 2rem;
   border-radius: 0.2rem;

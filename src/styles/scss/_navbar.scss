@@ -2,15 +2,19 @@
   position: relative;
   width: 100%;
   padding: 1rem 3rem;
-  background-color: #f7fcfe;
+  background-color: rgb(250, 253, 253);
 }
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.nav-logo img {
+  width: 45%;
+}
 .btn-burger {
   cursor: pointer;
+  font-size: 2rem;
 }
 
 #btn-burger {

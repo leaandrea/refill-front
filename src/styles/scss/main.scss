@@ -8,6 +8,7 @@
 @import "./contact-form";
 @import "./main-map";
 @import "./media-queries";
+@import "./404err";
 
 * {
   box-sizing: border-box;
@@ -22,6 +23,7 @@ body {
   user-select: none;
   min-width: 320px;
   font-family: "Montserrat", sans-serif;
+  background-color: rgb(250, 253, 253);
 }
 ol,
 ul {

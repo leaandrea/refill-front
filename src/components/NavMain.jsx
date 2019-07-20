@@ -8,7 +8,9 @@ function NavMain() {
     <div className="navbar">
       <nav className="nav">
         <NavLink activeClassName="is-active" exact to="/home">
-          <h1 className="nav-logo">Refill.</h1>
+          <div className="nav-logo">
+            <img src="../../../images/refill1-logo.png" alt="refill-logo" />
+          </div>
         </NavLink>
 
         <div className="burger">

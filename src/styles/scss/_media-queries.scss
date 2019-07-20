@@ -11,5 +11,31 @@
   .articles-container {
     flex-direction: column;
     flex-wrap: nowrap;
+    height: 100%;
+  }
+  .art1,
+  .art2,
+  .art3,
+  .art4 {
+    width: 70%;
+  }
+  .about {
+    min-height: 100vh;
+  }
+  .first-gif-container,
+  .third-gif-container {
+    display: none;
+  }
+  .mobile-number-container.is-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    color: rgb(250, 253, 253);
+    left: 50%;
+    font-size: 10rem;
+    transform: translate(-50%);
+  }
+  .number-container {
+    display: none;
   }
 }

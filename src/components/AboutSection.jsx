@@ -6,10 +6,12 @@ export default function AboutSection() {
     <>
       <section className="about">
         {/* <NavMain /> */}
+
         <h3 className="about-title">
           Plastic bottles pollutes and kill animals. We can avoid this thanks to
-          many spots in Paris that allows you to refill your bottle water
+          many free spots in Paris that allows you to refill your water bottle.
         </h3>
+
         <div className="articles-container">
           <article className="art1">
             <p>
@@ -20,12 +22,19 @@ export default function AboutSection() {
               consommateurs mondiaux.
             </p>
           </article>
+
           <article className="art2">
-            <p>
-              Les bouteilles jetables sont les déchets les plus répandus dans
-              les mers et océans
-            </p>
+            <div className="icone-fish-container">
+              <img src="../../../images/deadfish.png" alt="dead" />
+            </div>
+            <div className="fish-text-container">
+              <p>
+                Plastic bottles are the most common waste found in seas and
+                oceans
+              </p>
+            </div>
           </article>
+
           <article className="art3">
             <p>
               L'eau en bouteille coûte 400 fois plus cher que l'eau du robinet
