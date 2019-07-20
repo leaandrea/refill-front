@@ -1,35 +1,59 @@
 import React, { Component } from "react";
-import Btn from "../components/Btn";
-import GoogleMap from "../components/GoogleMap";
 import { geolocated } from "react-geolocated";
 
-const mapStyles = {
-  width: "50%",
-  height: "50%"
-};
+import NavMain from "../components/NavMain";
+import GoogleMap from "../components/GoogleMap";
+import Filters from "../components/Filters";
+import Btn from "../components/Btn";
+import Footer from "../components/Footer";
 
 class MapContainer extends Component {
   render() {
-    console.log(mapStyles);
     console.log(this.props);
     let geolocBtn = "Get my Location";
     return !this.props.isGeolocationAvailable ? (
-      <div>Your browser does not support Geolocation</div>
+      <p>Your browser does not support Geolocation</p>
     ) : !this.props.isGeolocationEnabled ? (
-      <div>Geolocation is not enabled</div>
+      <p>Geolocation is not enabled</p>
     ) : this.props.coords ? (
-      <GoogleMap
-        initialCenter={{
-          lat: this.props.coords.latitude,
-          lng: this.props.coords.longitude
-        }}
-      />
+      <>
+        <hr className="top-home-line" />
+        <NavMain />
+        <section>
+          This fabulous map will help you find drinking water spots to refill
+          your water bottle.
+          <ul className="legend">
+            <li className="blue">
+              <p> Still water fountain</p>
+            </li>
+            <li className="green">
+              <p>Sparkling water fountain</p>
+            </li>
+            <li className="corail">
+              <p> Stores </p>
+            </li>
+          </ul>
+        </section>
+        <section className="map-filters">
+          <div className="google-map-container">
+            <GoogleMap
+              initialCenter={{
+                lat: this.props.coords.latitude,
+                lng: this.props.coords.longitude
+              }}
+            />
+          </div>
+
+          <Filters />
+        </section>
+        <div className="btn-geoloc-container-mainmap">
+          <Btn>{geolocBtn}</Btn>
+        </div>
+        <Footer />
+      </>
     ) : (
       <div>Getting the location data&hellip; </div>
     );
-    /* <div>
-        <Btn>{geolocBtn}</Btn>
-      </div> */
   }
 }
 

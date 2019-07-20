@@ -8,7 +8,7 @@ function NavMain() {
     <div className="navbar">
       <nav className="nav">
         <NavLink activeClassName="is-active" exact to="/home">
-          <h1 className="nav-logo">LOGO</h1>
+          <h1 className="nav-logo">Refill.</h1>
         </NavLink>
 
         <div className="burger">

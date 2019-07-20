@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import axios from "axios";
 
-const mapStyles = {
-  width: "75%",
-  height: "75%"
-};
+// const mapStyles = {
+//   width: "65%",
+//   height: "65%"
+// };
 
 export class GoogleMap extends Component {
   state = {
@@ -51,11 +51,12 @@ export class GoogleMap extends Component {
       <Map
         google={this.props.google}
         zoom={15}
-        style={mapStyles}
+        // style={mapStyles}
         initialCenter={{
           lat: this.props.initialCenter.lat,
           lng: this.props.initialCenter.lng
         }}
+        gestureHandling="cooperative"
       >
         {this.state.markers.map((marker, i) =>
           marker.gazeuse ? (

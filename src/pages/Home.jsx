@@ -12,10 +12,11 @@ const Home = () => {
     <>
       <hr className="top-home-line" />
       <NavMain />
-      <hr className="top-home-line" />
+      {/* <hr className="top-home-line" /> */}
       <AboutSection />
-      <hr className="top-home-line" />
+      {/* <hr className="top-home-line" /> */}
       <div className="home-map-container">
+        <h1 className="title-home-map">Select an arrondissement</h1>
         <HomeMap />
       </div>
       <div className="btn-geoloc-container">
