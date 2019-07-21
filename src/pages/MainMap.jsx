@@ -4,13 +4,13 @@ import { geolocated } from "react-geolocated";
 import NavMain from "../components/NavMain";
 import GoogleMap from "../components/GoogleMap";
 import Filters from "../components/Filters";
-import Btn from "../components/Btn";
+// import Btn from "../components/Btn";
 import Footer from "../components/Footer";
 
 class MapContainer extends Component {
   render() {
     console.log(this.props);
-    let geolocBtn = "Get my Location";
+    // let geolocBtn = "Get my Location";
     return !this.props.isGeolocationAvailable ? (
       <p>Your browser does not support Geolocation</p>
     ) : !this.props.isGeolocationEnabled ? (
@@ -47,7 +47,7 @@ class MapContainer extends Component {
           <Filters />
         </section>
         <div className="btn-geoloc-container-mainmap">
-          <Btn>{geolocBtn}</Btn>
+          <button>Get my Location</button>
         </div>
         <Footer />
       </>

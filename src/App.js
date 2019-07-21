@@ -30,10 +30,11 @@ import {
   faTrash,
   faTimes,
   faEdit,
-  faBars
+  faBars,
+  faMousePointer
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBars, faEdit, faTrash, faTimes);
+library.add(faBars, faEdit, faTrash, faTimes, faMousePointer);
 
 // )
 
@@ -51,6 +52,15 @@ function App() {
         <Route path="/edit-fountain" component={AdminForm} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
+        <Route
+          path="/instagram"
+          component={() => {
+            window.location =
+              "https://www.google.com/url?q=https://www.instagram.com/refill_paris/?hl%3Dfr&sa=D&source=hangouts&ust=1563794659196000&usg=AFQjCNGjgeFQuYgJEc_Zxf6mzq3PSRoZaQ";
+            return null;
+          }}
+        />
+
         {/* The 404 route must always be the last one */}
         <Route path="*" component={Page404} />
       </Switch>

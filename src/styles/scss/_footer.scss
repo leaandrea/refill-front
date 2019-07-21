@@ -3,6 +3,23 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 10vh;
-  background-color: aquamarine;
+  height: 17vh;
+  // background-color: aquamarine;
+  background-image: url("./../../../src/images/wavy-footer.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.social-icons {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+.legal-blabla {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
 }

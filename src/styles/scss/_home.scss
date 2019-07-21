@@ -9,61 +9,153 @@
   background-color: rgb(162, 247, 218);
   margin-bottom: 2px;
 }
+// .middle-home-line {
+//   border: none;
+//   background-color: #d8fcf7;
+//   position: absolute;
+//   height: 5px;
+//   width: 80vw;
+//   z-index: 1;
+//   margin: auto;
+// }
 .home-map-section {
   border-top: 1px solid rgb(162, 247, 218);
+  border-bottom: 1px solid #0d062f;
   background-color: rgb(250, 253, 253);
-  // background: linear-gradient(#e9f9fa, #a1eee1);
+  height: 95.5vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  // background-image: radial-gradient(
+  //   circle,
+  //   #e9f9fa,
+  //   #e0f9f9,
+  //   #d7f8f6,
+  //   #cef8f3,
+  //   #c6f7ef
+  // );
   background-image: radial-gradient(
     circle,
     #e9f9fa,
-    #e0f9f9,
-    #d7f8f6,
-    #cef8f3,
-    #c6f7ef
+    #ecfafa,
+    #eefcfb,
+    #f1fdfb,
+    #f4fefc
   );
-  // background-image: url("./../../../src/images/50-Beautiful-and-Minimalist-Presentation-Backgrounds-08.jpg");
-  background-size: cover;
-  height: 94vh;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
 }
-// .home-map-wrapper {
-//   margin-bottom: 2rem;
-// }
+.home-map-section-wrapper-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .home-map-container {
   // border: 3px solid salmon;
-
-  margin: 1rem auto;
+  width: 65%;
+  height: 100%;
+  padding: 2rem 0 2rem 3rem;
+  // background-image: url("./../../../src/images/borders.png");
   display: flex;
   justify-content: center;
-
-  height: 70%;
   // background-color: rgba(250, 253, 253, 0.4);
 }
-.title-home-map-container {
-  border: 1px solid rgb(162, 247, 218);
+// .inter {
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #d8fcf7;
+//   margin: auto;
+//   // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+//   padding: 0 1rem;
+//   z-index: 10;
+// }
+.txt-container-flex-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 35%;
+  // border: 2px solid yellow;
+}
+.choose-container {
+  border: 1px solid #0d062f;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // margin: 2rem auto 0 auto;
-  margin: 2rem 0 0 5rem;
-  height: 10%;
-  width: 20%;
+  // margin: 2rem 0 0 5rem;
+
+  width: 57.5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(250, 253, 253, 0.8);
+  // background-color: #d8fcf7;
+  background-color: white;
+  margin: auto 39.2px;
 }
-.title-home-map {
+.choose {
   text-align: center;
   font-size: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  padding: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
+.icon-mouse-pointer {
+  font-size: 2rem;
+}
+.icon-cont {
+  width: 60px;
+  height: 60px;
+  border: 1px solid aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: aquamarine;
+  margin-bottom: 10px;
+}
+
 .btn-geoloc-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10%;
+  width: 57.5%;
+
+  margin: auto 39.2px;
 }
 
 .geoloc-btn {
-  font-size: 2rem;
-  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  border: none;
+  border: 1px solid #0d062f;
+  color: #0d062f;
+  // background-color: #d8fcf7;
+  // padding: 25%;
+  padding: 21%;
+  width: 100%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.geoloc-btn:hover {
+  background: #8bdbff;
+  // color: rgb(250, 253, 253);
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.geoloc-btn:active {
+  transform: scale(0.99);
 }

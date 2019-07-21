@@ -1,8 +1,30 @@
 .pro {
+  width: 100vw;
+  height: 62vh;
+}
+.pro-title {
+  margin-top: 2rem;
+  text-align: center;
+}
+.pro-flex-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.pro-left-side,
+.pro-right-side {
+  width: 40%;
+  padding: 0 4rem;
+  border: 1px solid coral;
+  height: 80%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 50vh;
-  border: 3px solid #0793d1;
+}
+.pro-left-side p,
+.pro-right-side p {
+  color: #0d062f;
 }

@@ -24,7 +24,9 @@ body {
   min-width: 320px;
   font-family: "Montserrat", sans-serif;
   background-color: rgb(250, 253, 253);
+  color: #0d062f;
 }
+
 ol,
 ul {
   list-style: none;
@@ -38,6 +40,17 @@ a {
   outline: none;
   text-decoration: none;
   color: inherit;
+}
+button {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+*:focus {
+  outline: none;
 }
 
 .popup {
