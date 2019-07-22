@@ -2,7 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavResponsive(props) {
-  console.log(props);
   return (
     <div className={`menu ${props.menuStatus ? "is-active" : ""} `}>
       {/* <i class="fas fa-times"></i> */}
@@ -15,25 +14,25 @@ export default function NavResponsive(props) {
         />
       </div>
       <h2>
-        <a class="burger-link" href="/">
+        <a className="burger-link" href="/">
           Home
         </a>
       </h2>
               
       <h2>
-        <a class="burger-link" href="/main-map">
+        <a className="burger-link" href="/main-map">
           Map
         </a>
       </h2>
               
       <h2>
-        <a class="burger-link" href="/">
+        <a className="burger-link" href="/quality-info">
           Quality Info
         </a>
       </h2>
               
       <h2>
-        <a class="burger-link" href="/">
+        <a className="burger-link" href="/contribute">
           Contribute
         </a>
       </h2>

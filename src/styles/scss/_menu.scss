@@ -14,19 +14,21 @@
   transform: translate(0%, 0);
 }
 
-// .times-container {
-//   display: flex;
-//   justify-content: right;
-// }
+.times-container {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .fa-times {
-  width: 35px;
-  max-width: 15%;
-  margin-bottom: 10%;
+  font-size: x-large;
+  text-align: right;
+  width: 100px;
   cursor: pointer;
-  float: right;
 }
 
 .burger-link {
+  margin: 30px 10px;
   color: rgb(250, 253, 253);
 }

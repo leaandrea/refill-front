@@ -65,18 +65,32 @@ export class GoogleMap extends Component {
         gestureHandling="cooperative"
       >
         {this.state.markers.map((marker, i) =>
-          marker.gazeuse ? (
-            <Marker
-              key={i}
-              onClick={this.onMarkerClick}
-              address={marker.address ? marker.address : "Fontaine"}
-              position={{ lat: marker.lat, lng: marker.lng }}
-              icon={{
-                url: "/images/gazeuse_icon.png",
-                scaledSize: new this.props.google.maps.Size(14, 14)
-              }}
-              gazeuse={marker.gazeuse}
-            />
+          marker.type === "fontaine" ? (
+            marker.gazeuse ? (
+              <Marker
+                key={i}
+                onClick={this.onMarkerClick}
+                address={marker.address ? marker.address : "Fontaine"}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                icon={{
+                  url: "/images/gazeuse_icon.png",
+                  scaledSize: new this.props.google.maps.Size(14, 14)
+                }}
+                gazeuse={marker.gazeuse}
+              />
+            ) : (
+              <Marker
+                key={i}
+                onClick={this.onMarkerClick}
+                address={marker.address ? marker.address : "Fontaine"}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                icon={{
+                  url: "/images/bluedot_icon.png",
+                  scaledSize: new this.props.google.maps.Size(10, 10)
+                }}
+                gazeuse={marker.gazeuse}
+              />
+            )
           ) : (
             <Marker
               key={i}
@@ -84,7 +98,7 @@ export class GoogleMap extends Component {
               address={marker.address ? marker.address : "Fontaine"}
               position={{ lat: marker.lat, lng: marker.lng }}
               icon={{
-                url: "/images/bluedot_icon.png",
+                url: "/images/commerces.png",
                 scaledSize: new this.props.google.maps.Size(10, 10)
               }}
               gazeuse={marker.gazeuse}
