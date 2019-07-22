@@ -22,10 +22,10 @@ const Home = (props) => {
     console.log("click")
     setGeoState(true)
     console.log(geoState)
-    // return < GeoLoc />
+
   }
 
-  // let geolocBtn = "Get my location";
+  //  let geolocBtn = "Get my location";
   return (
 
     <>
@@ -55,17 +55,6 @@ const Home = (props) => {
 
             <div className="btn-geoloc-container">
 
-              {/* <button className="geoloc-btn">
-                <Link> <GeoLoc />{geolocBtn}</Link>
-
-              </button> */}
-
-              {/* <button onClick={handleGeo}> YOOOOOO {geoState ? <GeoLocBtn /> : void (0)}</button> */}
-
-              {/* onClick={changeGeoState} geoState={geoState} */}
-
-
-              {/* <GeoLoc /> */}
 
               <button className="geoloc-btn"
                 onClick={handleGeo}
@@ -101,9 +90,3 @@ export default Home;
 
 
 
-{/* <div className="icon-cont">
-<FontAwesomeIcon
-  icon={faDotCircle}
-  className="icon-dot-circle"
-/>
-</div> */}
