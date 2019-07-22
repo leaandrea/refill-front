@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Home = () => {
-  let geolocBtn = "Get my Location";
+  let geolocBtn = "Get my location";
   return (
     <>
       <hr className="top-home-line" />
@@ -17,9 +17,12 @@ const Home = () => {
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}
+
       <section className="home-map-section">
         <div className="home-map-section-wrapper-flex">
+
           <div className="home-map-container">
+
             <HomeMap />
           </div>
           <div className="txt-container-flex-column">
@@ -31,7 +34,7 @@ const Home = () => {
                     className="icon-mouse-pointer"
                   />
                 </div>
-                Choose a district
+                Pick an arrondissement on the map
               </h2>
             </div>
 
@@ -48,6 +51,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+
       </section>
       {/* <hr className="top-home-line" /> */}
       <ProSection />
