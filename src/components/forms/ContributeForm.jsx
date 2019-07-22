@@ -44,14 +44,27 @@ export default class ContributeForm extends Component {
         >
           <label>I am</label>
 
-          <select name="whoareyou">
-            <option value="particulier">An individual</option>
-            <option value="professionnel">A business owner</option>
+          <select name="type">
+            <option value="fontaine">An individual</option>
+            <option value="commerce">A business owner</option>
           </select>
+          {this.state.type === "commerce" ? (
+            <>
+              <label htmlFor="name">What's the name of the business?</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={this.state.name}
+              />
+            </>
+          ) : (
+            <></>
+          )}
           <label>Type of water</label>
           <select name="water-type">
-            <option value="plate">Still</option>
-            <option value="sparkling">Sparkling</option>
+            <option value="false">Still</option>
+            <option value="true">Sparkling</option>
           </select>
 
           <input id="address" name="address" type="address" />

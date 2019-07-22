@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import Burger from "./Burger";
-import NavResponsive from "./NavResponsive";
+import Menu from "./Menu";
 
 export default class NavPages extends Component {
   state = {
@@ -23,10 +23,7 @@ export default class NavPages extends Component {
     console.log(this.state);
     return (
       <>
-        <NavResponsive
-          menuStatus={this.state.menuStatus}
-          closeMenu={this.handleClose}
-        />
+        <Menu menuStatus={this.state.menuStatus} closeMenu={this.handleClose} />
 
         <div>
           <div className="navbar-pages">

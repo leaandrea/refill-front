@@ -13,7 +13,7 @@ export default class CreateForm extends Component {
     lat: 48.848919,
     lng: 2.368648,
     en_service: true,
-    type: "fontaine",
+    type: "commerce",
     name: ""
   };
 
@@ -83,13 +83,22 @@ export default class CreateForm extends Component {
           </select>
           <label>Type of source?</label>
           <select name="type">
-            <option value="commerce">Commerce</option>
+            <option value="commerce">Business</option>
             <option value="fontaine">Fontaine</option>
           </select>
-          <label htmlFor="name">
-            If the source is the business, what's its name?
-          </label>
-          <input id="name" name="name" type="text" value={this.state.name} />
+          {this.state.type === "commerce" ? (
+            <>
+              <label htmlFor="name">What's the name of the business?</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={this.state.name}
+              />
+            </>
+          ) : (
+            <></>
+          )}
 
           <button>Create</button>
         </form>
