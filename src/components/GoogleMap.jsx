@@ -112,7 +112,11 @@ export class GoogleMap extends Component {
           onClose={this.onClose}
         >
           <div>
-            <h4>{this.state.selectedPlace.address}</h4>
+            <h4>
+              {this.state.selectedPlace.name
+                ? this.state.selectedPlace.name
+                : this.state.selectedPlace.address}
+            </h4>
             <p>
               {this.state.selectedPlace.gazeuse
                 ? "Fontaine d'eau gazeuse"

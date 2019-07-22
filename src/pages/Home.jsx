@@ -4,24 +4,25 @@ import AboutSection from "../components/AboutSection";
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
 import Footer from "../components/Footer";
-import GeoLocBtn from "../components/GeoLocBtn";
+import GeoLoc from "../components/GeoLoc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 let geolocBtn = "Get my Location";
-const Home = () => {
+const Home = (props) => {
   const [geoState, setGeoState] = useState(false)
 
-  // const changeGeoState = () => {
+  const changeGeoState = () => {
 
-  //   console.log(geoState)
-  //   setGeoState(true)
-  // }
+    console.log(geoState)
+    setGeoState(true)
+  }
   const handleGeo = () => {
 
     console.log("click")
     setGeoState(true)
     console.log(geoState)
+    // return < GeoLoc />
   }
 
   // let geolocBtn = "Get my location";
@@ -54,9 +55,8 @@ const Home = () => {
 
             <div className="btn-geoloc-container">
 
-
               {/* <button className="geoloc-btn">
-                <Link> <GeoLocBtn />{geolocBtn}</Link>
+                <Link> <GeoLoc />{geolocBtn}</Link>
 
               </button> */}
 
@@ -65,16 +65,20 @@ const Home = () => {
               {/* onClick={changeGeoState} geoState={geoState} */}
 
 
+              {/* <GeoLoc /> */}
 
+              <button className="geoloc-btn"
+                onClick={handleGeo}
+              >
 
-              <button className="geoloc-btn" onClick={handleGeo}>
                 <div className="icon-cont">
                   <FontAwesomeIcon
                     icon={faDotCircle}
                     className="icon-dot-circle"
                   />
                 </div>
-                Yoooo {geoState ? <GeoLocBtn /> : void (0)}
+                Yoooo {geoState ? <GeoLoc /> : null}
+
               </button>
 
 

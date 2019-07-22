@@ -173,22 +173,27 @@
 
 import React, { Component } from "react";
 import { geolocated } from "react-geolocated";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 
-class GeoLocButton extends Component {
+class GeoLoc extends Component {
 
   state = {
     geoloc: false
   }
 
-  getGeoLoc = () => {
-    this.setState({ geoloc: true })
+  // getGeoLoc = () => {
+  //   this.setState({ geoloc: true })
+  // }
+
+  componentDidMount() {
+
   }
+
   render() {
-    console.log(this.props);
+    console.log(this.props.history)
     let geolocBtn = "Get my Location";
     return !this.props.isGeolocationAvailable ? (
       <p>Your browser does not support Geolocation</p>
@@ -196,20 +201,15 @@ class GeoLocButton extends Component {
       null
     ) : this.props.coords ? (
       <>
-        < div >
-          <Link
-            to={{
-              pathname: "/main-map",
-              state: {
-                initialLat: this.props.coords.latitude,
-                initialLng: this.props.coords.longitude
-              }
-            }}
-          >
-
-          </Link>
-        </div >
-
+        <Redirect
+          to={{
+            pathname: "/main-map",
+            state: {
+              initialLat: this.props.coords.latitude,
+              initialLng: this.props.coords.longitude
+            }
+          }}
+        />
       </>
     ) : (
             null
@@ -217,7 +217,7 @@ class GeoLocButton extends Component {
   }
 }
 
-export { GeoLocButton };
+export { GeoLoc };
 
 export default geolocated({
   positionOptions: {
@@ -225,4 +225,4 @@ export default geolocated({
   },
   apiKey: `${process.env.REACT_APP_API_KEY}`,
   userDecisionTimeout: 5000
-})(GeoLocButton);
+})(GeoLoc);

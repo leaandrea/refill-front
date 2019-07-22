@@ -23,10 +23,7 @@ export default class NavPages extends Component {
     console.log(this.state);
     return (
       <>
-        <Menu
-          menuStatus={this.state.menuStatus}
-          closeMenu={this.handleClose}
-        />
+        <Menu menuStatus={this.state.menuStatus} closeMenu={this.handleClose} />
 
         <div>
           <div className="navbar-pages">
