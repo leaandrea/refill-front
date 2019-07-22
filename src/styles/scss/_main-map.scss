@@ -1,4 +1,7 @@
-.map-filters {
+.google-map-title {
+  margin-top: 50px;
+}
+.map-and-filters {
   width: 100vw;
   display: flex;
 }
@@ -11,8 +14,21 @@
 }
 .filters-container {
   width: 35vw;
+
   border: 2px solid greenyellow;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.filters-left,
+.filters-right {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 li:first-child::before {
   content: "•";
   color: blue;
@@ -39,6 +55,9 @@ li:nth-child(2)::before {
 }
 ul.legend {
   line-height: 2.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 li:nth-child(3)::before {
   content: "•";

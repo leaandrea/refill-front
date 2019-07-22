@@ -1,12 +1,29 @@
 .navbar {
   position: absolute;
   width: 100%;
-  padding: 1.7rem 4rem;
+  padding: 1.7rem 4.2rem;
   // background-color: rgb(250, 253, 253);
 
   top: 20px;
 }
 .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-pages {
+  position: relative;
+  width: 100%;
+  padding: 0rem 2.5rem;
+  // background-color: rgb(250, 253, 253);
+
+  top: 20px;
+}
+.btn-burger-pages {
+  color: black;
+  cursor: pointer;
+}
+.nav-pages {
   display: flex;
   align-items: center;
   justify-content: space-between;

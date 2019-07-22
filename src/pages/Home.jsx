@@ -12,7 +12,7 @@ const Home = () => {
   let geolocBtn = "Get my location";
   return (
     <>
-      <hr className="top-home-line" />
+      {/* <hr className="top-home-line" /> */}
       <NavMain />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />

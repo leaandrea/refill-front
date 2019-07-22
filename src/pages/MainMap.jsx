@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { geolocated } from "react-geolocated";
 
-import NavMain from "../components/NavMain";
+import NavPages from "../components/NavPages";
 import GoogleMap from "../components/GoogleMap";
 import Filters from "../components/Filters";
 // import Btn from "../components/Btn";
@@ -18,10 +18,27 @@ class MapContainer extends Component {
     ) : this.props.coords ? (
       <>
         <hr className="top-home-line" />
-        <NavMain />
-        <section>
+        <NavPages />
+
+        <h1 className="google-map-title">
           This fabulous map will help you find drinking water spots to refill
           your water bottle.
+        </h1>
+
+        <section className="map-and-filters">
+          <div className="google-map-container">
+            <GoogleMap
+              initialCenter={{
+                lat: this.props.location.state.initialLat,
+                lng: this.props.location.state.initialLng
+              }}
+            />
+          </div>
+
+          <Filters />
+        </section>
+
+        <section className="legend-section">
           <ul className="legend">
             <li className="blue">
               <p> Still water fountain</p>
@@ -34,21 +51,6 @@ class MapContainer extends Component {
             </li>
           </ul>
         </section>
-        <section className="map-filters">
-          <div className="google-map-container">
-            <GoogleMap
-              initialCenter={{
-                lat: this.props.location.state.initialLat,
-                lng: this.props.location.state.initialLng
-              }}
-            />
-          </div>
-
-          <Filters />
-        </section>
-        <div className="btn-geoloc-container-mainmap">
-          <button>Get my Location</button>
-        </div>
         <Footer />
       </>
     ) : (
