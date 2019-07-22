@@ -1,8 +1,11 @@
 import React from "react";
+import NavMain from "../components/NavMain";
+import Footer from "../components/Footer";
 
 export default function QualityInfos() {
   return (
     <>
+      <NavMain />
       <h1>Quality Info</h1>
       <p>
         De l'eau filtrée de qualité Mis au point par la NASA, le procédé
@@ -28,6 +31,7 @@ export default function QualityInfos() {
         d'électrodes d'argent. L'eau qui en résulte est d'une douceur
         incomparable.
       </p>
+      <Footer />
     </>
   );
 }

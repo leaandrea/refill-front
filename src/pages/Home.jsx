@@ -1,5 +1,5 @@
 import React from "react";
-// import NavMain from "../components/NavMain";
+import NavMain from "../components/NavMain";
 import AboutSection from "../components/AboutSection";
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
@@ -13,16 +13,14 @@ const Home = () => {
   return (
     <>
       <hr className="top-home-line" />
-      {/* <NavMain /> */}
+      <NavMain />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}
 
       <section className="home-map-section">
         <div className="home-map-section-wrapper-flex">
-
           <div className="home-map-container">
-
             <HomeMap />
           </div>
           <div className="txt-container-flex-column">
@@ -51,8 +49,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-
       </section>
       {/* <hr className="top-home-line" /> */}
       <ProSection />

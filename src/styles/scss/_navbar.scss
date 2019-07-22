@@ -1,9 +1,10 @@
 .navbar {
-  position: relative;
+  position: absolute;
   width: 100%;
-  padding: 1rem 3rem;
+  padding: 1.7rem 4rem;
   // background-color: rgb(250, 253, 253);
-  height: 13%;
+
+  top: 20px;
 }
 .nav {
   display: flex;
@@ -19,21 +20,21 @@
   color: rgb(255, 255, 255);
 }
 
-#btn-burger {
-  outline: none;
-  transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
-}
+// #btn-burger {
+//   outline: none;
+//   transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+// }
 
-#btn-burger:hover {
-  cursor: pointer;
-  border-color: #003557;
-  transform: scale(1.2, 1.2);
-}
+// #btn-burger:hover {
+//   cursor: pointer;
+//   border-color: #003557;
+//   transform: scale(1.2, 1.2);
+// }
 
-#btn-burger:active {
-  border-color: #003557;
-  background-color: #fff;
-}
+// #btn-burger:active {
+//   border-color: #003557;
+//   background-color: #fff;
+// }
 
 .nav h1 {
   font-size: 2.5rem;

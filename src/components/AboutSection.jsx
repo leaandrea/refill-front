@@ -1,5 +1,5 @@
 import React from "react";
-import NavMain from "../components/NavMain";
+// import NavMain from "../components/NavMain";
 import { Link } from "react-router-dom";
 
 export default function AboutSection() {
@@ -7,7 +7,7 @@ export default function AboutSection() {
     <>
       <section className="about">
         <div className="inner-border">
-          <NavMain />
+          {/* <NavMain /> */}
           <h3 className="about-title">
             With Refill, you can easily help the environement and save money!
           </h3>
