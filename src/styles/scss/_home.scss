@@ -2,6 +2,7 @@
   border: none;
   height: 5px;
   background-color: rgb(162, 247, 218);
+  width: 100vw;
 }
 
 .top-home-thin-line {
@@ -40,12 +41,14 @@
   //   #cef8f3,
   //   #c6f7ef
   // );
-  background-image: radial-gradient(circle,
-      #e9f9fa,
-      #ecfafa,
-      #eefcfb,
-      #f1fdfb,
-      #f4fefc);
+  background-image: radial-gradient(
+    circle,
+    #e9f9fa,
+    #ecfafa,
+    #eefcfb,
+    #f1fdfb,
+    #f4fefc
+  );
 }
 
 .home-map-section-wrapper-flex {
