@@ -2,46 +2,31 @@ import React, { Component } from 'react'
 import axios from "axios"
 
 import APIHandler from "../../ApiHandler/apiHandlerMap"
-
 const apiHandler = new APIHandler();
 
-export default class CreateForm extends Component {
+export default class EditForm extends Component {
+
 
   state = {
-    create: {}
+    edit: {}
   }
 
 
   handleChange = evt => {
-    const create = { ...this.state.create };
-    create[evt.target.name] = evt.target.value;
-    this.setState({ create }, () => {
+    const edit = { ...this.state.edit };
+    edit[evt.target.name] = evt.target.value;
+    this.setState({ edit }, () => {
       console.log(this.state)
     })
   }
 
+
+
   handleSubmit = evt => {
     evt.preventDefault();
-    apiHandler.post(`/api/fontaines`, this.state.create)
+    apiHandler.update(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${this.props.match.params.id}`, this.state.edit)
       .then(serverRes => console.log(serverRes)).catch(serverErr => console.log(serverErr))
   }
-
-  // addFountain = infos => {
-  //   apiHandler
-  //     .post(`/create-fountain`, infos)
-  //     .then(dbRes => {
-  //       const tmp = [...this.state.users]; // create a copy of state.users array
-  //       tmp.push(dbRes.data); // push the new user
-  //       this.setState({ fountains: tmp }, () => {
-  //         // update the state
-  //         // access the state once it's updated in that callback
-  //         console.log(this.state.fountains);
-  //       });
-  //     })
-  //     .catch(dbErr => {
-  //       console.log(dbErr);
-  //     });
-  // };
 
 
 
@@ -57,12 +42,15 @@ export default class CreateForm extends Component {
 
 
   render() {
+    console.log(this.state.edit)
     return (
-      <div>
+
+      < div >
         <form
           id="contribute_form"
           className="contribute-form"
           onSubmit={this.handleSubmit}
+          // onSubmit={() => this.deleteFountain(oneFountain._id)}
           onChange={this.handleChange}
         >
           {/* <label>I am a :</label> */}
@@ -76,15 +64,15 @@ export default class CreateForm extends Component {
 
 
           <label htmlFor="address">Address</label>
-          <input id="address" name="address" type="address" />
+          <input id="address" name="address" type="text" />
 
           <label htmlFor="latitude">Latitude</label>
 
-          <input id="latitude" name="lat" type="text" />
+          <input id="latitude" name="lat" type="number" />
 
 
           <label htmlFor="longitude">Longitude</label>
-          <input id="longitude" name="lng" type="text" />
+          <input id="longitude" name="lng" type="number" />
 
           <label>En service ?</label>
           <select name="en_service">
@@ -97,9 +85,10 @@ export default class CreateForm extends Component {
             <option value="fontaine">Fontaine</option>
           </select>
 
-          <button>Create</button>
+
+          <button>edit</button>
         </form>
-      </div>
+      </div >
     )
   }
 }

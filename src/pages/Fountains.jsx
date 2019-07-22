@@ -3,6 +3,9 @@ import axios from "axios";
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom'
+import APIHandler from ".././ApiHandler/apiHandlerMap"
+
+const apiHandler = new APIHandler();
 
 
 
@@ -32,9 +35,20 @@ export default class Foutains extends Component {
   // };
 
 
+  componentDidMount() {
+
+    apiHandler
+      .get(`/api/fontaines`)
+      .then(dbRes => {
+        this.setState({ fountains: dbRes.data.slice(0, 2) });
+      })
+      .catch(apiErr => console.error(apiErr));
+
+  }
+
   deleteFountain = id => {
-    axios
-      .delete(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${id}`)
+    apiHandler
+      .destroy(`/api/fontaines/`, id)
       .then(dbRes => {
 
         const removedId = dbRes.data._id; // get the removed id
@@ -50,16 +64,9 @@ export default class Foutains extends Component {
       });
   };
 
-  componentDidMount() {
 
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(dbRes => {
-        this.setState({ fountains: dbRes.data.slice(0, 100) });
-      })
-      .catch(apiErr => console.error(apiErr));
 
-  }
+
   render() {
     console.log(this.props)
     // const { fountains } = this.state;
@@ -92,8 +99,11 @@ export default class Foutains extends Component {
                 </tr>
               </tbody>
 
-              <Link to='/edit-fountain'> <button className="editButton">
+              <Link to={`/edit-fountain/${oneFountain._id}`}> <button className="editButton">
                 <FontAwesomeIcon icon="edit" /> </button>
+              </Link>
+              <Link to='/create-fountain'> <button className="createButton">
+                <FontAwesomeIcon icon="plus" /> </button>
               </Link>
 
               <button

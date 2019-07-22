@@ -17,7 +17,8 @@ import Page404 from "./pages/Page404";
 //---------------------------------------
 //COMPONENTS
 //---------------------------------------
-import AdminForm from "./components/forms/AdminForm";
+import EditForm from "./components/forms/EditForm";
+import CreateForm from "./components/forms/CreateForm";
 import ContributeForm from "./components/forms/ContributeForm";
 import ContactForm from "./components/forms/ContactForm";
 
@@ -31,10 +32,11 @@ import {
   faTimes,
   faEdit,
   faBars,
-  faMousePointer
+  faMousePointer,
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBars, faEdit, faTrash, faTimes, faMousePointer);
+library.add(faBars, faEdit, faTrash, faTimes, faMousePointer, faPlus);
 
 // )
 
@@ -49,7 +51,8 @@ function App() {
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
         <Route path="/fountains" component={Fountains} />
-        <Route path="/edit-fountain" component={AdminForm} />
+        <Route path="/edit-fountain/:id" component={EditForm} />
+        <Route path="/create-fountain" component={CreateForm} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
         <Route
