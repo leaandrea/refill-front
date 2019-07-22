@@ -22,29 +22,44 @@ export default class ContributeForm extends Component {
   render() {
     let sendBtn = "Send";
     return (
-      <form
-        id="contribute_form"
-        className="contribute-form"
-        onSubmit={this.handleSubmit}
-        onChange={this.handleChange}
-      >
-        <label>I am a :</label>
+      <>
+        <div>
+          <h3>Help other Refill users find free water close to them!</h3>
+          <p>
+            You can use the form below to submit a new source of water that we
+            might have missed.
+          </p>
+          <p>Feel free to submit a public fountain!</p>
+          <p>
+            If you own a restaurant or a business and you're willing to give
+            away free water to Refill users, we will gladly add your company to
+            our database.
+          </p>
+        </div>
+        <form
+          id="contribute_form"
+          className="contribute-form"
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+        >
+          <label>I am</label>
 
-        <select name="whoareyou">
-          <option value="particulier">Particulier</option>
-          <option value="professionnel">Professionnel</option>
-        </select>
-        <label>Type of water</label>
-        <select name="water-type">
-          <option value="plate">Plate</option>
-          <option value="sparkling">Sparkling</option>
-        </select>
+          <select name="whoareyou">
+            <option value="particulier">An individual</option>
+            <option value="professionnel">A business owner</option>
+          </select>
+          <label>Type of water</label>
+          <select name="water-type">
+            <option value="plate">Still</option>
+            <option value="sparkling">Sparkling</option>
+          </select>
 
-        <input id="address" name="address" type="address" />
-        <label htmlFor="address">Address</label>
+          <input id="address" name="address" type="address" />
+          <label htmlFor="address">Address</label>
 
-        <Btn>{sendBtn}</Btn>
-      </form>
+          <Btn>{sendBtn}</Btn>
+        </form>
+      </>
     );
   }
 }

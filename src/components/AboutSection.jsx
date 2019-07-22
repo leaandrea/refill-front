@@ -9,7 +9,7 @@ export default function AboutSection() {
         <div className="inner-border">
           <NavMain />
           <h3 className="about-title">
-            With Refill, you can easily help the environement and save money !
+            With Refill, you can easily help the environement and save money!
           </h3>
 
           <div className="articles-container">
@@ -17,12 +17,15 @@ export default function AboutSection() {
               <div className="who-text-container">
                 <h2>How</h2>
                 <p>
-                  Stop buying plastic bottles. It costs 400 times more than tap
-                  water. Use our map to find free spots near you. There are
-                  still water and sparkling water fountains. Some stores are
-                  also willing to offer you free water. Don't forget to take
-                  your reusable water bottle! Want to know more about{" "}
-                  <Link to="/quality-info">quality water </Link>?
+                  Stop buying plastic bottles! Take your reusable water bottle
+                  and use our map to find spots near you, where you'll be able
+                  to fill it for free. Refill will help you find public
+                  fountains and businesses that offer free water. There are even
+                  sparkling water fountains!
+                </p>
+                <p>
+                  Want to know more about
+                  <Link to="/quality-info"> water quality</Link>?
                 </p>
               </div>
             </article>
@@ -30,10 +33,11 @@ export default function AboutSection() {
               <div className="why-text-container">
                 <h2>Why</h2>
                 <p>
-                  Plastic bottles pollutes and kill animals. 80% of sea and
-                  ocean wates are thrown on earth. We can, in an easy way,
-                  reduce plastic waste so let's help the planet while staying
-                  hydrated.
+                  Plastic bottles pollute and kill animals, and 80% of sea and
+                  ocean waste is thrown on land. We can, in an easy way, reduce
+                  plastic waste and help the planet while staying hydrated. It's
+                  also cheaper for you, since bottled water is 400 times more
+                  expensive than tap water.
                 </p>
               </div>
             </article>
@@ -42,9 +46,13 @@ export default function AboutSection() {
               <div className="who-text-container">
                 <h2>Who</h2>
                 <p>
-                  Everyone who's in Paris! You're a tourit in holidays, a
-                  jogger, a family out for an afternoon. If we missed a spot you
-                  can tell us <Link to="/contribute">here</Link>.
+                  Refill is for everyone who's in Paris, whether you're a local,
+                  a tourist on holiday, a jogger, or a family out for the
+                  afternoon.
+                </p>
+                <p>
+                  If we missed a spot you can tell us
+                  <Link to="/contribute">here</Link>.
                 </p>
               </div>
             </article>
