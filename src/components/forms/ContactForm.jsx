@@ -31,9 +31,9 @@ export default class ContactForm extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         >
-          <label htmlFor="firstname">Firstname</label>
+          <label htmlFor="firstname">First name</label>
           <input type="text" name="firstname" />
-          <label htmlFor="lastname">Lastname</label>
+          <label htmlFor="lastname">Last name</label>
           <input type="text" name="lastname" />
           <label htmlFor="email">Email</label>
           <input type="email" name="email" />

@@ -13,6 +13,8 @@ export class GoogleMap extends Component {
     activeMarker: {},
     selectedPlace: {},
     markers: []
+    // initialLat: null,
+    // initialLng: null
   };
 
   componentDidMount() {
@@ -24,7 +26,11 @@ export class GoogleMap extends Component {
             ? true
             : false
         );
-        this.setState({ markers: fontainesEnService });
+        this.setState({
+          markers: fontainesEnService
+          // initialLat: this.props.initialLat,
+          // initialLng: this.props.initialLng
+        });
       })
       .catch(err => console.error(err));
   }

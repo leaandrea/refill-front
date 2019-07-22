@@ -38,8 +38,8 @@ class MapContainer extends Component {
           <div className="google-map-container">
             <GoogleMap
               initialCenter={{
-                lat: this.props.coords.latitude,
-                lng: this.props.coords.longitude
+                lat: this.props.location.state.initialLat,
+                lng: this.props.location.state.initialLng
               }}
             />
           </div>
