@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import NavMain from "../components/NavMain";
 import AboutSection from "../components/AboutSection";
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
 import Footer from "../components/Footer";
-import Btn from "../components/Btn";
+import GeoLocBtn from "../components/GeoLocBtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
-
+import { Link } from "react-router-dom";
+let geolocBtn = "Get my Location";
 const Home = () => {
-  let geolocBtn = "Get my location";
+  const [geoState, setGeoState] = useState(false)
+
+  // const changeGeoState = () => {
+
+  //   console.log(geoState)
+  //   setGeoState(true)
+  // }
+  const handleGeo = () => {
+
+    console.log("click")
+    setGeoState(true)
+    console.log(geoState)
+  }
+
+  // let geolocBtn = "Get my location";
   return (
+
     <>
       {/* <hr className="top-home-line" /> */}
       <NavMain />
@@ -37,15 +53,31 @@ const Home = () => {
             </div>
 
             <div className="btn-geoloc-container">
-              <Btn className="geoloc-btn">
+
+
+              {/* <button className="geoloc-btn">
+                <Link> <GeoLocBtn />{geolocBtn}</Link>
+
+              </button> */}
+
+              {/* <button onClick={handleGeo}> YOOOOOO {geoState ? <GeoLocBtn /> : void (0)}</button> */}
+
+              {/* onClick={changeGeoState} geoState={geoState} */}
+
+
+
+
+              <button className="geoloc-btn" onClick={handleGeo}>
                 <div className="icon-cont">
                   <FontAwesomeIcon
                     icon={faDotCircle}
                     className="icon-dot-circle"
                   />
                 </div>
-                {geolocBtn}
-              </Btn>
+                Yoooo {geoState ? <GeoLocBtn /> : void (0)}
+              </button>
+
+
             </div>
           </div>
         </div>
@@ -59,3 +91,15 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+{/* <div className="icon-cont">
+<FontAwesomeIcon
+  icon={faDotCircle}
+  className="icon-dot-circle"
+/>
+</div> */}

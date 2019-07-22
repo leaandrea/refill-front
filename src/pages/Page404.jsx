@@ -6,11 +6,11 @@ export default function Page404() {
     <>
       <hr className="top-home-line" />
       <div className="fof-wrapper">
-        <h1 className="fof-title">This page does not exist</h1>
+        <h1 className="fof-title">You seem lost in the depths of the ocean.</h1>
         <h2 className="fof-subtitle">
-          Let's go back to the&nbsp;
+          Go back &nbsp;
           <Link className="link-home" to="/">
-            Home page
+            Home
           </Link>
         </h2>
 

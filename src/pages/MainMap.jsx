@@ -27,12 +27,13 @@ class MapContainer extends Component {
 
         <section className="map-and-filters">
           <div className="google-map-container">
-            <GoogleMap
+            {this.props.location.state && <GoogleMap
               initialCenter={{
                 lat: this.props.location.state.initialLat,
                 lng: this.props.location.state.initialLng
               }}
-            />
+            />}
+
           </div>
 
           <Filters />
@@ -54,8 +55,8 @@ class MapContainer extends Component {
         <Footer />
       </>
     ) : (
-      <div>Getting the location data&hellip; </div>
-    );
+            <div>Getting the location data&hellip; </div>
+          );
   }
 }
 

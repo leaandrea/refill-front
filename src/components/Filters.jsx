@@ -11,7 +11,7 @@ export default class Filters extends Component {
     return (
       <div className="filters-container">
         <div className="filters-left">
-          <button onclick={this.handleClick}>Still Water</button>
+          <button onClick={this.handleClick}>Still Water</button>
           <button>Fountains</button>
           <button>See all water spots</button>
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Btn from "../Btn";
+// import Btn from "../Btn";
 
 export default class ContributeForm extends Component {
   state = {
@@ -57,7 +57,7 @@ export default class ContributeForm extends Component {
           <input id="address" name="address" type="address" />
           <label htmlFor="address">Address</label>
 
-          <Btn>{sendBtn}</Btn>
+          <button>Send</button>
         </form>
       </>
     );
