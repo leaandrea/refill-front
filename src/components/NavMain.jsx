@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavResponsive from "./NavResponsive";
+import Menu from "./Menu";
 
 export default class NavMain extends Component {
   state = {
@@ -22,10 +22,7 @@ export default class NavMain extends Component {
     console.log(this.state);
     return (
       <>
-        <NavResponsive
-          menuStatus={this.state.menuStatus}
-          closeMenu={this.handleClose}
-        />
+        <Menu menuStatus={this.state.menuStatus} closeMenu={this.handleClose} />
 
         <div>
           <div className="navbar">
