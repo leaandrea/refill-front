@@ -2,13 +2,31 @@
   position: fixed;
   height: 100vh;
   width: 26%;
-  background: tomato;
+  background: #2f00fc;
   right: 0;
   z-index: 1;
   transform: translate(100%, 0);
   transition: transform 0.4s ease-in;
+  padding: 2%;
 }
 
 .menu.is-active {
   transform: translate(0%, 0);
+}
+
+// .times-container {
+//   display: flex;
+//   justify-content: right;
+// }
+
+.fa-times {
+  width: 35px;
+  max-width: 15%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  float: right;
+}
+
+.burger-link {
+  color: rgb(250, 253, 253);
 }
