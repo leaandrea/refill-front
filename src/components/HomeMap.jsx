@@ -19,7 +19,7 @@ export default class HomeMap extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <svg
           className="home-map"
           xmlns="http://www.w3.org/2000/svg"
@@ -444,7 +444,7 @@ export default class HomeMap extends Component {
             </Link>
           )}
         </svg>
-      </div>
+      </>
     );
   }
 }
