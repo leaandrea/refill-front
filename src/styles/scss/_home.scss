@@ -23,7 +23,7 @@
 // }
 
 .home-map-section {
-  border-top: 1px solid rgb(162, 247, 218);
+  // border-top: 1px solid rgb(162, 247, 218);
   border-bottom: 1px solid #0d062f;
   background-color: rgb(250, 253, 253);
   height: 95.5vh;
@@ -32,6 +32,7 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  background-image: url("./../../../src/images/bghomemapgrain.png");
 
   // background-image: radial-gradient(
   //   circle,
@@ -41,14 +42,14 @@
   //   #cef8f3,
   //   #c6f7ef
   // );
-  background-image: radial-gradient(
-    circle,
-    #e9f9fa,
-    #ecfafa,
-    #eefcfb,
-    #f1fdfb,
-    #f4fefc
-  );
+  // background-image: radial-gradient(
+  //   circle,
+  //   #e9f9fa,
+  //   #ecfafa,
+  //   #eefcfb,
+  //   #f1fdfb,
+  //   #f4fefc
+  // );
 }
 
 .home-map-section-wrapper-flex {

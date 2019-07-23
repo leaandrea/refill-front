@@ -9,7 +9,6 @@ export default class ContactForm extends Component {
   };
 
   handleChange = evt => {
-    // console.log(this.state.form);
     const form = { ...this.state.form };
     form[evt.target.name] = evt.target.value;
     this.setState({ form }, () => {
@@ -19,8 +18,14 @@ export default class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
+
+    // axios
+    //   .post(`${process.env.REACT_APP_BACKEND_URL}/contact`, this.state.form)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
+    console.log(this.state.form);
     apiHandler
-      .post(`${process.env.SITE_URL}/contact`, this.state.form)
+      .post(`/contact`, this.state.form)
       .then(serverRes => console.log(serverRes))
       .catch(serverErr => console.log(serverErr));
   };

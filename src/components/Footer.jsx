@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -25,6 +26,9 @@ export default function Footer() {
         <section className="legal-blabla">
           <p>Legal Notice</p>
           <p>Terms of Use</p>
+          <a href={`http://localhost:3000/#top`}>
+            <FontAwesomeIcon icon={faChevronUp} className="contact-icon" />
+          </a>
         </section>
       </footer>
     </>

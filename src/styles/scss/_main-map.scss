@@ -12,6 +12,7 @@
   width: 65vw;
   // border: 2px solid coral;
 }
+
 .filters-container {
   width: 35vw;
   // border: 2px solid greenyellow;
@@ -75,6 +76,9 @@ li:nth-child(3)::before {
   border: 1px solid #0d062f;
   font-size: 1.5rem;
   height: 18%;
+}
+.button-filter.is-active {
+  background-color: red;
 }
 
 .button-filter:hover {

@@ -33,10 +33,19 @@ import {
   faEdit,
   faBars,
   faMousePointer,
-  faPlus
+  faPlus,
+  faChevronUp
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBars, faEdit, faTrash, faTimes, faMousePointer, faPlus);
+library.add(
+  faBars,
+  faEdit,
+  faTrash,
+  faTimes,
+  faMousePointer,
+  faPlus,
+  faChevronUp
+);
 
 // )
 
