@@ -10,8 +10,7 @@ export class GoogleMap extends Component {
   state = {
     showingInfoWindow: false,
     activeMarker: {},
-    selectedPlace: {},
-    markers: []
+    selectedPlace: {}
   };
 
   onMarkerClick = (props, marker, e) => {
@@ -44,7 +43,7 @@ export class GoogleMap extends Component {
         }}
         gestureHandling="cooperative"
       >
-        {this.state.markers.map((marker, i) =>
+        {this.props.markers.map((marker, i) =>
           marker.type === "fontaine" ? (
             marker.gazeuse ? (
               <Marker

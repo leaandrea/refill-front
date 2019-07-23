@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 
 class MapContainer extends Component {
   state = {
-    loaded: false,
     markers: [],
     displaySparklingWater: false,
     displayTypeFountain: false,
@@ -28,8 +27,7 @@ class MapContainer extends Component {
             : false
         );
         this.setState({
-          markers: fontainesEnService,
-          loaded: true
+          markers: fontainesEnService
         });
       })
       .catch(err => console.error(err));
@@ -192,7 +190,7 @@ class MapContainer extends Component {
             </div>
           ) : (
             <div className="google-map-container">
-              {this.state.loaded && (
+              {this.state.markers.length && (
                 <GoogleMap
                   markers={this.state.markers}
                   initialCenter={{
