@@ -1,44 +1,35 @@
-import NavMain from "../components/NavMain";
-import axios from "axios";
-import React, { Component } from 'react';
+import NavPages from "../components/NavMain";
+import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from 'react-router-dom'
-import APIHandler from "../ApiHandler/apiHandlerMap"
+import { Link } from "react-router-dom";
+import APIHandler from ".././ApiHandler/apiHandler";
 
 const apiHandler = new APIHandler();
 
-
-
 export default class Foutains extends Component {
-
-  state =
-    {
-      fountains: [],
-    }
-
-
-
+  state = {
+    fountains: []
+  };
 
   componentDidMount() {
-
     apiHandler
       .get(`/api/fontaines`)
       .then(dbRes => {
-        this.setState({ fountains: dbRes.data.slice(0, 2) });
+        this.setState({ fountains: dbRes.data.slice(0, 40) });
       })
       .catch(apiErr => console.error(apiErr));
-
   }
 
   deleteFountain = id => {
     apiHandler
       .destroy(`/api/fontaines/`, id)
       .then(dbRes => {
-
         const removedId = dbRes.data._id; // get the removed id
         const tmp = [...this.state.fountains]; // make a copy of the users array
-        // 
-        const remainingFountains = tmp.filter(fountain => fountain._id !== removedId);
+        //
+        const remainingFountains = tmp.filter(
+          fountain => fountain._id !== removedId
+        );
         this.setState({ fountains: remainingFountains });
 
         console.log(dbRes);
@@ -48,68 +39,52 @@ export default class Foutains extends Component {
       });
   };
 
-
-
-
   render() {
-    console.log(this.props)
+    console.log(this.props);
     // const { fountains } = this.state;
     return (
-      <div>
-
-
-
+      <>
         <hr className="top-home-line" />
-        <NavMain />
+        <NavPages />
         <table>
-          <tbody>
+          <thead>
             <tr>
               <th>Address</th>
               <th>Fountain's type</th>
             </tr>
-          </tbody>
-        </table>
-        {this.state.fountains.map((oneFountain, i) => {
-          return (
+          </thead>
 
-            <table key={i}>
-              <tbody>
+          {this.state.fountains.map((oneFountain, i) => {
+            return (
+              <tbody key={i}>
                 <tr>
-
                   <td>{oneFountain.address}</td>
                   <td>{oneFountain.type}</td>
-
-
                 </tr>
+
+                <Link to={`/edit-fountain/${oneFountain._id}`}>
+                  <button className="editButton">
+                    <FontAwesomeIcon icon="edit" />
+                  </button>
+                </Link>
+
+                <Link to="/create-fountain">
+                  <button className="createButton">
+                    <FontAwesomeIcon icon="plus" />
+                  </button>
+                </Link>
+
+                <button
+                  className="deleteButton"
+                  onClick={() => this.deleteFountain(oneFountain._id)}
+                >
+                  <FontAwesomeIcon icon="trash" />
+                </button>
               </tbody>
-
-              <Link to={`/edit-fountain/${oneFountain._id}`}> <button className="editButton">
-                <FontAwesomeIcon icon="edit" /> </button>
-              </Link>
-              <Link to='/create-fountain'> <button className="createButton">
-                <FontAwesomeIcon icon="plus" /> </button>
-              </Link>
-
-              <button
-                className="deleteButton"
-                onClick={() => this.deleteFountain(oneFountain._id)}
-              >  <FontAwesomeIcon icon="trash" />
-
-              </button>
-
-
-
-
-            </table>
-
-
-
-          );
-        })}
-
-      </div>
-    )
+            );
+          })}
+        </table>
+      </>
+    );
   }
 }
-
-

@@ -1,34 +1,33 @@
-import React, { Component } from 'react'
-import axios from "axios"
+import React, { Component } from "react";
 
-import APIHandler from "../../ApiHandler/apiHandlerMap"
+import APIHandler from "../../ApiHandler/apiHandler";
 const apiHandler = new APIHandler();
 
 export default class EditForm extends Component {
-
-
   state = {
     edit: {}
-  }
-
+  };
 
   handleChange = evt => {
     const edit = { ...this.state.edit };
     edit[evt.target.name] = evt.target.value;
     this.setState({ edit }, () => {
-      console.log(this.state)
-    })
-  }
-
-
+      console.log(this.state);
+    });
+  };
 
   handleSubmit = evt => {
     evt.preventDefault();
-    apiHandler.update(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${this.props.match.params.id}`, this.state.edit)
-      .then(serverRes => console.log(serverRes)).catch(serverErr => console.log(serverErr))
-  }
-
-
+    apiHandler
+      .update(
+        `${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${
+          this.props.match.params.id
+        }`,
+        this.state.edit
+      )
+      .then(serverRes => console.log(serverRes))
+      .catch(serverErr => console.log(serverErr));
+  };
 
   // lat: Number,
   // lng: Number,
@@ -39,13 +38,10 @@ export default class EditForm extends Component {
   // verified: Boolean,
   // type: { type: String, enum: ["fontaine", "commerce"] }
 
-
-
   render() {
-    console.log(this.state.edit)
+    console.log(this.state.edit);
     return (
-
-      < div >
+      <div>
         <form
           id="contribute_form"
           className="contribute-form"
@@ -55,13 +51,11 @@ export default class EditForm extends Component {
         >
           {/* <label>I am a :</label> */}
 
-
           <label>Is-it sparkling water ?</label>
           <select name="gazeuse">
             <option value="false">Plate</option>
             <option value="true">Sparkling</option>
           </select>
-
 
           <label htmlFor="address">Address</label>
           <input id="address" name="address" type="text" />
@@ -69,7 +63,6 @@ export default class EditForm extends Component {
           <label htmlFor="latitude">Latitude</label>
 
           <input id="latitude" name="lat" type="number" />
-
 
           <label htmlFor="longitude">Longitude</label>
           <input id="longitude" name="lng" type="number" />
@@ -85,10 +78,9 @@ export default class EditForm extends Component {
             <option value="fontaine">Fontaine</option>
           </select>
 
-
           <button>edit</button>
         </form>
-      </div >
-    )
+      </div>
+    );
   }
 }

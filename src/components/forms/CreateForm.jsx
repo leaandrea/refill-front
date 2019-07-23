@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import APIHandler from "../../ApiHandler/apiHandlerMap";
+import APIHandler from "../../ApiHandler/apiHandler";
 
 const apiHandler = new APIHandler();
 
@@ -36,10 +36,10 @@ export default class CreateForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="create-form-container">
         <form
-          id="contribute_form"
-          className="contribute-form"
+          id="create_form"
+          className="create-form"
           name="create-form"
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}

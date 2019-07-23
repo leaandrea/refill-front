@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 // import Btn from "../Btn";
 
 export default class ContributeForm extends Component {
@@ -10,17 +10,7 @@ export default class ContributeForm extends Component {
     this.setState({ value: event.target.value });
   }
 
-  // axios
-  //     .post(`${process.env.SITE_URL}/contribute`, contributeForm)
-  //     .then(serverRes => {
-  //       console.log("serverRes", serverRes);
-  //       console.log("state", this.state);
-  //     })
-  //     .catch(serverErr => console.log(serverErr));
-  // };
-
   render() {
-    let sendBtn = "Send";
     return (
       <>
         <div>

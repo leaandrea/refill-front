@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
-import axios from "axios";
 
 // const mapStyles = {
 //   width: "65%",
@@ -16,24 +15,6 @@ export class GoogleMap extends Component {
     // initialLat: null,
     // initialLng: null
   };
-
-  componentDidMount() {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(fontaine =>
-          fontaine.en_service && fontaine.potable && fontaine.verified
-            ? true
-            : false
-        );
-        this.setState({
-          markers: fontainesEnService
-          // initialLat: this.props.initialLat,
-          // initialLng: this.props.initialLng
-        });
-      })
-      .catch(err => console.error(err));
-  }
 
   onMarkerClick = (props, marker, e) => {
     this.setState({
@@ -64,33 +45,19 @@ export class GoogleMap extends Component {
         }}
         gestureHandling="cooperative"
       >
-        {this.state.markers.map((marker, i) =>
-          marker.type === "fontaine" ? (
-            marker.gazeuse ? (
-              <Marker
-                key={i}
-                onClick={this.onMarkerClick}
-                address={marker.address ? marker.address : "Fontaine"}
-                position={{ lat: marker.lat, lng: marker.lng }}
-                icon={{
-                  url: "/images/gazeuse_icon.png",
-                  scaledSize: new this.props.google.maps.Size(14, 14)
-                }}
-                gazeuse={marker.gazeuse}
-              />
-            ) : (
-              <Marker
-                key={i}
-                onClick={this.onMarkerClick}
-                address={marker.address ? marker.address : "Fontaine"}
-                position={{ lat: marker.lat, lng: marker.lng }}
-                icon={{
-                  url: "/images/bluedot_icon.png",
-                  scaledSize: new this.props.google.maps.Size(10, 10)
-                }}
-                gazeuse={marker.gazeuse}
-              />
-            )
+        {this.props.markers.map((marker, i) =>
+          marker.gazeuse ? (
+            <Marker
+              key={i}
+              onClick={this.onMarkerClick}
+              address={marker.address ? marker.address : "Fontaine"}
+              position={{ lat: marker.lat, lng: marker.lng }}
+              icon={{
+                url: "/images/gazeuse_icon.png",
+                scaledSize: new this.props.google.maps.Size(14, 14)
+              }}
+              gazeuse={marker.gazeuse}
+            />
           ) : (
             <Marker
               key={i}
@@ -98,7 +65,7 @@ export class GoogleMap extends Component {
               address={marker.address ? marker.address : "Fontaine"}
               position={{ lat: marker.lat, lng: marker.lng }}
               icon={{
-                url: "/images/commerces.png",
+                url: "/images/bluedot_icon.png",
                 scaledSize: new this.props.google.maps.Size(10, 10)
               }}
               gazeuse={marker.gazeuse}
@@ -112,11 +79,7 @@ export class GoogleMap extends Component {
           onClose={this.onClose}
         >
           <div>
-            <h4>
-              {this.state.selectedPlace.name
-                ? this.state.selectedPlace.name
-                : this.state.selectedPlace.address}
-            </h4>
+            <h4>{this.state.selectedPlace.address}</h4>
             <p>
               {this.state.selectedPlace.gazeuse
                 ? "Fontaine d'eau gazeuse"
