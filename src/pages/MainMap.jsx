@@ -15,7 +15,10 @@ export default class MapContainer extends Component {
     displayTypeStore: false,
     displayAllRefillSpots: false,
     displayStillWater: false,
-    buttonSparklingActive: false
+    buttonSparklingActive: false,
+    buttonStillActive: false,
+    buttonTypeStore: false,
+    buttonTypeFountain: false
   };
 
   componentDidMount() {
@@ -49,7 +52,8 @@ export default class MapContainer extends Component {
           this.setState({
             markers: sparklingWater,
             displaySparklingWater: true,
-            buttonSparklingActive: true
+            buttonSparklingActive: true,
+            buttonStillActive: false
           });
         } else {
           this.setState({
@@ -76,12 +80,15 @@ export default class MapContainer extends Component {
           );
           this.setState({
             markers: stillWater,
-            displayStillWater: true
+            displayStillWater: true,
+            buttonStillActive: true,
+            buttonSparklingActive: false
           });
         } else {
           this.setState({
             markers: fontainesEnService,
-            displayStillWater: false
+            displayStillWater: false,
+            buttonStillActive: false
           });
         }
       })
@@ -102,12 +109,14 @@ export default class MapContainer extends Component {
           );
           this.setState({
             markers: typeFountain,
-            displayTypeFountain: true
+            displayTypeFountain: true,
+            buttonTypeFountain: true
           });
         } else {
           this.setState({
             markers: fontainesEnService,
-            displayTypeFountain: false
+            displayTypeFountain: false,
+            buttonTypeFountain: false
           });
         }
       })
@@ -128,12 +137,14 @@ export default class MapContainer extends Component {
           );
           this.setState({
             markers: typeStore,
-            displayTypeStore: true
+            displayTypeStore: true,
+            buttonTypeStore: true
           });
         } else {
           this.setState({
             markers: fontainesEnService,
-            displayTypeStore: false
+            displayTypeStore: false,
+            buttonTypeStore: false
           });
         }
       })
@@ -213,6 +224,9 @@ export default class MapContainer extends Component {
             getAllRefillSpots={this.getAllRefillSpots}
             getStillWater={this.getStillWater}
             buttonSparklingActive={this.state.buttonSparklingActive}
+            buttonStillActive={this.state.buttonStillActive}
+            buttonTypeFountain={this.state.buttonTypeFountain}
+            buttonTypeStore={this.state.buttonTypeStore}
           />
         </section>
 

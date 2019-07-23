@@ -74,11 +74,11 @@ export default class HomeMap extends Component {
                   transform="translate(-99.6 -82.72)"
                   id="arr_2"
                 />
-                <text className="txt-2" x="-99.6" y="-82.72">
+                {/* <text className="txt-2" x="-99.6" y="-82.72">
                   <tspan x="592.01" y="338.47">
                     2
                   </tspan>
-                </text>
+                </text> */}
               </g>
             </Link>
           )}

@@ -79,10 +79,9 @@ li:nth-child(3)::before {
 }
 .button-filter.is-active {
   background-color: red;
-}
-
-.button-filter:hover {
-  background-color: #d8fcf7;
+  transform: scale(0.9);
+  text-decoration: underline;
+  text-underline-position: below;
 }
 
 .button-filter:active {
