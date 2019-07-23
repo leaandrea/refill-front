@@ -20,7 +20,6 @@ export default class NavPages extends Component {
     // console.log(this.state);
   };
   render() {
-    console.log(this.state);
     return (
       <>
         <Menu menuStatus={this.state.menuStatus} closeMenu={this.handleClose} />
