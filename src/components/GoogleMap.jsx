@@ -31,7 +31,6 @@ export class GoogleMap extends Component {
   };
 
   render() {
-    console.log(this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}
