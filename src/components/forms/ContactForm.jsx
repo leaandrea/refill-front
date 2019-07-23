@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import APIHandler from "../../ApiHandler/apiHandler";
 
 const apiHandler = new APIHandler();
@@ -21,7 +20,7 @@ export default class ContactForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     apiHandler
-      .post(`/contact`, this.state.form)
+      .post(`${process.env.SITE_URL}/contact`, this.state.form)
       .then(serverRes => console.log(serverRes))
       .catch(serverErr => console.log(serverErr));
   };
