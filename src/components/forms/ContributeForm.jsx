@@ -6,9 +6,12 @@ const apiHandler = new APIHandler();
 export default class ContributeForm extends Component {
   state = {
     type: "",
+    potable: 1,
+    en_service: true,
     gazeuse: false,
     address: "3 rue Jules César",
-    name: ""
+    name: "",
+    verified: false
   };
 
   handleChange = evt => {
@@ -18,6 +21,13 @@ export default class ContributeForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
+    apiHandler
+      .post(`/api/fontaines`, this.state)
+      .then(serverRes => {
+        console.log(serverRes);
+        this.props.history.push("/contribute");
+      })
+      .catch(serverErr => console.log(`server error: ${serverErr}`));
   };
 
   render() {
@@ -68,7 +78,12 @@ export default class ContributeForm extends Component {
           </select>
 
           <label htmlFor="address">Address</label>
-          <input id="address" name="address" type="address" />
+          <input
+            id="address"
+            name="address"
+            type="address"
+            defaultValue={this.state.address}
+          />
 
           <button>Send</button>
         </form>
