@@ -31,7 +31,7 @@ export class GoogleMap extends Component {
   };
 
   render() {
-    console.log(this.props.initialCenter);
+    console.log(this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}
@@ -81,7 +81,9 @@ export class GoogleMap extends Component {
                 url: "/images/commerces.png",
                 scaledSize: new this.props.google.maps.Size(10, 10)
               }}
+              name={marker.name}
               gazeuse={marker.gazeuse}
+              type={marker.type}
             />
           )
         )}
@@ -91,7 +93,11 @@ export class GoogleMap extends Component {
           onClose={this.onClose}
         >
           <div>
-            <h4>{this.state.selectedPlace.address}</h4>
+            <h4>
+              {this.state.selectedPlace.type === "commerce"
+                ? this.state.selectedPlace.name
+                : this.state.selectedPlace.address}
+            </h4>
             <p>
               {this.state.selectedPlace.gazeuse
                 ? "Fontaine d'eau gazeuse"
@@ -105,5 +111,5 @@ export class GoogleMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo"
+  apiKey: process.env.REACT_APP_API_KEY
 })(GoogleMap);
