@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import GeoLoc from "../components/GeoLoc";
+
+
 // import axios from "axios";
 
 export default class Filters extends Component {
@@ -70,7 +73,10 @@ export default class Filters extends Component {
   //     .catch(err => console.error(err));
   // };
 
+
+
   render() {
+
     return (
       <div className="filters-container">
         <div className="filters-left">
