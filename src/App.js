@@ -12,6 +12,7 @@ import PageHome from "./pages/Home";
 import PageMainMap from "./pages/MainMap";
 import PageQualityInfos from "./pages/QualityInfos";
 import Fountains from "./pages/Fountains";
+import Auth from "./pages/Auth";
 import Page404 from "./pages/Page404";
 
 //---------------------------------------
@@ -21,6 +22,8 @@ import EditForm from "./components/forms/EditForm";
 import CreateForm from "./components/forms/CreateForm";
 import ContributeForm from "./components/forms/ContributeForm";
 import ContactForm from "./components/forms/ContactForm";
+import LoginForm from "./components/forms/LoginForm";
+import SignupForm from "./components/forms/SignupForm";
 
 //---------------------------------------
 //FONTAWESOME
@@ -64,6 +67,10 @@ function App() {
         <Route path="/create-fountain" component={CreateForm} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
+        <Route path="/admin" component={Auth} />
+        <Route path="/login" component={LoginForm} />
+        <Route path="/signup" component={SignupForm} />
+
         <Route
           path="/instagram"
           component={() => {
