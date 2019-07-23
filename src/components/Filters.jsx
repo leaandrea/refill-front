@@ -74,17 +74,20 @@ export default class Filters extends Component {
     return (
       <div className="filters-container">
         <div className="filters-left">
-          <button className="button-filter" onClick={this.props.getStillWater}>
+          <button
+            className="button-filter is-active"
+            onClick={this.props.getStillWater}
+          >
             Still Water
           </button>
           <button
-            className="button-filter"
+            className="button-filter is-active"
             onClick={this.props.getTypeFountain}
           >
             Fountains
           </button>
           <button
-            className="button-filter"
+            className="button-filter is-active"
             onClick={this.props.getAllRefillSpots}
           >
             See all water spots
@@ -92,12 +95,15 @@ export default class Filters extends Component {
         </div>
         <div className="filters-right">
           <button
-            className="button-filter"
+            className="button-filter is-active"
             onClick={this.props.getSparklingWater}
           >
             Sparkling Water
           </button>
-          <button className="button-filter" onClick={this.props.getTypeStore}>
+          <button
+            className="button-filter is-active"
+            onClick={this.props.getTypeStore}
+          >
             Stores
           </button>
           <button className="button-filter">Get my location</button>
