@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 
 class MapContainer extends Component {
   state = {
+    loaded: false,
     markers: [],
     displaySparklingWater: false,
     displayTypeFountain: false,
@@ -27,9 +28,8 @@ class MapContainer extends Component {
             : false
         );
         this.setState({
-          markers: fontainesEnService
-          // initialLat: this.props.initialLat,
-          // initialLng: this.props.initialLng
+          markers: fontainesEnService,
+          loaded: true
         });
       })
       .catch(err => console.error(err));
@@ -178,17 +178,31 @@ class MapContainer extends Component {
         </h1>
 
         <section className="map-and-filters">
-          <div className="google-map-container">
-            {this.props.location.state && (
-              <GoogleMap
-                markers={this.state.markers}
-                initialCenter={{
-                  lat: this.props.location.state.initialLat,
-                  lng: this.props.location.state.initialLng
-                }}
-              />
-            )}
-          </div>
+          {this.props.location ? (
+            <div className="google-map-container">
+              {this.props.location.state && (
+                <GoogleMap
+                  markers={this.state.markers}
+                  initialCenter={{
+                    lat: this.props.location.state.initialLat,
+                    lng: this.props.location.state.initialLng
+                  }}
+                />
+              )}
+            </div>
+          ) : (
+            <div className="google-map-container">
+              {this.state.loaded && (
+                <GoogleMap
+                  markers={this.state.markers}
+                  initialCenter={{
+                    lat: 48.858395,
+                    lng: 2.347913
+                  }}
+                />
+              )}
+            </div>
+          )}
 
           <Filters
             getSparklingWater={this.getSparklingWater}
@@ -205,7 +219,7 @@ class MapContainer extends Component {
               <p> Still water fountain</p>
             </li>
             <li className="green">
-              <p>Sparkling water fountain</p>
+              <p> Sparkling water fountain</p>
             </li>
             <li className="corail">
               <p> Stores </p>

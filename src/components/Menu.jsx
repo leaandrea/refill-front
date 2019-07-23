@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export default function NavResponsive(props) {
   return (
@@ -20,9 +21,18 @@ export default function NavResponsive(props) {
       </h2>
               
       <h2>
-        <a className="burger-link" href="/main-map">
+        <Link
+          className="burger-link"
+          to={{
+            pathname: "/main-map",
+            state: {
+              initialLat: 48.858395,
+              initialLng: 2.347913
+            }
+          }}
+        >
           Map
-        </a>
+        </Link>
       </h2>
               
       <h2>

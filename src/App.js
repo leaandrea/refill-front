@@ -48,7 +48,17 @@ function App() {
       <Switch>
         <Redirect exact from="/" to="/home" />
         <Route path="/home" component={PageHome} />
-        <Route path="/main-map" component={PageMainMap} />
+        <Route
+          path="/main-map"
+          render={props => (
+            <PageMainMap
+              state={{
+                initialLat: null,
+                initialLng: null
+              }}
+            />
+          )}
+        />
         <Route path="/quality-info" component={PageQualityInfos} />
         <Route path="/fountains" component={Fountains} />
         <Route path="/edit-fountain/:id" component={EditForm} />
