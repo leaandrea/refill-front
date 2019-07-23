@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import APIHandler from "../../ApiHandler/apiHandler";
+import Geocode from "react-geocode";
+
+Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 
 const apiHandler = new APIHandler();
 
 export default class ContributeForm extends Component {
   state = {
-    type: "",
+    type: "fontaine",
     potable: 1,
     en_service: true,
     gazeuse: false,
     address: "3 rue Jules César",
-    name: "",
-    verified: false
+    name: "Coucou",
+    verified: false,
+    lat: null,
+    lng: null
   };
 
   handleChange = evt => {
@@ -19,8 +24,24 @@ export default class ContributeForm extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = evt => {
-    evt.preventDefault();
+  getLatLng(clbk) {
+    Geocode.fromAddress(this.state.address).then(
+      response => {
+        this.setState({
+          lat: response.results[0].geometry.location.lat,
+          lng: response.results[0].geometry.location.lng
+        });
+        console.log(this.state);
+        clbk();
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  addToDb = () => {
+    console.log(this);
     apiHandler
       .post(`/api/fontaines`, this.state)
       .then(serverRes => {
@@ -28,6 +49,11 @@ export default class ContributeForm extends Component {
         this.props.history.push("/contribute");
       })
       .catch(serverErr => console.log(`server error: ${serverErr}`));
+  };
+
+  handleSubmit = evt => {
+    evt.preventDefault();
+    this.getLatLng(this.addToDb);
   };
 
   render() {
@@ -72,7 +98,7 @@ export default class ContributeForm extends Component {
             <></>
           )}
           <label>Type of water</label>
-          <select name="water-type">
+          <select name="gazeuse">
             <option value="false">Still</option>
             <option value="true">Sparkling</option>
           </select>

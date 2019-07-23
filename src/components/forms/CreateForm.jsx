@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import APIHandler from "../../ApiHandler/apiHandler";
+import Geocode from "react-geocode";
+
+Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 
 const apiHandler = new APIHandler();
 
@@ -10,8 +13,8 @@ export default class CreateForm extends Component {
     address: "3 rue Jules César",
     verified: true,
     potable: 1,
-    lat: 48.848919,
-    lng: 2.368648,
+    lat: null,
+    lng: null,
     en_service: true,
     type: "commerce",
     name: ""
@@ -22,16 +25,36 @@ export default class CreateForm extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = evt => {
-    evt.preventDefault();
+  getLatLng(clbk) {
+    Geocode.fromAddress(this.state.address).then(
+      response => {
+        this.setState({
+          lat: response.results[0].geometry.location.lat,
+          lng: response.results[0].geometry.location.lng
+        });
+        console.log(this.state);
+        clbk();
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 
+  addToDb = () => {
+    console.log(this);
     apiHandler
       .post(`/api/fontaines`, this.state)
       .then(serverRes => {
         console.log(serverRes);
-        this.props.history.push("/");
+        this.props.history.push("/contribute");
       })
-      .catch(serverErr => console.log(serverErr));
+      .catch(serverErr => console.log(`server error: ${serverErr}`));
+  };
+
+  handleSubmit = evt => {
+    evt.preventDefault();
+    this.getLatLng(this.addToDb);
   };
 
   render() {
@@ -58,7 +81,7 @@ export default class CreateForm extends Component {
             value={this.state.address}
           />
 
-          <label htmlFor="latitude">Latitude</label>
+          {/* <label htmlFor="latitude">Latitude</label>
 
           <input
             id="latitude"
@@ -74,7 +97,7 @@ export default class CreateForm extends Component {
             type="number"
             step="0.000001"
             value={this.state.lng}
-          />
+          /> */}
 
           <label>Is the fountain in service?</label>
           <select name="en_service">
