@@ -31,6 +31,7 @@ export class GoogleMap extends Component {
   };
 
   render() {
+    console.log(this.props.initialCenter);
     return (
       <Map
         google={this.props.google}

@@ -7,7 +7,7 @@ import Filters from "../components/Filters";
 // import Btn from "../components/Btn";
 import Footer from "../components/Footer";
 
-class MapContainer extends Component {
+export default class MapContainer extends Component {
   state = {
     markers: [],
     displaySparklingWater: false,
@@ -161,11 +161,12 @@ class MapContainer extends Component {
   };
 
   render() {
-    return !this.props.isGeolocationAvailable ? (
-      <p>Your browser does not support Geolocation</p>
-    ) : !this.props.isGeolocationEnabled ? (
-      <p>Geolocation is not enabled</p>
-    ) : this.props.coords ? (
+    return (
+      //  !this.props.isGeolocationAvailable ? (
+      //   <p>Your browser does not support Geolocation</p>
+      // ) : !this.props.isGeolocationEnabled ? (
+      //   <p>Geolocation is not enabled</p>
+      // ) : this.props.coords ? (
       <>
         <hr className="top-home-line" />
         <NavPages />
@@ -176,7 +177,7 @@ class MapContainer extends Component {
         </h1>
 
         <section className="map-and-filters">
-          {this.props.location ? (
+          {this.props.location.state ? (
             <div className="google-map-container">
               {this.props.location.state && (
                 <GoogleMap
@@ -226,18 +227,19 @@ class MapContainer extends Component {
         </section>
         <Footer />
       </>
-    ) : (
-      <div>Getting the location data&hellip; </div>
+      // )
+      // : (
+      //   <div>Getting the location data&hellip; </div>
     );
   }
 }
 
-export { MapContainer };
+// export { MapContainer };
 
-export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false
-  },
-  apiKey: `AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo`,
-  userDecisionTimeout: 5000
-})(MapContainer);
+// export geolocated({
+//   positionOptions: {
+//     enableHighAccuracy: false
+//   },
+//   apiKey: `AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo`,
+//   userDecisionTimeout: 5000
+// })(MapContainer);

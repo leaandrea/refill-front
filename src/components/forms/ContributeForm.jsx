@@ -1,19 +1,29 @@
 import React, { Component } from "react";
+import APIHandler from "../../ApiHandler/apiHandler";
 
-// import Btn from "../Btn";
+const apiHandler = new APIHandler();
 
 export default class ContributeForm extends Component {
   state = {
-    contributeForm: {}
+    type: "",
+    gazeuse: false,
+    address: "3 rue Jules César",
+    name: ""
   };
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+
+  handleChange = evt => {
+    const { name, value } = evt.target;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = evt => {
+    evt.preventDefault();
+  };
 
   render() {
     return (
-      <>
-        <div>
+      <div className="contribute-section">
+        <div className="contribute-text">
           <h3>Help other Refill users find free water close to them!</h3>
           <p>
             You can use the form below to submit a new source of water that we
@@ -57,12 +67,12 @@ export default class ContributeForm extends Component {
             <option value="true">Sparkling</option>
           </select>
 
-          <input id="address" name="address" type="address" />
           <label htmlFor="address">Address</label>
+          <input id="address" name="address" type="address" />
 
           <button>Send</button>
         </form>
-      </>
+      </div>
     );
   }
 }
