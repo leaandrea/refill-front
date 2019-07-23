@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { geolocated } from "react-geolocated";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 
 class GeoLoc extends Component {
 
@@ -21,7 +19,7 @@ class GeoLoc extends Component {
 
   render() {
     console.log(this.props.history)
-    let geolocBtn = "Get my Location";
+
     return !this.props.isGeolocationAvailable ? (
       <p>Your browser does not support Geolocation</p>
     ) : !this.props.isGeolocationEnabled ? (

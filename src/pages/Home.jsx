@@ -7,16 +7,15 @@ import Footer from "../components/Footer";
 import GeoLoc from "../components/GeoLoc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "react-router-dom";
 let geolocBtn = "Get my Location";
 const Home = (props) => {
   const [geoState, setGeoState] = useState(false)
 
-  const changeGeoState = () => {
+  // const changeGeoState = () => {
 
-    console.log(geoState)
-    setGeoState(true)
-  }
+  //   console.log(geoState)
+  //   setGeoState(true)
+  // }
   const handleGeo = () => {
 
     console.log("click")
@@ -66,7 +65,7 @@ const Home = (props) => {
                     className="icon-dot-circle"
                   />
                 </div>
-                Yoooo {geoState ? <GeoLoc /> : null}
+                {geolocBtn}{geoState ? <GeoLoc /> : null}
 
               </button>
 

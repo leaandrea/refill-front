@@ -106,6 +106,7 @@ export default class Filters extends Component {
           >
             Stores
           </button>
+
           <button className="button-filter">Get my location</button>
         </div>
       </div>
