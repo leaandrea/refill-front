@@ -26,3 +26,13 @@
 .legal-blabla button {
   border: none;
 }
+.btn-cgu,
+.btn-lg-notice {
+  cursor: pointer;
+}
+.btn-cgu:hover,
+.btn-lg-notice:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  transform: scale(1.1);
+}

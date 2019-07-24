@@ -65,13 +65,10 @@ function App() {
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
         {/* <Route path="/fountains" component={Fountains} /> */}
-        <ProtectedRoute path="/edit-fountain/:id" component={EditForm} />
-        <ProtectedRoute path="/create-fountain" component={CreateForm} />
-        <ProtectedRoute
-          path="/check-contributions"
-          component={CheckContributions}
-        />{" "}
-        <ProtectedRoute path="/fountains" component={AllFountains} />
+        <Route path="/edit-fountain/:id" component={EditForm} />
+        <Route path="/create-fountain" component={CreateForm} />
+        <Route path="/check-contributions" component={CheckContributions} />
+        <Route path="/fountains" component={AllFountains} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
         <Route path="/admin" component={Auth} />

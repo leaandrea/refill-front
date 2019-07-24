@@ -15,27 +15,27 @@ export default function Footer() {
       <footer className="footer">
         <section className="social-icons">
           <div className="contact">
-            <p>Contact us!</p>
+            Contact us!
             <Link to="/contact">
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
             </Link>
           </div>
           <div className="insta">
-            <p>#refill on instagram</p>
+            #refill on instagram
             <Link to="/instagram">
               <FontAwesomeIcon icon={faInstagram} className="contact-icon" />
             </Link>
           </div>
         </section>
         <section className="legal-blabla">
-          <button className="btn-lg-notice" onClick={toggle}>
+          <p className="btn-lg-notice" onClick={toggle}>
             Legal Notice
-          </button>
+          </p>
           <LegalNoticeModal isShowing={isShowing} hide={toggle} />
 
-          <button className="btn-cgu" onClick={toggle}>
+          <p className="btn-cgu" onClick={toggle}>
             Terms of use
-          </button>
+          </p>
           <TermsOfUseModal isShowing={isShowing} hide={toggle} />
           <a href={`http://localhost:3000/#top`}>
             <FontAwesomeIcon icon={faChevronUp} className="contact-icon" />

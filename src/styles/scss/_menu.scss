@@ -66,3 +66,8 @@
   margin: 30px 10px;
   color: rgb(250, 253, 253);
 }
+.burger-link:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  font-size: 1.6rem;
+}
