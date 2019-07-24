@@ -6,9 +6,11 @@ import Menu from "./Menu";
 export default class NavMain extends Component {
   state = {
     menuStatus: false
+
     // menuOpen: false,
     // menuClose: true
   };
+
   handleClick = e => {
     this.setState({ menuStatus: true });
     // console.log(this.state);
@@ -18,7 +20,9 @@ export default class NavMain extends Component {
     this.setState({ menuStatus: false });
     // console.log(this.state);
   };
+
   render() {
+    let color;
     return (
       <>
         <Menu
@@ -30,7 +34,12 @@ export default class NavMain extends Component {
         <div>
           <div className="navbar">
             <nav className="nav">
-              <NavLink activeClassName="is-active" exact to="/home">
+              <NavLink
+                style={{ color: color }}
+                activeClassName="is-active"
+                exact
+                to="/home"
+              >
                 <div className="nav-logo">
                   {/* <img src="../../../images/refill1-logo.png" alt="refill-logo" /> */}
                   <h1>REFILL.</h1>

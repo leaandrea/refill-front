@@ -110,6 +110,10 @@ export default class Foutains extends Component {
   displayForm = i => {
     this.setState({ displayForm: true, selectedFountain: i });
   };
+  hideForm = () => {
+    console.log("hide");
+    this.setState({ displayForm: false });
+  };
 
   render() {
     console.log(this.props);
@@ -128,11 +132,14 @@ export default class Foutains extends Component {
                 <button onClick={() => this.handleClick("next")}>next</button>
               </div>
               <div className="table-container">
-                <table className="contributions-table ">
-                  <thead>
+                <table className="table">
+                  <thead className="table-head">
                     <tr>
                       <th className="thead-address">Address</th>
                       <th>Fountain's type</th>
+                      <th>Verified</th>
+                      <th>Gazeuse?</th>
+                      <th>En service ?</th>
                       <th colSpan="3">CRUD</th>
                     </tr>
                   </thead>
@@ -143,21 +150,29 @@ export default class Foutains extends Component {
                         <tr>
                           <td>{oneFountain.address}</td>
                           <td>{oneFountain.type}</td>
-
+                          <td>{oneFountain.verified.toString()}</td>
+                          <td>{oneFountain.gazeuse.toString()}</td>
+                          <td>{oneFountain.en_service.toString()}</td>
                           <td>
-                            <Link
-                              to={{
-                                pathname: `/edit-fountain/${oneFountain._id}`,
-                                state: {
-                                  address: oneFountain.address,
-                                  type: oneFountain.type
-                                }
-                              }}
+                            {/* <Link
+                        to={{
+                          pathname: `/edit-fountain/${oneFountain._id}`,
+                          state: {
+                            address: oneFountain.address,
+                            type: oneFountain.type,
+                            verified: oneFountain.verified,
+                            gazeuse: oneFountain.gazeuse,
+                            en_service: oneFountain.en_service
+                          }
+                        }}
+                      > */}
+                            <button
+                              onClick={() => this.displayForm(i)}
+                              className="editButton"
                             >
-                              <button className="editButton">
-                                <FontAwesomeIcon icon="edit" />
-                              </button>
-                            </Link>
+                              <FontAwesomeIcon icon="edit" />
+                            </button>
+                            {/* </Link> */}
                           </td>
 
                           <td>
@@ -183,6 +198,11 @@ export default class Foutains extends Component {
                     );
                   })}
                 </table>
+                <EditForm
+                  displayForm={this.state.displayForm}
+                  fountain={this.state.fountains[this.state.selectedFountain]}
+                  hideForm={this.state.displayForm}
+                />
               </div>
               <Footer />
             </>
