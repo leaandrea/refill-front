@@ -54,13 +54,14 @@ export default class Foutains extends Component {
         <NavPages />
         <h1>Check Contributions</h1>
         <div className="table-container">
-          <table className="contributions-table">
+          <table className="table">
             <thead className="table-head">
               <tr>
                 <th>Address</th>
                 <th>Fountain's type</th>
                 <th>Verified</th>
                 <th>Gazeuse?</th>
+                <th>En service ?</th>
                 <th colSpan={3}>CRUD</th>
               </tr>
             </thead>
@@ -71,8 +72,9 @@ export default class Foutains extends Component {
                   <tr>
                     <td>{oneFountain.address}</td>
                     <td>{oneFountain.type}</td>
-                    <td>{oneFountain.verified}</td>
-                    <td>{oneFountain.gazeuse}</td>
+                    <td>{oneFountain.verified.toString()}</td>
+                    <td>{oneFountain.gazeuse.toString()}</td>
+                    <td>{oneFountain.en_service.toString()}</td>
                     <td>
                       <Link
                         to={{
@@ -80,7 +82,9 @@ export default class Foutains extends Component {
                           state: {
                             address: oneFountain.address,
                             type: oneFountain.type,
-                            verified: oneFountain.verified
+                            verified: oneFountain.verified,
+                            gazeuse: oneFountain.gazeuse,
+                            en_service: oneFountain.en_service
                           }
                         }}
                       >

@@ -4,8 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import LegalNoticeModal from "./modals/LegalNoticeModal";
+import TermsOfUseModal from "./modals/TermsOfUse";
+import useModal from "./modals/useModal";
 
 export default function Footer() {
+  const { isShowing, toggle } = useModal();
   return (
     <>
       <footer className="footer">
@@ -24,8 +28,15 @@ export default function Footer() {
           </div>
         </section>
         <section className="legal-blabla">
-          <p>Legal Notice</p>
-          <p>Terms of Use</p>
+          <button className="btn-lg-notice" onClick={toggle}>
+            Legal Notice
+          </button>
+          <LegalNoticeModal isShowing={isShowing} hide={toggle} />
+
+          <button className="btn-cgu" onClick={toggle}>
+            Terms of use
+          </button>
+          <TermsOfUseModal isShowing={isShowing} hide={toggle} />
           <a href={`http://localhost:3000/#top`}>
             <FontAwesomeIcon icon={faChevronUp} className="contact-icon" />
           </a>

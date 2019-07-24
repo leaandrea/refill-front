@@ -61,19 +61,23 @@ export default class EditForm extends Component {
   };
 
   render() {
-    console.log(this.props);
-
+    const { fountain, displayForm } = this.props;
+    if (!displayForm) return null;
     return (
       <>
-        <div>
+        <p>{fountain.address}</p>
+        {/* <div>
           <form
             id="contribute_form"
             className="contribute-form"
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
           >
-            <label>Is-it sparkling water ?</label>
-            <select name="gazeuse">
+            <label>Is-it sparkling water ?</label> */}
+        {/* <select
+              defaultValue={this.props.location.state.gazeuse}
+              name="gazeuse"
+            >
               <option value="false">Plate</option>
               <option value="true">Sparkling</option>
             </select>
@@ -84,8 +88,8 @@ export default class EditForm extends Component {
               name="address"
               type="text"
               defaultValue={this.props.location.state.address}
-            />
-            {/* 
+            /> */}
+        {/* 
             <label htmlFor="latitude">Latitude</label>
 
             <input
@@ -103,28 +107,29 @@ export default class EditForm extends Component {
               defaultValue={this.props.location.state.lng}
             /> */}
 
-            <label>En service ?</label>
-            <select name="en_service">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
+        {/* <label>En service ?</label>
+            <select
+              defaultValue={this.props.location.state.en_service}
+              name="en_service"
+            >
+              <option>Yes</option>
+              <option>No</option>
             </select>
             <label>Type of source ?</label>
-            <select name="type">
+            <select defaultValue={this.props.location.state.type} name="type">
               <option value="commerce">Commerce</option>
               <option value="fontaine">Fontaine</option>
             </select>
             <label>Verified</label>
             <select name="verified">
-              <option value={this.props.location.state.verified === false}>
-                False
-              </option>
+              <option value="false">False</option>
               <option value="true">True</option>
             </select>
             <button>edit</button>
           </form>
         </div>
         <a href="/check-contributions">Go to check board</a>
-        <a href="/fountains">Go to admin board</a>
+        <a href="/fountains">Go to admin board</a> */}
       </>
     );
   }

@@ -78,7 +78,7 @@ export default class CreateForm extends Component {
             id="address"
             name="address"
             type="address"
-            value={this.state.address}
+            defaultValue={this.state.address}
           />
 
           {/* <label htmlFor="latitude">Latitude</label>
@@ -116,7 +116,7 @@ export default class CreateForm extends Component {
                 id="name"
                 name="name"
                 type="text"
-                value={this.state.name}
+                defaultValue={this.state.name}
               />
             </>
           ) : (

@@ -21,6 +21,7 @@ import PlasticPrint from "./pages/PlasticPrint";
 //COMPONENTS
 //---------------------------------------
 import EditForm from "./components/forms/EditForm";
+import EditModal from "./components/modals/EditModal";
 import CreateForm from "./components/forms/CreateForm";
 import ContributeForm from "./components/forms/ContributeForm";
 import ContactForm from "./components/forms/ContactForm";
@@ -51,8 +52,6 @@ library.add(
   faPlus,
   faChevronUp
 );
-
-// )
 
 function App() {
   return (

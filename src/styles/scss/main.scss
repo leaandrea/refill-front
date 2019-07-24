@@ -13,6 +13,7 @@
 @import "./contribute";
 @import "./create";
 @import "./plasticprint";
+@import "./modal";
 
 * {
   box-sizing: border-box;
@@ -29,7 +30,6 @@
   src: url(".././font/GT-Walsheim-Pro-Trial-Medium.otf") format("opentype");
 }
 
-
 body {
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
@@ -40,6 +40,7 @@ body {
   background-color: rgb(250, 253, 253);
   color: #0d062f;
   overflow-x: hidden;
+  position: relative;
 }
 
 ol,
@@ -65,6 +66,7 @@ button {
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-color: rgba(255, 255, 128, 0);
 }
 
 *:focus {
