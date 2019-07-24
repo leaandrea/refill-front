@@ -10,7 +10,6 @@ import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 let geolocBtn = "Get my Location";
 const Home = props => {
   const [geoState, setGeoState] = useState(false);
-  console.log(props);
 
   // const changeGeoState = () => {
 
@@ -18,9 +17,9 @@ const Home = props => {
   //   setGeoState(true)
   // }
   const handleGeo = () => {
-    console.log("click");
+    // console.log("click");
     setGeoState(true);
-    console.log(geoState);
+    // console.log(geoState);
   };
 
   //  let geolocBtn = "Get my location";
@@ -38,7 +37,7 @@ const Home = props => {
             <HomeMap />
           </div>
           <div className="txt-container-flex-column">
-            <div className="choose-container">
+            <div className="pick-container">
               <h2 className="choose">
                 <div className="icon-cont">
                   <FontAwesomeIcon
@@ -50,17 +49,19 @@ const Home = props => {
               </h2>
             </div>
 
-            <div className="btn-geoloc-container">
-              <button className="geoloc-btn" onClick={handleGeo}>
-                <div className="icon-cont">
-                  <FontAwesomeIcon
-                    icon={faDotCircle}
-                    className="icon-dot-circle"
-                  />
-                </div>
+            <div className="get-container">
+              <h2 className="choose">
+                <button className="geoloc-btn" onClick={handleGeo}>
+                  <div className="icon-cont">
+                    <FontAwesomeIcon
+                      icon={faDotCircle}
+                      className="icon-dot-circle"
+                    />
+                  </div>
+                </button>
                 {geolocBtn}
-                {geoState ? <GeoLoc /> : null}
-              </button>
+              </h2>
+              {geoState ? <GeoLoc /> : null}
             </div>
           </div>
         </div>
