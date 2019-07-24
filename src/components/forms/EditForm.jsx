@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import Geocode from "react-geocode";
+
 import APIHandler from "../../ApiHandler/apiHandler";
+
+Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 const apiHandler = new APIHandler();
 
 export default class EditForm extends Component {
@@ -17,6 +21,7 @@ export default class EditForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
+    this.getLatLng(this.addToDb);
     apiHandler
       .update(
         `${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${
@@ -28,14 +33,32 @@ export default class EditForm extends Component {
       .catch(serverErr => console.log(serverErr));
   };
 
-  // lat: Number,
-  // lng: Number,
-  // potable: { type: Number, enum: [0, 1] },
-  // address: String,
-  // en_service: Boolean,
-  // gazeuse: Boolean,
-  // verified: Boolean,
-  // type: { type: String, enum: ["fontaine", "commerce"] }
+  getLatLng(clbk) {
+    Geocode.fromAddress(this.state.address).then(
+      response => {
+        this.setState({
+          lat: response.results[0].geometry.location.lat,
+          lng: response.results[0].geometry.location.lng
+        });
+        console.log(this.state);
+        clbk();
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  addToDb = () => {
+    console.log(this);
+    apiHandler
+      .post(`/api/fontaines`, this.state)
+      .then(serverRes => {
+        console.log(serverRes);
+        this.props.history.push("/check-contributions");
+      })
+      .catch(serverErr => console.log(`server error: ${serverErr}`));
+  };
 
   render() {
     console.log(this.props);
@@ -47,11 +70,8 @@ export default class EditForm extends Component {
             id="contribute_form"
             className="contribute-form"
             onSubmit={this.handleSubmit}
-            // onSubmit={() => this.deleteFountain(oneFountain._id)}
             onChange={this.handleChange}
           >
-            {/* <label>I am a :</label> */}
-
             <label>Is-it sparkling water ?</label>
             <select name="gazeuse">
               <option value="false">Plate</option>
@@ -65,7 +85,7 @@ export default class EditForm extends Component {
               type="text"
               defaultValue={this.props.location.state.address}
             />
-
+            {/* 
             <label htmlFor="latitude">Latitude</label>
 
             <input
@@ -81,7 +101,7 @@ export default class EditForm extends Component {
               name="lng"
               type="number"
               defaultValue={this.props.location.state.lng}
-            />
+            /> */}
 
             <label>En service ?</label>
             <select name="en_service">
@@ -95,7 +115,9 @@ export default class EditForm extends Component {
             </select>
             <label>Verified</label>
             <select name="verified">
-              <option value="false">False</option>
+              <option value={this.props.location.state.verified === false}>
+                False
+              </option>
               <option value="true">True</option>
             </select>
             <button>edit</button>

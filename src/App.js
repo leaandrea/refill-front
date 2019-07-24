@@ -17,6 +17,7 @@ import Auth from "./pages/Auth";
 import AllFountains from "./pages/Fountains";
 
 import Page404 from "./pages/Page404";
+import PlasticPrint from "./pages/PlasticPrint";
 
 //---------------------------------------
 //COMPONENTS
@@ -78,6 +79,7 @@ function App() {
         <Route path="/admin" component={Auth} />
         <Route path="/login" component={LoginForm} />
         <Route path="/signup" component={SignupForm} />
+        <Route path="/your-plastic-print" component={PlasticPrint} />
         <Route
           path="/instagram"
           component={() => {

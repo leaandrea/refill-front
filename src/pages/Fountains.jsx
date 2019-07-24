@@ -10,17 +10,33 @@ const apiHandler = new APIHandler();
 
 export default class Foutains extends Component {
   state = {
-    fountains: []
+    fountains: [],
+    offset: 0,
+    ressourcesPerPage: 40,
+    nbRessources: null
   };
 
   componentDidMount() {
     apiHandler
       .get(`/api/fontaines`)
       .then(dbRes => {
-        this.setState({ fountains: dbRes.data.slice(0, 40) });
+        this.setState({
+          nbRessources: dbRes.data.length,
+          fountains: dbRes.data.slice(0, this.state.ressourcesPerPage)
+        });
+        // this.setState({ fountains: dbRes.data.slice(0, 100) });
       })
       .catch(apiErr => console.error(apiErr));
   }
+
+  getFontainsByOffset = () => {
+    apiHandler
+      .get(`/api/fontaines?offset=${this.state.offset}`)
+      .then(dbRes => {
+        this.setState({ fountains: dbRes.data });
+      })
+      .catch(apiErr => console.error(apiErr));
+  };
 
   deleteFountain = id => {
     apiHandler
@@ -41,6 +57,54 @@ export default class Foutains extends Component {
       });
   };
 
+  handleClick = direction => {
+    const setOffset = (count, clbk) => {
+      this.setState({ offset: count }, clbk);
+    };
+
+    if (
+      direction === "prev" &&
+      this.state.offset - this.state.ressourcesPerPage >= 0
+    ) {
+      setOffset(this.state.offset - this.state.ressourcesPerPage, () => {
+        console.log("yayyyy prev");
+        console.log(this.state.offset);
+        this.getFontainsByOffset();
+      });
+    } else if (
+      direction === "next" &&
+      this.state.offset + this.state.ressourcesPerPage <=
+        this.state.nbRessources
+    ) {
+      setOffset(this.state.offset + this.state.ressourcesPerPage, () => {
+        console.log("yayyyy next");
+        console.log(this.state.offset);
+        this.getFontainsByOffset();
+      });
+    }
+    // let content = this.state.fountains.slice(0, 40).map((fountain, i) => {
+    //   console.log(fountain);
+
+    //   return (
+    //     <ul key={i}>
+    //       <li>{fountain.verified === true}</li>
+    //     </ul>
+    //   );
+    // });
+    // this.setState({ fountains: content });
+  };
+  // handleClick2 = () => {
+  //   this.state.fountains.slice(40, 42).map((fountain, i) => {
+  //     console.log("TWOO", fountain);
+
+  //     return (
+  //       <ul>
+  //         <li key={i}>{fountain.verified === true}</li>
+  //       </ul>
+  //     );
+  //   });
+  // };
+
   render() {
     console.log(this.props);
     // const { fountains } = this.state;
@@ -51,6 +115,12 @@ export default class Foutains extends Component {
             <>
               <hr className="top-home-line" />
               <NavPages history={this.props.history} />
+              <div className="pag-buttons-container">
+                {/* <button onClick={this.handleClick}>1</button>
+          <button onClick={this.handleClick2}>2</button> */}
+                <button onClick={() => this.handleClick("prev")}>prev</button>
+                <button onClick={() => this.handleClick("next")}>next</button>
+              </div>
               <div className="table-container">
                 <table className="contributions-table ">
                   <thead>
@@ -74,9 +144,7 @@ export default class Foutains extends Component {
                                 pathname: `/edit-fountain/${oneFountain._id}`,
                                 state: {
                                   address: oneFountain.address,
-                                  type: oneFountain.type,
-                                  lat: oneFountain.lat,
-                                  lng: oneFountain.lng
+                                  type: oneFountain.type
                                 }
                               }}
                             >
