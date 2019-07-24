@@ -29,3 +29,11 @@ td {
   background-color: bisque;
   padding: 1rem;
 }
+.pag-buttons-container {
+  display: flex;
+  justify-content: center;
+  widows: 60%;
+}
+.pag-buttons-container button {
+  padding: 3rem;
+}

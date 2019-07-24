@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { geolocated } from "react-geolocated";
 import axios from "axios";
 import NavPages from "../components/NavPages";
 import GoogleMap from "../components/GoogleMap";
 import Filters from "../components/Filters";
-// import Btn from "../components/Btn";
 import Footer from "../components/Footer";
 import APIHandler from "../ApiHandler/apiHandler";
 

@@ -80,8 +80,7 @@ export default class Foutains extends Component {
                           state: {
                             address: oneFountain.address,
                             type: oneFountain.type,
-                            lat: oneFountain.lat,
-                            lng: oneFountain.lng
+                            verified: oneFountain.verified
                           }
                         }}
                       >
