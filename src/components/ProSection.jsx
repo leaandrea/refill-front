@@ -8,7 +8,7 @@ export default function ProSection() {
     <>
       <section className="pro">
         <h1 className="pro-title">
-          Restaurants, stores, communities : Join Refill!
+          Restaurants, stores, communities: Join Refill!
         </h1>
         <div className="pro-flex-container">
           <div className="pro-left-side">

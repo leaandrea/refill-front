@@ -19,11 +19,11 @@ export default function AboutSection() {
                 <p>
                   Stop buying plastic bottles! Take your reusable water bottle
                   and use our map to find spots near you, where you'll be able
-                  to fill it for free. Refill will help you find public
-                  fountains and businesses that offer free water. There are even
-                  sparkling water fountains!
+                  to fill it for free. There are even sparkling water fountains!
+                  <br />
                 </p>
                 <p>
+                  <br />
                   Want to know more about
                   <Link to="/quality-info"> water quality</Link>?
                 </p>
@@ -33,11 +33,10 @@ export default function AboutSection() {
               <div className="why-text-container">
                 <h2>Why</h2>
                 <p>
-                  Plastic bottles pollute and kill animals, and 80% of sea and
-                  ocean waste is thrown on land. We can, in an easy way, reduce
-                  plastic waste and help the planet while staying hydrated. It's
-                  also cheaper for you, since bottled water is 400 times more
-                  expensive than tap water.
+                  Plastic bottles kill animals and create waste both on land and
+                  in the ocean, and bottled water is 400 times more expensive
+                  than tap water. Help the planet and save money while staying
+                  hydrated!
                 </p>
               </div>
             </article>
@@ -46,11 +45,13 @@ export default function AboutSection() {
               <div className="who-text-container">
                 <h2>Who</h2>
                 <p>
-                  Refill is for everyone who's in Paris, whether you're a local,
-                  a tourist on holiday, a jogger, or a family out for the
+                  Refill is for everyone who is in Paris, whether you're a
+                  local, a tourist on holiday, a jogger, or a family out for the
                   afternoon.
+                  <br />
                 </p>
                 <p>
+                  <br />
                   If we missed a spot you can tell us
                   <Link to="/contribute">here</Link>.
                 </p>
