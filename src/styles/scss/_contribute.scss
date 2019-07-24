@@ -9,20 +9,22 @@
   align-content: center;
 }
 
-.contribute-form {
+.contribute-form,
+.edit-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 50vw;
+  height: 85%;
   margin: auto;
   padding: 20px;
   align-items: center;
 }
 
-.contribute-form label {
+.contribute-form label,
+.edit-form label {
   cursor: pointer;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 5px;
   display: flex;
   justify-content: flex-start;
   width: 80%;
@@ -32,7 +34,12 @@
 .contribute-form select:nth-child(2),
 .contribute-form select:nth-child(10),
 .contribute-form select:nth-child(6),
-.contribute-form select:nth-child(8) {
+.contribute-form select:nth-child(8),
+.edit-form input,
+.edit-form select:nth-child(2),
+.edit-form select:nth-child(10),
+.edit-form select:nth-child(6),
+.edit-form select:nth-child(8) {
   height: 32px;
   width: 80%;
   border: 1px solid;
@@ -40,12 +47,23 @@
   outline: none;
   padding: 3px 0 3px 20px;
 }
-.contribute-form button {
+.contribute-form button,
+.edit-form button {
   border: 1px solid black;
   height: 32px;
   width: 200px;
   padding: 4px;
-  margin: auto;
+  margin: 0 auto;
   cursor: pointer;
   border-radius: 0.3rem;
+}
+.form-wrapper {
+  position: fixed;
+  top: 50%;
+  width: 60vw;
+  height: 80vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aliceblue;
+  border: 20px solid dodgerblue;
 }

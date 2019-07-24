@@ -19,11 +19,11 @@ export default function AboutSection() {
                 <p>
                   Stop buying plastic bottles! Take your reusable water bottle
                   and use our map to find spots near you, where you'll be able
-                  to fill it for free. Refill will help you find public
-                  fountains and businesses that offer free water. There are even
-                  sparkling water fountains!
+                  to fill it for free. There are even sparkling water fountains!
+                  <br />
                 </p>
                 <p>
+                  <br />
                   Want to know more about
                   <Link to="/quality-info"> water quality</Link>?
                 </p>
@@ -47,11 +47,13 @@ export default function AboutSection() {
               <div className="who-text-container">
                 <h2>Who</h2>
                 <p>
-                  Refill is for everyone who's in Paris, whether you're a local,
-                  a tourist on holiday, a jogger, or a family out for the
+                  Refill is for everyone who is in Paris, whether you're a
+                  local, a tourist on holiday, a jogger, or a family out for the
                   afternoon.
+                  <br />
                 </p>
                 <p>
+                  <br />
                   If we missed a spot you can tell us
                   <Link to="/contribute">here</Link>.
                 </p>

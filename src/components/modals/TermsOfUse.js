@@ -45,19 +45,7 @@ const TermsOfUseModal = ({ isShowing, hide }) =>
                   may contain links to websites operated by third parties
                   (“Third-Party Websites”). Moreover, chats may be installed on
                   our websites in which third parties express their opinion on
-                  various topics (“Third-Party Postings”). We bear no
-                  responsibility for the content of the Third-Party Websites and
-                  Third-Party Postings and expressly distance ourselves from
-                  such content. If we become aware that any Third-Party Websites
-                  or Third-Party Postings infringe any statutory provisions or
-                  third-party rights, we will remove the link or delete the
-                  respective posting made in the chat insofar as this is
-                  possible in legal and technical terms. In this respect, we
-                  would appreciate any relevant information provided by you.
-                  Uploading illegal material or material infringing any
-                  third-party rights in chats installed on our websites is
-                  prohibited. This applies in particular to defamatory,
-                  disparaging, offensive or pornographic material.
+                  various topics (“Third-Party Postings”).
                 </p>
               </div>
             </div>

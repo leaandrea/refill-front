@@ -10,6 +10,7 @@ import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 let geolocBtn = "Get my Location";
 const Home = props => {
   const [geoState, setGeoState] = useState(false);
+  console.log(props);
 
   // const changeGeoState = () => {
 
@@ -26,7 +27,7 @@ const Home = props => {
   return (
     <>
       {/* <hr className="top-home-line" /> */}
-      <NavMain history={props.history} />
+      <NavMain style={{ color: "white" }} history={props.history} />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}

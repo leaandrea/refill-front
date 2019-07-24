@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import NavPages from "../components/NavPages";
+import NavMain from "../components/NavMain";
 import GoogleMap from "../components/GoogleMap";
 import Filters from "../components/Filters";
 import Footer from "../components/Footer";
@@ -194,7 +194,7 @@ export default class MapContainer extends Component {
       // ) : this.props.coords ? (
       <>
         <hr className="top-home-line" />
-        <NavPages history={this.props.history} />
+        <NavMain style={{ color: "red" }} history={this.props.history} />
 
         <h1 className="google-map-title">
           This fabulous map will help you find drinking water spots to refill

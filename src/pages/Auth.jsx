@@ -7,6 +7,7 @@ import NavPages from "../components/NavPages";
 export default function Auth(props) {
   return (
     <>
+      <NavPages />
       <AuthConsumer>
         {({ loginStatus }) =>
           loginStatus ? (
