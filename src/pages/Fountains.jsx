@@ -111,6 +111,12 @@ export default class Foutains extends Component {
       <>
         <hr className="top-home-line" />
         <NavPages />
+        <div className="pag-buttons-container">
+          {/* <button onClick={this.handleClick}>1</button>
+          <button onClick={this.handleClick2}>2</button> */}
+          <button onClick={() => this.handleClick("prev")}>prev</button>
+          <button onClick={() => this.handleClick("next")}>next</button>
+        </div>
         <div className="table-container">
           <table className="contributions-table ">
             <thead>
@@ -167,12 +173,6 @@ export default class Foutains extends Component {
           </table>
         </div>
 
-        <div className="pag-buttons-container">
-          {/* <button onClick={this.handleClick}>1</button>
-          <button onClick={this.handleClick2}>2</button> */}
-          <button onClick={() => this.handleClick("prev")}>prev</button>
-          <button onClick={() => this.handleClick("next")}>next</button>
-        </div>
         <Footer />
       </>
     );
