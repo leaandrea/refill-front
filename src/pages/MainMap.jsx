@@ -6,6 +6,9 @@ import GoogleMap from "../components/GoogleMap";
 import Filters from "../components/Filters";
 // import Btn from "../components/Btn";
 import Footer from "../components/Footer";
+import APIHandler from "../ApiHandler/apiHandler";
+
+const apiHandler = new APIHandler();
 
 export default class MapContainer extends Component {
   state = {
@@ -13,7 +16,7 @@ export default class MapContainer extends Component {
     displaySparklingWater: false,
     displayTypeFountain: false,
     displayTypeStore: false,
-    displayAllRefillSpots: false,
+    reset: false,
     displayStillWater: false,
     buttonSparklingActive: false,
     buttonStillActive: false,
@@ -22,14 +25,15 @@ export default class MapContainer extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
+    apiHandler
+      .get(`/api/fontaines`)
       .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(fontaine =>
-          fontaine.en_service && fontaine.potable && fontaine.verified
+        let fontainesEnService = fontaines.data.filter(fontaine => {
+          console.log("LAAAA", fontaine.type);
+          return fontaine.en_service && fontaine.potable && fontaine.verified
             ? true
-            : false
-        );
+            : false;
+        });
         this.setState({
           markers: fontainesEnService
         });
@@ -37,7 +41,7 @@ export default class MapContainer extends Component {
       .catch(err => console.error(err));
   }
 
-  getSparklingWater = () => {
+  getAllWater = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
       .then(fontaines => {
@@ -45,134 +49,143 @@ export default class MapContainer extends Component {
           fontaine =>
             fontaine.en_service && fontaine.potable && fontaine.verified
         );
-        if (!this.state.displaySparklingWater) {
-          let sparklingWater = fontainesEnService.filter(
-            oneFontaine => oneFontaine.gazeuse
-          );
+        if (this.state.displaySparklingWater) {
           this.setState({
-            markers: sparklingWater,
-            displaySparklingWater: true,
-            buttonSparklingActive: true,
-            buttonStillActive: false
+            markers: fontainesEnService.filter(oneSource => oneSource.gazeuse)
           });
-        } else {
+        } else if (this.state.displayStillWater) {
           this.setState({
-            markers: fontainesEnService,
-            displaySparklingWater: false,
-            buttonSparklingActive: false
+            markers: fontainesEnService
+          });
+        } else if (this.state.displayTypeStore) {
+          this.setState({
+            markers: fontainesEnService.filter(
+              oneSource => oneSource.type === "commerce"
+            )
+          });
+        } else if (this.state.displayTypeFountain) {
+          this.setState({
+            markers: fontainesEnService.filter(
+              oneSource => oneSource.type === "fontaine"
+            )
+          });
+        } else if (this.state.reset) {
+          this.setState({
+            markers: fontainesEnService
           });
         }
       })
       .catch(err => console.error(err));
+  };
+
+  getSparklingWater = () => {
+    this.setState(
+      {
+        displaySparklingWater: !this.state.displaySparklingWater,
+        displayStillWater: false,
+        displayTypeStore: false,
+        displayTypeFountain: false,
+        buttonSparklingActive: true,
+        buttonStillActive: false,
+        buttonTypeStore: false,
+        buttonTypeFountain: false
+      },
+      () => {
+        this.getAllWater();
+      }
+    );
   };
 
   getStillWater = () => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(
-          fontaine =>
-            fontaine.en_service && fontaine.potable && fontaine.verified
-        );
-        if (!this.state.displayStillWater) {
-          let stillWater = fontainesEnService.filter(
-            oneFontaine => oneFontaine.potable
-          );
-          this.setState({
-            markers: stillWater,
-            displayStillWater: true,
-            buttonStillActive: true,
-            buttonSparklingActive: false
-          });
-        } else {
-          this.setState({
-            markers: fontainesEnService,
-            displayStillWater: false,
-            buttonStillActive: false
-          });
-        }
-      })
-      .catch(err => console.error(err));
-  };
-
-  getTypeFountain = () => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(
-          fontaine =>
-            fontaine.en_service && fontaine.potable && fontaine.verified
-        );
-        if (!this.state.displayTypeFountain) {
-          let typeFountain = fontainesEnService.filter(
-            oneFontaine => oneFontaine.type === "fontaine"
-          );
-          this.setState({
-            markers: typeFountain,
-            displayTypeFountain: true,
-            buttonTypeFountain: true
-          });
-        } else {
-          this.setState({
-            markers: fontainesEnService,
-            displayTypeFountain: false,
-            buttonTypeFountain: false
-          });
-        }
-      })
-      .catch(err => console.error(err));
+    this.setState(
+      {
+        displayStillWater: !this.state.displayStillWater,
+        displaySparklingWater: false,
+        displayTypeStore: false,
+        displayTypeFountain: false,
+        buttonStillActive: true,
+        buttonSparklingActive: false,
+        buttonTypeStore: false,
+        buttonTypeFountain: false
+      },
+      () => this.getAllWater()
+    );
   };
 
   getTypeStore = () => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(
-          fontaine =>
-            fontaine.en_service && fontaine.potable && fontaine.verified
-        );
-        if (!this.state.displayTypeStore) {
-          let typeStore = fontainesEnService.filter(
-            oneFontaine => oneFontaine.type === "store"
-          );
-          this.setState({
-            markers: typeStore,
-            displayTypeStore: true,
-            buttonTypeStore: true
-          });
-        } else {
-          this.setState({
-            markers: fontainesEnService,
-            displayTypeStore: false,
-            buttonTypeStore: false
-          });
-        }
-      })
-      .catch(err => console.error(err));
+    this.setState(
+      {
+        displayTypeStore: !this.state.displayTypeStore,
+        displayTypeFountain: false,
+        displaySparklingWater: false,
+        displayStillWater: false,
+        buttonTypeStore: true,
+        buttonTypeFountain: false,
+        buttonStillActive: false,
+        buttonSparklingActive: false
+      },
+      () => this.getAllWater()
+    );
+  };
+  getTypeFountain = () => {
+    this.setState(
+      {
+        displayTypeFountain: !this.state.displayTypeStore,
+        displayTypeStore: false,
+        displayStillWater: false,
+        displaySparklingWater: false,
+        buttonTypeFountain: true,
+        buttonTypeStore: false,
+        buttonStillActive: false,
+        buttonSparklingActive: false
+      },
+      () => this.getAllWater()
+    );
   };
 
-  getAllRefillSpots = () => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-      .then(fontaines => {
-        let fontainesEnService = fontaines.data.filter(
-          fontaine =>
-            fontaine.en_service && fontaine.potable && fontaine.verified
-        );
-        if (!this.state.displayAllRefillSpots) {
-          this.setState({
-            markers: fontainesEnService,
-            displayAllRefillSpots: true
-          });
-        } else {
-          this.setState({
-            markers: [],
-            displayAllRefillSpots: false
-          });
-        }
-      })
-      .catch(err => console.error(err));
+  reset = () => {
+    this.setState(
+      {
+        displayStillWater: !this.state.displayStillWater,
+        displaySparklingWater: false,
+        displayTypeStore: false,
+        displayTypeFountain: false,
+        buttonStillActive: false,
+        buttonSparklingActive: false,
+        buttonTypeStore: false,
+        buttonTypeFountain: false
+      },
+      () => this.getAllWater()
+    );
   };
+
+  // getTypeStore = () => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
+  //     .then(fontaines => {
+  //       let fontainesEnService = fontaines.data.filter(
+  //         fontaine =>
+  //           fontaine.en_service && fontaine.potable && fontaine.verified
+  //       );
+  //       if (!this.state.displayTypeStore) {
+  //         let typeStore = fontainesEnService.filter(
+  //           oneFontaine => oneFontaine.type === "store"
+  //         );
+  //         this.setState({
+  //           markers: typeStore,
+  //           displayTypeStore: true,
+  //           buttonTypeStore: true
+  //         });
+  //       } else {
+  //         this.setState({
+  //           markers: fontainesEnService,
+  //           displayTypeStore: false,
+  //           buttonTypeStore: false
+  //         });
+  //       }
+  //     })
+  //     .catch(err => console.error(err));
+  // };
 
   render() {
     return (
@@ -205,7 +218,7 @@ export default class MapContainer extends Component {
             </div>
           ) : (
             <div className="google-map-container">
-              {this.state.markers.length && (
+              {this.state.marker && (
                 <GoogleMap
                   markers={this.state.markers}
                   initialCenter={{
@@ -221,7 +234,7 @@ export default class MapContainer extends Component {
             getSparklingWater={this.getSparklingWater}
             getTypeFountain={this.getTypeFountain}
             getTypeStore={this.getTypeStore}
-            getAllRefillSpots={this.getAllRefillSpots}
+            reset={this.reset}
             getStillWater={this.getStillWater}
             buttonSparklingActive={this.state.buttonSparklingActive}
             buttonStillActive={this.state.buttonStillActive}
@@ -261,3 +274,22 @@ export default class MapContainer extends Component {
 //   apiKey: `AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo`,
 //   userDecisionTimeout: 5000
 // })(MapContainer);
+
+// ;
+//         if (!this.state.displaySparklingWater) {
+//           let sparklingWater = fontainesEnService.filter(
+//             oneFontaine => oneFontaine.gazeuse
+//           );
+//           this.setState({
+//             markers: sparklingWater,
+//             displaySparklingWater: true,
+//             buttonSparklingActive: true,
+//             buttonStillActive: false
+//           });
+//         } else {
+//           this.setState({
+//             markers: fontainesEnService,
+//             displaySparklingWater: false,
+//             buttonSparklingActive: false
+//           });
+//         }

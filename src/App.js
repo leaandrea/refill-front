@@ -11,6 +11,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import PageHome from "./pages/Home";
 import PageMainMap from "./pages/MainMap";
 import PageQualityInfos from "./pages/QualityInfos";
+import CheckContributions from "./pages/CheckContributions";
 import Fountains from "./pages/Fountains";
 import Auth from "./pages/Auth";
 import Page404 from "./pages/Page404";
@@ -65,6 +66,7 @@ function App() {
         <Route path="/fountains" component={Fountains} />
         <Route path="/edit-fountain/:id" component={EditForm} />
         <Route path="/create-fountain" component={CreateForm} />
+        <Route path="/check-contributions" component={CheckContributions} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
         <Route path="/admin" component={Auth} />

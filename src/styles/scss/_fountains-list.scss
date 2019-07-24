@@ -1,7 +1,31 @@
 // containers
-
 .fountainsListContainer {
   display: flex;
   justify-content: center;
+}
+.table-container {
+  width: 80vw;
+  margin: 70px auto;
+}
+.contributions-table {
+  table-layout: auto;
+  width: 100%;
+}
+.contributions-table th {
+  padding: 2rem;
+  background-color: aquamarine;
+}
 
+tr,
+td {
+  border: solid;
+}
+
+td {
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: bisque;
+  padding: 1rem;
 }

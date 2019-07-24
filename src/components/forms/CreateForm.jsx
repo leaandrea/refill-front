@@ -47,7 +47,7 @@ export default class CreateForm extends Component {
       .post(`/api/fontaines`, this.state)
       .then(serverRes => {
         console.log(serverRes);
-        this.props.history.push("/contribute");
+        this.props.history.push("/create-fountain");
       })
       .catch(serverErr => console.log(`server error: ${serverErr}`));
   };

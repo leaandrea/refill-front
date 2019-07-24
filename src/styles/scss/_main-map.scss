@@ -79,7 +79,6 @@ li:nth-child(3)::before {
 }
 .button-filter.is-active {
   background-color: red;
-  transform: scale(0.9);
   text-decoration: underline;
   text-underline-position: below;
 }

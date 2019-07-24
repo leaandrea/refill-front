@@ -12,8 +12,6 @@ export default class Filters extends Component {
   };
 
   render() {
-    console.log("filter render");
-    console.log("props", this.props);
     return (
       <div className="filters-container">
         <div className="filters-left">
@@ -33,10 +31,7 @@ export default class Filters extends Component {
           >
             Fountains
           </button>
-          <button
-            className="button-filter"
-            onClick={this.props.getAllRefillSpots}
-          >
+          <button className="button-filter" onClick={this.props.reset}>
             See all water spots
           </button>
         </div>
