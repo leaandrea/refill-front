@@ -8,8 +8,8 @@ export default class Signup extends Component {
   state = {
     isPasswordOk: false,
     username: "toto",
-    password: "1234",
-    passwordConfirm: "1234"
+    password: "1234"
+    // passwordConfirm: "1234"
   };
 
   checkPasswordMatch() {
@@ -23,23 +23,23 @@ export default class Signup extends Component {
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
+    console.log(this.state);
   };
 
   handleSubmit = evt => {
     evt.preventDefault();
 
-    const { username, password, passwordConfirm } = this.state;
+    const { username, password } = this.state;
     // simulate multipart/formdata ...
     const fd = new FormData();
     fd.append("username", username); // accessible @backend as req.body.name ...
     fd.append("password", password); // req.body./password
-
     apiHandler
-      .post("/signup", fd) // let's post the built formData object as a regular payload
+      .post("/signup", { username, password }) // let's post the built formData object as a regular payload
       .then(serverRes => {
         // everything is fine, redirect to dashboard
         console.log(this.props);
-        this.props.redirect("/fountains");
+        this.props.history.push("/fountains");
         console.log(serverRes);
       })
       .catch(serverErr => console.error(serverErr));
@@ -47,7 +47,7 @@ export default class Signup extends Component {
 
   render() {
     const { handleChange, handleSubmit } = this;
-    const { username, password, passwordConfirm } = this.state;
+    const { username, password } = this.state;
     return (
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
         <h1 className="title">Signup</h1>
@@ -66,13 +66,13 @@ export default class Signup extends Component {
           type="password"
           defaultValue={password}
         />
-        <label htmlFor="passwordConfirm">confirm password</label>
+        {/* <label htmlFor="passwordConfirm">confirm password</label>
         <input
           name="passwordConfirm"
           id="passwordConfirm"
           type="password"
           defaultValue={passwordConfirm}
-        />
+        /> */}
         <hr />
         <button className="btn">ok</button>
       </form>

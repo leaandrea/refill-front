@@ -8,8 +8,8 @@ import GeoLoc from "../components/GeoLoc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 let geolocBtn = "Get my Location";
-const Home = (props) => {
-  const [geoState, setGeoState] = useState(false)
+const Home = props => {
+  const [geoState, setGeoState] = useState(false);
 
   // const changeGeoState = () => {
 
@@ -17,19 +17,16 @@ const Home = (props) => {
   //   setGeoState(true)
   // }
   const handleGeo = () => {
-
-    console.log("click")
-    setGeoState(true)
-    console.log(geoState)
-
-  }
+    console.log("click");
+    setGeoState(true);
+    console.log(geoState);
+  };
 
   //  let geolocBtn = "Get my location";
   return (
-
     <>
       {/* <hr className="top-home-line" /> */}
-      <NavMain />
+      <NavMain history={props.history} />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}
@@ -53,23 +50,16 @@ const Home = (props) => {
             </div>
 
             <div className="btn-geoloc-container">
-
-
-              <button className="geoloc-btn"
-                onClick={handleGeo}
-              >
-
+              <button className="geoloc-btn" onClick={handleGeo}>
                 <div className="icon-cont">
                   <FontAwesomeIcon
                     icon={faDotCircle}
                     className="icon-dot-circle"
                   />
                 </div>
-                {geolocBtn}{geoState ? <GeoLoc /> : null}
-
+                {geolocBtn}
+                {geoState ? <GeoLoc /> : null}
               </button>
-
-
             </div>
           </div>
         </div>
@@ -83,9 +73,3 @@ const Home = (props) => {
 };
 
 export default Home;
-
-
-
-
-
-

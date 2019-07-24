@@ -12,7 +12,7 @@ export default class HomeMap extends Component {
       .get(`${process.env.REACT_APP_BACKEND_URL}/api/initialPoints`)
       .then(initialPoints => {
         this.setState({ initialPoints: initialPoints.data });
-        console.log(this.state.initialPoints);
+        // console.log(this.state.initialPoints);
       })
       .catch(err => console.error(err));
   }

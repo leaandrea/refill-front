@@ -51,7 +51,7 @@ export default class Foutains extends Component {
     return (
       <>
         <hr className="top-home-line" />
-        <NavPages />
+        <NavPages history={this.props.history} />
         <h1>Check Contributions</h1>
         <div className="table-container">
           <table className="contributions-table">

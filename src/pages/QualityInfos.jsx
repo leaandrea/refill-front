@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 export default function QualityInfos() {
   return (
     <>
-      <NavPages />
+      <NavPages history={this.props.history} />
       <h1>Quality Info</h1>
       <p>
         De l'eau filtrée de qualité Mis au point par la NASA, le procédé

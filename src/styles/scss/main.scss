@@ -28,6 +28,9 @@
   src: url(".././font/GT-Walsheim-Pro-Trial-Medium.otf") format("opentype");
 }
 
+.App {
+  position: relative;
+}
 
 body {
   -webkit-user-select: none;

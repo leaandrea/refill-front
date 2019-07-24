@@ -7,14 +7,15 @@ export default class Login extends Component {
     password: "1234"
   };
 
-  handleSubmit = (evt, login) => {
+  handleSubmit = (evt, signin) => {
     // the handleSubmit method here receives 2 params
     // 1 - the classic event object
-    // 2 - the login function, passed by the AuthConsumer
+    // 2 - the signin function, passed by the AuthConsumer
     evt.preventDefault();
-    login(status => {
+    signin(status => {
+      console.log(status);
       // this callback is executed inside the Provider !!!
-      this.props.redirect("/fountains");
+      this.props.history.push("/fountains");
     }, this.state);
   };
 
@@ -28,10 +29,10 @@ export default class Login extends Component {
     const { username, password } = this.state;
     return (
       <AuthConsumer>
-        {({ login }) => (
+        {({ signin }) => (
           <form
             className="form"
-            onSubmit={evt => handleSubmit(evt, login)}
+            onSubmit={evt => handleSubmit(evt, signin)}
             onChange={handleChange}
           >
             <h1 className="title">login</h1>
