@@ -1,31 +1,232 @@
 //containers
 
 .pageContainer {
-  height: 100vh;
-  border: 1px solid yellow;
-  display: flex;
-  align-items: center;
+  height: 180vh;
+  justify-content: center;
+  // border: 2px solid #008000;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 4%;
+
 }
 
-.mainContainer {
-  height: 50vh;
-  border: 5px solid black;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-direction:
-    column;
-  align-items: center;
+.mainText {
+  margin-bottom: 20px;
 }
+
+.questionLabel {
+  margin-bottom: 12px;
+}
+
+.firstContainer {
+  margin-top: 4%;
+  margin-bottom: 4%;
+
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.hrBorder {
+  border-top: 4px solid rgb(34, 111, 226);
+  width: 40%;
+}
+
+.secondContainer {
+  width: 60%;
+
+  // border: 2px solid orange;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.bigPromptsContainer {}
 
 
 .featureContainer {
-
+  // border: 2px solid violet;
   text-align: center;
-  border: 1px solid red;
   width: 60%;
 }
 
-.titleFeatureContainer {
-  border: 1px solid blue;
+.responseBigContainer {
+
+  width: 90%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+
+.input {
+  width: 15%;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+//items
+
+.plasticPrintInput {
+  display: flex;
+  flex-direction: column;
+  // border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+.response {
+  // border: 1px solid violet;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.responseImg1,
+.responseImg2,
+.responseImg3,
+.responseImg4,
+.responseImg5,
+.responseImg6 {
+  width: 35%;
+  height: 50%;
+}
+
+.promptsContainers1,
+.promptsContainers2,
+.promptsContainers3,
+.promptsContainers4,
+.promptsContainers5,
+.promptsContainers6 {
+  // border: 1px solid green;
+  width: 100px;
+  margin: 30px 3px;
+
+  height: 90px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.imagesContainer {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+
+.promptsContainers1 {
+
+  animation: cssAnimation 0s 0.8s forwards;
+  visibility: hidden;
+
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
+}
+
+
+
+.promptsContainers2 {
+
+  animation: cssAnimation 0s 2s forwards;
+  visibility: hidden;
+
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
+}
+
+
+.promptsContainers3 {
+
+  animation: cssAnimation 0s 3s forwards;
+  visibility: hidden;
+
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
+}
+
+
+.promptsContainers4 {
+
+  animation: cssAnimation 0s 4s forwards;
+  visibility: hidden;
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
+}
+
+
+.promptsContainers5 {
+
+  animation: cssAnimation 0s 5s forwards;
+  visibility: hidden;
+
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
+}
+
+.promptsContainers6 {
+
+  animation: cssAnimation 0s 6s forwards;
+  visibility: hidden;
+
+
+  @keyframes cssAnimation {
+    to {
+      visibility: visible;
+    }
+  }
 }
