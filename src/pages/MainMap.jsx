@@ -194,7 +194,7 @@ export default class MapContainer extends Component {
       // ) : this.props.coords ? (
       <>
         <hr className="top-home-line" />
-        <NavPages />
+        <NavPages history={this.props.history} />
 
         <h1 className="google-map-title">
           This fabulous map will help you find drinking water spots to refill

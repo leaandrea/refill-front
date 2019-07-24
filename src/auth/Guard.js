@@ -80,6 +80,7 @@ class AuthProvider extends React.Component {
     // send a request to the server : session will be destroyed there
     apiAuthHandler.post("/logout").then(serverRes => {
       this.setState({ loginStatus: false }, () => clbk(this.isLoggedIn));
+      console.log(this.state.loginStatus);
     });
   };
 
@@ -94,8 +95,8 @@ class AuthProvider extends React.Component {
           loginStatus: this.state.loginStatus,
           // exposed methods
           isLoggedIn: this.isLoggedIn,
-          login: this.login,
-          logout: this.logout
+          signin: this.signin,
+          signout: this.signout
         }}
       >
         {/* here, the provider children tags will be inserted */}

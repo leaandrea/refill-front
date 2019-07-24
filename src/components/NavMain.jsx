@@ -21,7 +21,11 @@ export default class NavMain extends Component {
   render() {
     return (
       <>
-        <Menu menuStatus={this.state.menuStatus} closeMenu={this.handleClose} />
+        <Menu
+          history={this.props.history}
+          menuStatus={this.state.menuStatus}
+          closeMenu={this.handleClose}
+        />
 
         <div>
           <div className="navbar">

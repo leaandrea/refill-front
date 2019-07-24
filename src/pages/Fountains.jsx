@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import APIHandler from ".././ApiHandler/apiHandler";
 import Footer from "../components/Footer";
 import EditForm from "../components/forms/EditForm";
+import { AuthConsumer } from "../auth/Guard";
+
 const apiHandler = new APIHandler();
 
 export default class Foutains extends Component {
@@ -114,86 +116,78 @@ export default class Foutains extends Component {
     // const { fountains } = this.state;
     return (
       <>
-        <hr className="top-home-line" />
-        <NavPages />
-        <div className="pag-buttons-container">
-          {/* <button onClick={this.handleClick}>1</button>
-          <button onClick={this.handleClick2}>2</button> */}
-          <button onClick={() => this.handleClick("prev")}>prev</button>
-          <button onClick={() => this.handleClick("next")}>next</button>
-        </div>
-        <div className="table-container">
-          <table className="table ">
-            <thead className="table-head">
-              <tr>
-                <th className="thead-address">Address</th>
-                <th>Fountain's type</th>
-                <th>Verified</th>
-                <th>Gazeuse?</th>
-                <th>En service ?</th>
-                <th colSpan="3">CRUD</th>
-              </tr>
-            </thead>
+        <AuthConsumer>
+          {({ loginStatus }) => (
+            <>
+              <hr className="top-home-line" />
+              <NavPages history={this.props.history} />
+              <div className="pag-buttons-container">
+                {/* <button onClick={this.handleClick}>1</button>
+        <button onClick={this.handleClick2}>2</button> */}
+                <button onClick={() => this.handleClick("prev")}>prev</button>
+                <button onClick={() => this.handleClick("next")}>next</button>
+              </div>
+              <div className="table-container">
+                <table className="contributions-table ">
+                  <thead>
+                    <tr>
+                      <th className="thead-address">Address</th>
+                      <th>Fountain's type</th>
+                      <th colSpan="3">CRUD</th>
+                    </tr>
+                  </thead>
 
-            {this.state.fountains.map((oneFountain, i) => {
-              return (
-                <tbody key={i}>
-                  <tr>
-                    <td>{oneFountain.address}</td>
-                    <td>{oneFountain.type}</td>
-                    <td>{oneFountain.verified.toString()}</td>
-                    <td>{oneFountain.gazeuse.toString()}</td>
-                    <td>{oneFountain.en_service.toString()}</td>
+                  {this.state.fountains.map((oneFountain, i) => {
+                    return (
+                      <tbody key={i}>
+                        <tr>
+                          <td>{oneFountain.address}</td>
+                          <td>{oneFountain.type}</td>
 
-                    <td>
-                      {/* <Link
-                        to={{
-                          pathname: `/edit-fountain/${oneFountain._id}`,
-                          state: {
-                            address: oneFountain.address,
-                            type: oneFountain.type,
-                            verified: oneFountain.verified,
-                            gazeuse: oneFountain.gazeuse,
-                            en_service: oneFountain.en_service
-                          }
-                        }}
-                      > */}
-                      <button
-                        onClick={() => this.displayForm(i)}
-                        className="editButton"
-                      >
-                        <FontAwesomeIcon icon="edit" />
-                      </button>
-                      {/* </Link> */}
-                    </td>
+                          <td>
+                            <Link
+                              to={{
+                                pathname: `/edit-fountain/${oneFountain._id}`,
+                                state: {
+                                  address: oneFountain.address,
+                                  type: oneFountain.type
+                                }
+                              }}
+                            >
+                              <button className="editButton">
+                                <FontAwesomeIcon icon="edit" />
+                              </button>
+                            </Link>
+                          </td>
 
-                    <td>
-                      <Link to="/create-fountain">
-                        <button className="createButton">
-                          <FontAwesomeIcon icon="plus" />
-                        </button>
-                      </Link>
-                    </td>
+                          <td>
+                            <Link to="/create-fountain">
+                              <button className="createButton">
+                                <FontAwesomeIcon icon="plus" />
+                              </button>
+                            </Link>
+                          </td>
 
-                    <td>
-                      <button
-                        className="deleteButton"
-                        onClick={() => this.deleteFountain(oneFountain._id)}
-                      >
-                        <FontAwesomeIcon icon="trash" />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              );
-            })}
-          </table>
-          <EditForm
-            displayForm={this.state.displayForm}
-            fountain={this.state.fountains[this.state.selectedFountain]}
-          />
-        </div>
-        <Footer />
+                          <td>
+                            <button
+                              className="deleteButton"
+                              onClick={() =>
+                                this.deleteFountain(oneFountain._id)
+                              }
+                            >
+                              <FontAwesomeIcon icon="trash" />
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    );
+                  })}
+                </table>
+              </div>
+              <Footer />
+            </>
+          )}
+        </AuthConsumer>
       </>
     );
   }

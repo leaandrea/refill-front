@@ -5,6 +5,7 @@ import React from "react";
 import "./App.css";
 import "./styles/scss/main.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
+import ProtectedRoute from "./auth/ProtectedRoute";
 //---------------------------------------
 //PAGES
 //---------------------------------------
@@ -12,8 +13,9 @@ import PageHome from "./pages/Home";
 import PageMainMap from "./pages/MainMap";
 import PageQualityInfos from "./pages/QualityInfos";
 import CheckContributions from "./pages/CheckContributions";
-import Fountains from "./pages/Fountains";
 import Auth from "./pages/Auth";
+import AllFountains from "./pages/Fountains";
+
 import Page404 from "./pages/Page404";
 import PlasticPrint from "./pages/PlasticPrint";
 
@@ -63,17 +65,20 @@ function App() {
         <Route path="/home" component={PageHome} />
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
-        <Route path="/fountains" component={Fountains} />
-        <Route path="/edit-fountain/:id" component={EditForm} />
-        <Route path="/create-fountain" component={CreateForm} />
-        <Route path="/check-contributions" component={CheckContributions} />
+        {/* <Route path="/fountains" component={Fountains} /> */}
+        <ProtectedRoute path="/edit-fountain/:id" component={EditForm} />
+        <ProtectedRoute path="/create-fountain" component={CreateForm} />
+        <ProtectedRoute
+          path="/check-contributions"
+          component={CheckContributions}
+        />{" "}
+        <ProtectedRoute path="/fountains" component={AllFountains} />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
         <Route path="/admin" component={Auth} />
         <Route path="/login" component={LoginForm} />
         <Route path="/signup" component={SignupForm} />
         <Route path="/your-plastic-print" component={PlasticPrint} />
-
         <Route
           path="/instagram"
           component={() => {
@@ -82,7 +87,8 @@ function App() {
             return null;
           }}
         />
-
+        {/* Below, protected route /dashboard : (user must be signedin in backend ) */}
+        <ProtectedRoute path="/fountains" component={AllFountains} />
         {/* The 404 route must always be the last one */}
         <Route path="*" component={Page404} />
       </Switch>

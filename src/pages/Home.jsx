@@ -26,7 +26,7 @@ const Home = props => {
   return (
     <>
       {/* <hr className="top-home-line" /> */}
-      <NavMain />
+      <NavMain history={props.history} />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}
