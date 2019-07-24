@@ -25,7 +25,7 @@ export default function NavResponsive(props) {
             Home
           </a>
         </h2>
-                
+
         <h2>
           <Link
             className="burger-link"
@@ -40,13 +40,19 @@ export default function NavResponsive(props) {
             Map
           </Link>
         </h2>
-                
+
+        <h2>
+          <a className="burger-link" href="your-plastic-print">
+            Footprint Calculator
+          </a>
+        </h2>
+
         <h2>
           <a className="burger-link" href="/quality-info">
             Quality Info
           </a>
         </h2>
-                
+
         <h2>
           <a className="burger-link" href="/contribute">
             Contribute
@@ -66,8 +72,8 @@ export default function NavResponsive(props) {
                 <p className="burger-link">Log out</p>
               </h2>
             ) : (
-              ""
-            )
+                ""
+              )
           }
         </AuthConsumer>
       </div>

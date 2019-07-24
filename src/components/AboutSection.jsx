@@ -38,6 +38,7 @@ export default function AboutSection() {
                   plastic waste and help the planet while staying hydrated. It's
                   also cheaper for you, since bottled water is 400 times more
                   expensive than tap water.
+                <Link to="/your-plastic-print"> And do you even know the impact of your consumption on the planet?</Link>
                 </p>
               </div>
             </article>
