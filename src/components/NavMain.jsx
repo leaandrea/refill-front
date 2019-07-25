@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from "./Menu";
+import { log } from "util";
 
 export default class NavMain extends Component {
   state = {
@@ -22,7 +23,8 @@ export default class NavMain extends Component {
   };
 
   render() {
-    let color;
+    console.log(this.props);
+
     return (
       <>
         <Menu
@@ -35,7 +37,7 @@ export default class NavMain extends Component {
           <div className="navbar">
             <nav className="nav">
               <NavLink
-                style={{ color: color }}
+                style={{ color: this.props.style.color }}
                 activeClassName="is-active"
                 exact
                 to="/home"

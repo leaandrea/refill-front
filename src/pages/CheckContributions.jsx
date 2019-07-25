@@ -1,4 +1,4 @@
-import NavPages from "../components/NavPages";
+import NavMain from "../components/NavMain";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -51,7 +51,7 @@ export default class Foutains extends Component {
     return (
       <>
         <hr className="top-home-line" />
-        <NavPages history={this.props.history} />
+        <NavMain style={{ color: "black" }} history={this.props.history} />
         <h1>Check Contributions</h1>
         <div className="table-container">
           <table className="table">

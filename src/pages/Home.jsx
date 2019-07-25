@@ -66,6 +66,7 @@ const Home = props => {
           </div>
         </div>
       </section>
+
       {/* <hr className="top-home-line" /> */}
       <ProSection />
       {/* <hr className="top-home-line" /> */}
