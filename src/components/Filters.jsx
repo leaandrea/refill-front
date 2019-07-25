@@ -74,7 +74,7 @@ export default class Filters extends Component {
           <button
             onClick={this.handleGeoLoc}
 
-            className="button-filter"> Get my location  {this.state.geoloc ? <GeoLoc /> : null} </button>
+            className="button-filter"> Around me  {this.state.geoloc ? <GeoLoc /> : null} </button>
         </div>
       </div>
     );

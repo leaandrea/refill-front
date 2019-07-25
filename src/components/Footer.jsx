@@ -9,8 +9,17 @@ import TermsOfUseModal from "./modals/TermsOfUse";
 import useModal from "./modals/useModal";
 
 export default function Footer() {
+
   const { isShowing, toggle } = useModal();
+
+  const handleScrollToStats = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
   return (
+
     <>
       <footer className="footer">
         <section className="social-icons">
@@ -37,9 +46,9 @@ export default function Footer() {
             Terms of use
           </p>
           <TermsOfUseModal isShowing={isShowing} hide={toggle} />
-          <a href={`http://localhost:3000/#top`}>
-            <FontAwesomeIcon icon={faChevronUp} className="contact-icon" />
-          </a>
+          {/* <a href={`http://localhost:3000/#top`}> */}
+          <FontAwesomeIcon icon={faChevronUp} className="contact-icon" onClick={handleScrollToStats} />
+          {/* </a> */}
         </section>
       </footer>
     </>

@@ -24,6 +24,28 @@
   // font-family: GT-Pressura-Pro-Mono-Regular;
 }
 
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Bold-Oblique;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProBoldOblique.woff") format("opentype");
+
+}
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Condensed-Regular;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProCondensedRegular.woff") format("opentype");
+
+}
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Light;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProLight.woff") format("opentype");
+
+}
+
 @font-face {
   font-family: GT-Walsheim-Pro-Medium;
   // font-family: GT-Pressura-Pro-Mono-Regular;
@@ -99,6 +121,7 @@ button {
   border-radius: 20px;
   background: white;
 }
+
 .data {
   background-color: red;
   width: 100vw;

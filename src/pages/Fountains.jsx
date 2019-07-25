@@ -76,7 +76,7 @@ export default class Foutains extends Component {
     } else if (
       direction === "next" &&
       this.state.offset + this.state.ressourcesPerPage <=
-        this.state.nbRessources
+      this.state.nbRessources
     ) {
       setOffset(this.state.offset + this.state.ressourcesPerPage, () => {
         // console.log("yayyyy next");

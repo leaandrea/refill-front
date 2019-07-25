@@ -1,18 +1,20 @@
 .about-title {
   font-size: 1rem;
   text-align: center;
-  padding: 2.5rem 5rem;
+  padding: 2.5rem 4rem;
   // color: rgb(255, 255, 255);
   // color: #002a00;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   height: 10%;
   margin-top: 2.5rem;
+
+
 }
 
 .about {
   width: 100vw;
-  height: 81vh;
+  height: 84vh;
   background-color: rgb(255, 255, 255);
   background-image: url("./../../../src/images/background-about.jpg");
   background-size: cover;
@@ -43,27 +45,39 @@
 }
 
 .articles-container h2 {
-  color: #0d062f;
+  color: rgb(32, 199, 149);
   text-align: center;
+  margin-bottom: 6px;
+  font-size: 1.6rem;
 }
 
 .art1,
 .art2,
 .art3 {
-  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 40px;
+  // background-color: rgba(255, 255, 255, 0.8);
   width: 290px;
   height: 290px;
   display: flex;
   align-items: flex-start;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border: 1px solid #d8fcf7;
+  padding: 10px;
+  // border: 1px solid #d8fcf7;
 }
 
 .art1 p,
 .art2 p,
 .art3 p {
   text-align: justify;
-  color: #0d062f;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: GT-Walsheim-Pro-Light;
+}
+
+
+.aboutLinks {
+  color: rgba(103, 255, 209, 0.925);
+  font-family: GT-Walsheim-Pro-Bold-Oblique;
 }

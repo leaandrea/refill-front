@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import GeoLoc from "../components/GeoLoc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
-let geolocBtn = "Get my Location";
+let geolocBtn = "Click here to get your location";
 const Home = props => {
   const [geoState, setGeoState] = useState(false);
 

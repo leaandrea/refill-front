@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import APIHandler from "../../ApiHandler/apiHandler";
 import Geocode from "react-geocode";
 
+
 Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 
 const apiHandler = new APIHandler();
@@ -55,7 +56,12 @@ export default class CreateForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     this.getLatLng(this.addToDb);
+
   };
+
+  validationMessage = evt => {
+    alert("You added a fountain to the database !")
+  }
 
   render() {
     return (
@@ -120,10 +126,15 @@ export default class CreateForm extends Component {
               />
             </>
           ) : (
-            <></>
-          )}
+              <></>
+            )}
 
-          <button>Create</button>
+          <button onClick={this.validationMessag}>
+            Create
+            </button>
+
+
+
         </form>
       </div>
     );

@@ -8,7 +8,7 @@ export default function Page404() {
       <div className="fof-wrapper">
         <h1 className="fof-title">You seem lost in the depths of the ocean.</h1>
         <h2 className="fof-subtitle">
-          Go back &nbsp;
+          Go&nbsp;
           <Link className="link-home" to="/">
             Home
           </Link>

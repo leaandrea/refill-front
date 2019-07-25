@@ -9,7 +9,10 @@ export default function AboutSection() {
         <div className="inner-border">
           {/* <NavMain /> */}
           <h3 className="about-title">
-            With Refill, you can easily help the environement and save money!
+          Protect the environment and save money : <br/>
+   Refill helps you find all Paris's free drinking water spots to refill
+          your water bottle!
+           
           </h3>
 
           <div className="articles-container">
@@ -17,15 +20,14 @@ export default function AboutSection() {
               <div className="who-text-container">
                 <h2>How</h2>
                 <p>
-                  Stop buying plastic bottles! Take your reusable water bottle
-                  and use our map to find spots near you, where you'll be able
-                  to fill it for free. There are even sparkling water fountains!
+                  Take your reusable water bottle
+                  and use our great map to find free spots near you. There are even sparkling water fountains!
                   <br />
                 </p>
                 <p>
-                  <br />
-                  Want to know more about
-                  <Link to="/quality-info"> water quality</Link>?
+                  <br /> <br/>
+                 Want to know more about
+                 <Link className="aboutLinks" to="/quality-info">   water quality</Link>?
                 </p>
               </div>
             </article>
@@ -33,12 +35,9 @@ export default function AboutSection() {
               <div className="why-text-container">
                 <h2>Why</h2>
                 <p>
-                  Plastic bottles pollute and kill animals, and 80% of sea and
-                  ocean waste is thrown on land. We can, in an easy way, reduce
-                  plastic waste and help the planet while staying hydrated. It's
-                  also cheaper for you, since bottled water is 400 times more
-                  expensive than tap water.
-                <Link to="/your-plastic-print"> And do you even know the impact of your consumption on the planet?</Link>
+                  Plastic bottles are the main waste in oceans and kill wildlife. And tap water is 400 times cheaper ! Let's save that money and help the planet.
+                  <br/> <br/> <br/>
+                 Do you know the <Link className="aboutLinks" to="/your-plastic-print">impact </Link>of what you consume?
                 </p>
               </div>
             </article>
@@ -53,9 +52,9 @@ export default function AboutSection() {
                   <br />
                 </p>
                 <p>
-                  <br />
-                  If we missed a spot you can tell us
-                  <Link to="/contribute">here</Link>.
+                  <br /> <br/>
+                  If we missed a spot you can tell us 
+                  <Link className="aboutLinks" to="/contribute"> here</Link>.
                 </p>
               </div>
             </article>
