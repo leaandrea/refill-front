@@ -1,19 +1,19 @@
 // containers
-.fountainsListContainer {
-  display: flex;
-  justify-content: center;
-}
+
 .table-container {
   width: 100vw;
+  margin-bottom: 80px;
 }
 .table {
   table-layout: auto;
   width: 80vh;
+  width: 82vw;
   margin: 0 auto;
 }
 .table th {
   padding: 2rem;
-  background-color: rgb(162, 247, 218);
+  // background-color: rgb(162, 247, 218);
+  background-color: rgb(158, 214, 236);
 }
 
 tr,
@@ -26,10 +26,11 @@ td {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: bisque;
+  background-color: rgb(199, 232, 245);
   padding: 1rem;
 }
 .title-admin-board {
+  margin-top: 15px;
   text-align: center;
 }
 .pag-buttons-container {
@@ -37,15 +38,43 @@ td {
   justify-content: center;
   justify-content: space-around;
   width: 30%;
-  margin: 3rem auto 2rem auto;
+  margin: 3rem auto 1rem auto;
 }
 .pag-buttons-container button {
   padding: 1rem;
   font-size: 1.5rem;
 }
-.admin-text-container {
-  justify-content: space-between;
+.create-fountain-text {
   display: flex;
-  width: 60%;
-  margin: auto;
+  justify-content: flex-end;
+  width: 89%;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.create-button {
+  margin-left: 5px;
+  padding: 0.6rem;
+}
+.btn-crud {
+  font-size: 1rem;
+}
+
+.create-button:hover,
+.pag-buttons-container button:hover {
+  background-color: rgb(162, 247, 218);
+}
+
+.username {
+  color: #55a5c5;
+}
+
+@media all and (max-width: 720px) {
+  .pag-buttons-container button {
+    font-size: 0.9rem;
+  }
+  .table-head th,
+  tbody td {
+    font-size: 0.8rem;
+    padding: 0.45rem;
+  }
 }

@@ -119,7 +119,13 @@ export default class Foutains extends Component {
                 history={this.props.history}
               />
               <h2 className="title-admin-board">
-                Hey {user && user.username} ! Welcome to the admin board
+                Hey{" "}
+                <span className="username">
+                  {user &&
+                    user.username.charAt(0).toUpperCase() +
+                      user.username.slice(1)}
+                </span>
+                ! Welcome to the admin board
               </h2>
 
               <div className="pag-buttons-container">
@@ -128,25 +134,23 @@ export default class Foutains extends Component {
                 <button onClick={() => this.handleClick("prev")}>Prev</button>
                 <button onClick={() => this.handleClick("next")}>Next</button>
               </div>
-              <div className="admin-text-container">
-                <p>Fountain's list</p>
-                <p>
-                  Create a fountain{" "}
-                  <button
-                    onClick={() => this.displayCreateForm()}
-                    className="createButton"
-                  >
-                    <FontAwesomeIcon icon="plus" />
-                  </button>
-                </p>
-              </div>
+
+              <h3 className="create-fountain-text">
+                Create a fountain
+                <button
+                  onClick={() => this.displayCreateForm()}
+                  className="create-button"
+                >
+                  <FontAwesomeIcon icon="plus" />
+                </button>
+              </h3>
 
               <div className="table-container">
                 <table className="table">
                   <thead className="table-head">
                     <tr>
                       <th className="thead-address">Address</th>
-                      <th>Fountain's type</th>
+                      <th> Fountain's type</th>
                       <th>Verified</th>
                       <th>Gazeuse?</th>
                       <th>En service ?</th>
@@ -190,7 +194,10 @@ export default class Foutains extends Component {
                                 onClick={() => this.displayEditForm(i)}
                                 className="editButton"
                               >
-                                <FontAwesomeIcon icon="edit" />
+                                <FontAwesomeIcon
+                                  icon="edit"
+                                  className="btn-crud"
+                                />
                               </button>
                               {/* </Link> */}
                             </td>
@@ -202,7 +209,10 @@ export default class Foutains extends Component {
                                   this.deleteFountain(oneFountain._id)
                                 }
                               >
-                                <FontAwesomeIcon icon="trash" />
+                                <FontAwesomeIcon
+                                  icon="trash"
+                                  className="btn-crud"
+                                />
                               </button>
                             </td>
                           </tr>

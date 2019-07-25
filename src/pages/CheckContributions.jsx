@@ -112,7 +112,7 @@ export default class Foutains extends Component {
                       > */}
                         <button
                           onClick={() => this.displayEditForm(i)}
-                          className="editButton"
+                          className="btn-crud"
                         >
                           <FontAwesomeIcon icon="edit" />
                         </button>
@@ -121,7 +121,7 @@ export default class Foutains extends Component {
 
                       <td>
                         <button
-                          className="deleteButton"
+                          className="btn-crud"
                           onClick={() => this.deleteFountain(oneFountain._id)}
                         >
                           <FontAwesomeIcon icon="trash" />
