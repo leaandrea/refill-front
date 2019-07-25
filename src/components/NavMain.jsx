@@ -5,7 +5,8 @@ import Menu from "./Menu";
 
 export default class NavMain extends Component {
   state = {
-    menuStatus: false
+    menuStatus: false,
+    logoColor: true,
 
     // menuOpen: false,
     // menuClose: true
@@ -41,7 +42,8 @@ export default class NavMain extends Component {
               >
                 <div className="nav-logo">
                   {/* <img src="../../../images/refill1-logo.png" alt="refill-logo" /> */}
-                  <h1>REFILL.</h1>
+                  {this.props.logoState ? (
+                    <img className="mainLogo" src="./images/LOGO1.png" alt="" />) : (<img className="mainLogo" src="./images/LOGO2.png" alt="" />)}
                 </div>
               </NavLink>
 
