@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPoo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function ProSection() {
@@ -10,7 +8,11 @@ export default function ProSection() {
         <h1 className="pro-title">
           Restaurants, stores, communities: join Refill!
         </h1>
+
+
         <div className="pro-flex-container">
+
+
           <div className="pro-left-side">
             <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer1" />
             <p>
@@ -22,6 +24,7 @@ export default function ProSection() {
             <br />
 
           </div>
+
           <div className="pro-right-side">
             <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer" />
             <p className="textProSection">
@@ -31,6 +34,8 @@ export default function ProSection() {
               glasses, no bottles, just water. Easy and convenient.
             </p>
           </div>
+
+
         </div>
       </section>
     </>

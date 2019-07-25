@@ -2,30 +2,25 @@
   background-color: rgba(246, 250, 249, 0.877);
 }
 
-@media (max-width: 720px) {
+// @media (max-width: 720px) {
 
-  .textsSectionContainer {
+//   .articles-container {
 
-    height: 100vh;
-  }
+//     height: 100vh;
+//   }
 
-  .articles-container {
 
-    display: inlmine-block;
-    justify-content: flex-start;
-
-  }
-}
+// }
 
 
 .articles-container {
-
+  // border: 1px solid red;
   width: 100vw;
-  height: 82vh;
+  // height: 78vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 85%;
+  // max-height: 85%;
   padding: 1.7rem;
 
 }
@@ -42,6 +37,7 @@
 .art1,
 .art2,
 .art3 {
+  // border: 1px solid blue;
 
   // background-color: rgba(255, 255, 255, 0.8);
 
@@ -49,9 +45,9 @@
   align-content: center;
   align-items: center;
   width: 310px;
-  height: 320px;
+
   margin: 3rem;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
 
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);

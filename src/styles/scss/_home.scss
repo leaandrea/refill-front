@@ -5,25 +5,12 @@
   width: 100vw;
 }
 
-.top-home-thin-line {
-  border: none;
-  height: 1px;
-  background-color: rgb(162, 247, 218);
-  margin-bottom: 2px;
-}
 
-// .middle-home-line {
-//   border: none;
-//   background-color: #d8fcf7;
-//   position: absolute;
-//   height: 5px;
-//   width: 80vw;
-//   z-index: 1;
-//   margin: auto;
-// }
+
 
 .home-map-section {
   // border-top: 1px solid rgb(162, 247, 218);
+  border-bottom: 1px solid #0d062f;
   border-bottom: 1px solid #0d062f;
   // background-color: rgba(20, 143, 243, 0.288);
   height: 95.5vh;
@@ -36,34 +23,32 @@
   background-size: cover;
   // background-image: url("./../../../src/images/bghomemapgrain.png");
   background-image: url("../../../src/images/bg-map-section.jpg");
-  // background-image: radial-gradient(
-  //   circle,
-  //   #e9f9fa,
-  //   #e0f9f9,
-  //   #d7f8f6,
-  //   #cef8f3,
-  //   #c6f7ef
-  // );
-  // background-image: radial-gradient(
-  //   circle,
-  //   #e9f9fa,
-  //   #ecfafa,
-  //   #eefcfb,
-  //   #f1fdfb,
-  //   #f4fefc
-  // );
+
 }
 
 .home-map-section-wrapper-flex {
+  border-bottom: 1px solid #0d062f;
+  border-bottom: 1px solid #0d062f;
+
+  // background-color: rgba(20, 143, 243, 0.288);
+  height: 95.5vh;
+  display: flex;
+  // justify-content: space-evenly;
+  // flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  height: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
+  background-image: url("../../../src/images/bg-map-section.jpg");
 }
 
 .home-map-container {
-  // border: 3px solid salmon;
+
   width: 65%;
   height: 100%;
   padding: 4rem 4rem 4rem 4rem;
@@ -89,39 +74,46 @@
 .txt-container-flex-column {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   height: 100%;
-  width: 35%;
-  border: 2px solid yellow;
+  width: 30%;
+
+  font-family: GT Waslsheim Pro Light; // margin-right: 40px;
+
 
 }
 
 .pick-container,
 .get-container {
-  // border: 1px solid #0d062f;
+
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // margin: 2rem auto 0 auto;
   // margin: 2rem 0 0 5rem;
-  width: 57.5%;
+  // width: 57.5%;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: #d8fcf7;
   // background-color: white;
-  margin: auto 39.2px;
-  border: 1px solid orange;
+
+
+
 }
 
 .choose {
   text-align: center;
   font-size: 1.5rem;
   overflow: hidden;
-  width: 100%;
-  padding: 20%;
+
+  // width: 100%;
+  //   width: 57.5%;
+  // padding: 20%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 1px solid orange;
+  font-family: GT-Walsheim-Pro-Light;
+
 }
 
 .icon-mouse-pointer {
@@ -162,7 +154,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
+
   border: none;
   // background-color: #d8fcf7;
 }
