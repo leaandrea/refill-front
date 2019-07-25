@@ -50,14 +50,6 @@ const LegalNoticeModal = ({ isShowing, hide }) =>
                   Third-Party Postings and expressly distance ourselves from
                   such content. If we become aware that any Third-Party Websites
                   or Third-Party Postings infringe any statutory provisions or
-                  third-party rights, we will remove the link or delete the
-                  respective posting made in the chat insofar as this is
-                  possible in legal and technical terms. In this respect, we
-                  would appreciate any relevant information provided by you.
-                  Uploading illegal material or material infringing any
-                  third-party rights in chats installed on our websites is
-                  prohibited. This applies in particular to defamatory,
-                  disparaging, offensive or pornographic material.
                 </p>
               </div>
             </div>

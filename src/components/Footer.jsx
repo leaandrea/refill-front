@@ -7,19 +7,18 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import LegalNoticeModal from "./modals/LegalNoticeModal";
 import TermsOfUseModal from "./modals/TermsOfUse";
 import useModal from "./modals/useModal";
+import useModalCgu from "./modals/useModalCgu";
 
 export default function Footer() {
-
   const { isShowing, toggle } = useModal();
-
-  const handleScrollToStats = () => {
+  const { isShowing2, toggle2 } = useModalCgu();
+  const handleScroll = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
-  }
+      behavior: "smooth"
+    });
+  };
   return (
-
     <>
       <footer className="footer">
         <section className="social-icons">
@@ -42,13 +41,16 @@ export default function Footer() {
           </p>
           <LegalNoticeModal isShowing={isShowing} hide={toggle} />
 
-          <p className="btn-cgu" onClick={toggle}>
+          <p className="btn-cgu" onClick={toggle2}>
             Terms of use
           </p>
-          <TermsOfUseModal isShowing={isShowing} hide={toggle} />
-          {/* <a href={`http://localhost:3000/#top`}> */}
-          <FontAwesomeIcon icon={faChevronUp} className="contact-icon" onClick={handleScrollToStats} />
-          {/* </a> */}
+          <TermsOfUseModal isShowing={isShowing2} hide={toggle2} />
+
+          <FontAwesomeIcon
+            icon={faChevronUp}
+            className="contact-icon"
+            onClick={handleScroll}
+          />
         </section>
       </footer>
     </>

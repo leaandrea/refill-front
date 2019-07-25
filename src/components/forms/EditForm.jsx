@@ -8,8 +8,13 @@ const apiHandler = new APIHandler();
 
 export default class EditForm extends Component {
   state = {
-    edit: {}
+    edit: {},
+    fountainIndex: null
   };
+
+  // UNSAFE_componentWillReceiveProps(toto) {
+  //   this.setState({ fountainIndex: toto.selectedFountain });
+  // }
 
   handleChange = evt => {
     const edit = { ...this.state.edit };
@@ -25,11 +30,13 @@ export default class EditForm extends Component {
     apiHandler
       .update(
         `${process.env.REACT_APP_BACKEND_URL}/api/fontaines/${
-          this.props.match.params.id
+          this.props.fountain._id
         }`,
         this.state.edit
       )
-      .then(serverRes => console.log(serverRes))
+      .then(serverRes => {
+        this.props.getUpdateFountain();
+      })
       .catch(serverErr => console.log(serverErr));
   };
 
@@ -48,6 +55,9 @@ export default class EditForm extends Component {
       }
     );
   }
+  testClick = () => {
+    console.log("yoyo");
+  };
 
   addToDb = () => {
     console.log(this);
@@ -61,11 +71,12 @@ export default class EditForm extends Component {
   };
 
   render() {
-    const { fountain, displayForm } = this.props;
-    if (!displayForm) return null;
-    return (
+    const { fountain, isDisplayForm } = this.props;
+    console.log("grr", isDisplayForm);
+    // console.log("lol", this.props.fountain);
+    return !isDisplayForm ? null : (
       <>
-        <div className="modal-overlay" />
+        <div className="modal-overlay" onClick={() => this.props.hideForm()} />
         <div className="form-wrapper">
           <div className="modal-header">
             <button
@@ -73,7 +84,7 @@ export default class EditForm extends Component {
               className="modal-close-button"
               data-dismiss="modal"
               aria-label="Close"
-              onClick={this.hideForm}
+              onClick={() => this.props.hideForm()}
             >
               <span aria-hidden="true">&times;</span>
             </button>
@@ -85,26 +96,31 @@ export default class EditForm extends Component {
             onChange={this.handleChange}
           >
             <label>Is-it sparkling water ?</label>
-            <select defaultValue={fountain.gazeuse} name="gazeuse">
-              <option value="false">Plate</option>
-              <option value="true">Sparkling</option>
-            </select>
+            {fountain && (
+              <select defaultValue={fountain.gazeuse} name="gazeuse">
+                <option value="false">Plate</option>
+                <option value="true">Sparkling</option>
+              </select>
+            )}
 
             <label htmlFor="address">Address</label>
             <input
               id="address"
               name="address"
               type="text"
-              defaultValue={fountain.address}
+              defaultValue={fountain ? fountain.address : ""}
             />
 
             <label>En service ?</label>
-            <select defaultValue={fountain.en_service} name="en_service">
-              <option>Yes</option>
-              <option>No</option>
+            <select
+              defaultValue={fountain ? fountain.en_service : ""}
+              name="en_service"
+            >
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
             <label>Type of source ?</label>
-            <select defaultValue={fountain.type} name="type">
+            <select defaultValue={fountain ? fountain.type : ""} name="type">
               <option value="commerce">Commerce</option>
               <option value="fontaine">Fontaine</option>
             </select>
@@ -116,6 +132,7 @@ export default class EditForm extends Component {
             <button>edit</button>
           </form>
         </div>
+
         <a href="/check-contributions">Go to check board</a>
         <a href="/fountains">Go to admin board</a>
       </>

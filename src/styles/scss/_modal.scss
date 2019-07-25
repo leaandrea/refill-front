@@ -1,8 +1,11 @@
 .modal-wrapper {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 50px;
+  width: 80vw;
+  height: 80vh;
+  top: 90px;
+  overflow: scroll;
+  left: 50%;
+  transform: translate(-50%);
 }
 .modal-header {
   width: 90%;
@@ -26,7 +29,7 @@
 .modal-content {
   display: flex;
   flex-direction: column;
-  padding: 0 10rem;
+  padding: 2rem 4rem;
 }
 .modal-overlay {
   position: fixed;

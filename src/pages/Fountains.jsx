@@ -15,10 +15,13 @@ export default class Foutains extends Component {
     offset: 0,
     ressourcesPerPage: 40,
     nbRessources: null,
-    displayForm: false
+    isDisplayForm: false
   };
 
   componentDidMount() {
+    this.getFountains();
+  }
+  getFountains = () => {
     apiHandler
       .get(`/api/fontaines`)
       .then(dbRes => {
@@ -29,7 +32,7 @@ export default class Foutains extends Component {
         // this.setState({ fountains: dbRes.data.slice(0, 100) });
       })
       .catch(apiErr => console.error(apiErr));
-  }
+  };
 
   getFontainsByOffset = () => {
     apiHandler
@@ -76,7 +79,7 @@ export default class Foutains extends Component {
     } else if (
       direction === "next" &&
       this.state.offset + this.state.ressourcesPerPage <=
-      this.state.nbRessources
+        this.state.nbRessources
     ) {
       setOffset(this.state.offset + this.state.ressourcesPerPage, () => {
         // console.log("yayyyy next");
@@ -107,12 +110,19 @@ export default class Foutains extends Component {
   //   });
   // };
 
+  doSomething = () => {
+    console.log("click");
+  };
+
   displayForm = i => {
-    this.setState({ displayForm: true, selectedFountain: i });
+    this.setState({ isDisplayForm: true, selectedFountain: i }, () => {
+      console.log("bad index ?", this.state.selectedFountain);
+      console.log(this.state.fountains[this.state.selectedFountain]);
+    });
   };
   hideForm = () => {
     console.log("hide");
-    this.setState({ displayForm: false });
+    this.setState({ isDisplayForm: false });
   };
 
   render() {
@@ -150,14 +160,24 @@ export default class Foutains extends Component {
                   {this.state.fountains.map((oneFountain, i) => {
                     return (
                       <tbody key={i}>
-                        <tr>
-                          <td>{oneFountain.address}</td>
-                          <td>{oneFountain.type}</td>
-                          <td>{oneFountain.verified.toString()}</td>
-                          <td>{oneFountain.gazeuse.toString()}</td>
-                          <td>{oneFountain.en_service.toString()}</td>
-                          <td>
-                            {/* <Link
+                        {oneFountain && (
+                          <tr>
+                            <td>{oneFountain.address}</td>
+                            <td>{oneFountain.type}</td>
+                            <td>
+                              {oneFountain.verified &&
+                                oneFountain.verified.toString()}
+                            </td>
+                            <td>
+                              {oneFountain.gazeuse &&
+                                oneFountain.gazeuse.toString()}
+                            </td>
+                            <td>
+                              {oneFountain.en_service &&
+                                oneFountain.en_service.toString()}
+                            </td>
+                            <td>
+                              {/* <Link
                         to={{
                           pathname: `/edit-fountain/${oneFountain._id}`,
                           state: {
@@ -169,42 +189,44 @@ export default class Foutains extends Component {
                           }
                         }}
                       > */}
-                            <button
-                              onClick={() => this.displayForm(i)}
-                              className="editButton"
-                            >
-                              <FontAwesomeIcon icon="edit" />
-                            </button>
-                            {/* </Link> */}
-                          </td>
-
-                          <td>
-                            <Link to="/create-fountain">
-                              <button className="createButton">
-                                <FontAwesomeIcon icon="plus" />
+                              <button
+                                onClick={() => this.displayForm(i)}
+                                className="editButton"
+                              >
+                                <FontAwesomeIcon icon="edit" />
                               </button>
-                            </Link>
-                          </td>
+                              {/* </Link> */}
+                            </td>
 
-                          <td>
-                            <button
-                              className="deleteButton"
-                              onClick={() =>
-                                this.deleteFountain(oneFountain._id)
-                              }
-                            >
-                              <FontAwesomeIcon icon="trash" />
-                            </button>
-                          </td>
-                        </tr>
+                            <td>
+                              <Link to="/create-fountain">
+                                <button className="createButton">
+                                  <FontAwesomeIcon icon="plus" />
+                                </button>
+                              </Link>
+                            </td>
+
+                            <td>
+                              <button
+                                className="deleteButton"
+                                onClick={() =>
+                                  this.deleteFountain(oneFountain._id)
+                                }
+                              >
+                                <FontAwesomeIcon icon="trash" />
+                              </button>
+                            </td>
+                          </tr>
+                        )}
                       </tbody>
                     );
                   })}
                 </table>
                 <EditForm
-                  displayForm={this.state.displayForm}
+                  isDisplayForm={this.state.isDisplayForm}
                   fountain={this.state.fountains[this.state.selectedFountain]}
-                  hideForm={this.state.displayForm}
+                  hideForm={this.hideForm}
+                  getUpdateFountain={this.getFountains}
                 />
               </div>
               <Footer />

@@ -24,32 +24,25 @@
   // font-family: GT-Pressura-Pro-Mono-Regular;
 }
 
-
-@font-face {
-  font-family: GT-Walsheim-Pro-Bold-Oblique;
-  // font-family: GT-Pressura-Pro-Mono-Regular;
-  src: url(".././font/GTWalsheimProBoldOblique.woff") format("opentype");
-
-}
-
 @font-face {
   font-family: GT-Walsheim-Pro-Condensed-Regular;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProCondensedRegular.woff") format("opentype");
-
 }
-
 @font-face {
   font-family: GT-Walsheim-Pro-Light;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProLight.woff") format("opentype");
-
 }
-
 @font-face {
   font-family: GT-Walsheim-Pro-Medium;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProMedium.woff") format("opentype");
+}
+@font-face {
+  font-family: GT-Walsheim-Pro-Bold-Oblique;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProBoldOblique.woff") format("opentype");
 }
 
 .App {
@@ -121,9 +114,25 @@ button {
   border-radius: 20px;
   background: white;
 }
+.intro-section,
+.widget_plus,
+.intro-section,
+.widget_titre {
+  display: none;
+  visibility: hidden;
+}
 
-.data {
-  background-color: red;
+.widget_planeto {
+  display: flex;
   width: 100vw;
-  border: 3px solid red;
+}
+div.stat-group {
+  margin: 0;
+}
+body > div.widget_planeto > div > div.stat.widget {
+  display: flex;
+  width: 80vw;
+}
+div.stat-group div.stat .stat-chiffre {
+  width: 100%;
 }

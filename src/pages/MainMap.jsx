@@ -186,6 +186,7 @@ export default class MapContainer extends Component {
   // };
 
   render() {
+    console.log(this.state);
     return (
       //  !this.props.isGeolocationAvailable ? (
       //   <p>Your browser does not support Geolocation</p>
@@ -194,7 +195,10 @@ export default class MapContainer extends Component {
       // ) : this.props.coords ? (
       <>
         <hr className="top-home-line" />
-        <NavMain style={{ color: "black" }} history={this.props.history} />
+        <NavMain
+          style={{ color: "black", background: "red" }}
+          history={this.props.history}
+        />
 
         <h1 className="google-map-title">
           This fabulous map will help you find drinking water spots to refill
