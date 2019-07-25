@@ -8,7 +8,9 @@ const apiHandler = new APIHandler();
 
 export default class EditForm extends Component {
   state = {
-    edit: {}
+    edit: {},
+    noDbError: false,
+    dbError: false
   };
 
   handleChange = evt => {
@@ -30,9 +32,14 @@ export default class EditForm extends Component {
         this.state.edit
       )
       .then(serverRes => {
+        console.log("ok", serverRes);
         this.props.getUpdateFountain();
+        this.setState({ dbError: false, noDbError: true });
       })
-      .catch(serverErr => console.log(serverErr));
+      .catch(serverErr => {
+        this.setState({ noDbError: false, dbError: true });
+        console.log(`server error: ${serverErr}`);
+      });
   };
 
   getLatLng(clbk) {
@@ -128,6 +135,20 @@ export default class EditForm extends Component {
             </select>
             <button>edit</button>
           </form>
+          {this.state.noDbError ? (
+            <div>
+              <p>Successfully modified !</p>
+            </div>
+          ) : (
+            ""
+          )}
+          {this.state.dbError ? (
+            <div>
+              <p>There was a problem editing your source. Please try again.</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
 
         <a href="/check-contributions">Go to check board</a>

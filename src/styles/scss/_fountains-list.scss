@@ -9,7 +9,7 @@
 .table {
   table-layout: auto;
   width: 80vh;
-  margin: 70px auto;
+  margin: 0 auto;
 }
 .table th {
   padding: 2rem;
@@ -29,13 +29,23 @@ td {
   background-color: bisque;
   padding: 1rem;
 }
+.title-admin-board {
+  text-align: center;
+}
 .pag-buttons-container {
   display: flex;
   justify-content: center;
-  widows: 60%;
+  justify-content: space-around;
+  width: 30%;
+  margin: 3rem auto 2rem auto;
 }
 .pag-buttons-container button {
-  padding: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.admin-text-container {
+  justify-content: space-between;
   display: flex;
   width: 60%;
+  margin: auto;
 }

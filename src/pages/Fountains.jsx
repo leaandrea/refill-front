@@ -1,7 +1,6 @@
 import NavMain from "../components/NavMain";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import APIHandler from ".././ApiHandler/apiHandler";
 import Footer from "../components/Footer";
 import EditForm from "../components/forms/EditForm";
@@ -89,7 +88,6 @@ export default class Foutains extends Component {
       });
     }
   };
-
   displayEditForm = i => {
     this.setState({ isDisplayEditForm: true, selectedFountain: i }, () => {
       console.log("bad index ?", this.state.selectedFountain);
@@ -113,19 +111,36 @@ export default class Foutains extends Component {
     return (
       <>
         <AuthConsumer>
-          {({ loginStatus }) => (
+          {({ loginStatus, user }) => (
             <>
               <hr className="top-home-line" />
               <NavMain
                 style={{ color: "black" }}
                 history={this.props.history}
               />
+              <h2 className="title-admin-board">
+                Hey {user && user.username} ! Welcome to the admin board
+              </h2>
+
               <div className="pag-buttons-container">
                 {/* <button onClick={this.handleClick}>1</button>
         <button onClick={this.handleClick2}>2</button> */}
-                <button onClick={() => this.handleClick("prev")}>prev</button>
-                <button onClick={() => this.handleClick("next")}>next</button>
+                <button onClick={() => this.handleClick("prev")}>Prev</button>
+                <button onClick={() => this.handleClick("next")}>Next</button>
               </div>
+              <div className="admin-text-container">
+                <p>Fountain's list</p>
+                <p>
+                  Create a fountain{" "}
+                  <button
+                    onClick={() => this.displayCreateForm()}
+                    className="createButton"
+                  >
+                    <FontAwesomeIcon icon="plus" />
+                  </button>
+                </p>
+              </div>
+
               <div className="table-container">
                 <table className="table">
                   <thead className="table-head">
@@ -135,7 +150,7 @@ export default class Foutains extends Component {
                       <th>Verified</th>
                       <th>Gazeuse?</th>
                       <th>En service ?</th>
-                      <th colSpan="3">CRUD</th>
+                      <th colSpan="2">CRUD</th>
                     </tr>
                   </thead>
 
@@ -176,17 +191,6 @@ export default class Foutains extends Component {
                                 className="editButton"
                               >
                                 <FontAwesomeIcon icon="edit" />
-                              </button>
-                              {/* </Link> */}
-                            </td>
-
-                            <td>
-                              {/* <Link to="/create-fountain"> */}
-                              <button
-                                onClick={() => this.displayCreateForm(i)}
-                                className="createButton"
-                              >
-                                <FontAwesomeIcon icon="plus" />
                               </button>
                               {/* </Link> */}
                             </td>
