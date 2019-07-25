@@ -1,16 +1,21 @@
 import NavMain from "../components/NavMain";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import EditForm from "../components/forms/EditForm";
 import APIHandler from "../ApiHandler/apiHandler";
 
 const apiHandler = new APIHandler();
 export default class Foutains extends Component {
   state = {
-    fountains: []
+    fountains: [],
+    isDisplayForm: false
   };
 
   componentDidMount() {
+    this.getFountains();
+  }
+
+  getFountains = () => {
     apiHandler
       .get(`/api/fontaines`)
       .then(fontaines => {
@@ -22,7 +27,7 @@ export default class Foutains extends Component {
         this.setState({ fountains: unverifiedContributions });
       })
       .catch(apiErr => console.error(apiErr));
-  }
+  };
 
   deleteFountain = id => {
     apiHandler
@@ -43,11 +48,18 @@ export default class Foutains extends Component {
       });
   };
 
+  displayForm = i => {
+    this.setState({ isDisplayForm: true, selectedFountain: i }, () => {
+      console.log("bad index ?", this.state.selectedFountain);
+      console.log(this.state.fountains[this.state.selectedFountain]);
+    });
+  };
+  hideForm = () => {
+    console.log("hide");
+    this.setState({ isDisplayForm: false });
+  };
+
   render() {
-    console.log("ici");
-
-    console.log(this.state.fountains);
-
     return (
       <>
         <hr className="top-home-line" />
@@ -72,11 +84,20 @@ export default class Foutains extends Component {
                   <tr>
                     <td>{oneFountain.address}</td>
                     <td>{oneFountain.type}</td>
-                    <td>{oneFountain.verified.toString()}</td>
-                    <td>{oneFountain.gazeuse.toString()}</td>
-                    <td>{oneFountain.en_service.toString()}</td>
                     <td>
-                      <Link
+                      {oneFountain.verified.toString() &&
+                        oneFountain.verified.toString()}
+                    </td>
+                    <td>
+                      {oneFountain.gazeuse.toString() &&
+                        oneFountain.gazeuse.toString()}
+                    </td>
+                    <td>
+                      {oneFountain.en_service.toString() &&
+                        oneFountain.en_service.toString()}
+                    </td>
+                    <td>
+                      {/* <Link
                         to={{
                           pathname: `/edit-fountain/${oneFountain._id}`,
                           state: {
@@ -87,11 +108,14 @@ export default class Foutains extends Component {
                             en_service: oneFountain.en_service
                           }
                         }}
+                      > */}
+                      <button
+                        onClick={() => this.displayForm(i)}
+                        className="editButton"
                       >
-                        <button className="editButton">
-                          <FontAwesomeIcon icon="edit" />
-                        </button>
-                      </Link>
+                        <FontAwesomeIcon icon="edit" />
+                      </button>
+                      {/* </Link> */}
                     </td>
 
                     <td>
@@ -107,6 +131,12 @@ export default class Foutains extends Component {
               );
             })}
           </table>
+          <EditForm
+            isDisplayForm={this.state.isDisplayForm}
+            fountain={this.state.fountains[this.state.selectedFountain]}
+            hideForm={this.hideForm}
+            getUpdateFountain={this.getFountains}
+          />
 
           <a href="/fountains">Go to admin board</a>
         </div>

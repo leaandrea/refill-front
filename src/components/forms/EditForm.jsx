@@ -8,13 +8,8 @@ const apiHandler = new APIHandler();
 
 export default class EditForm extends Component {
   state = {
-    edit: {},
-    fountainIndex: null
+    edit: {}
   };
-
-  // UNSAFE_componentWillReceiveProps(toto) {
-  //   this.setState({ fountainIndex: toto.selectedFountain });
-  // }
 
   handleChange = evt => {
     const edit = { ...this.state.edit };
@@ -71,12 +66,14 @@ export default class EditForm extends Component {
   };
 
   render() {
-    const { fountain, isDisplayForm } = this.props;
-    console.log("grr", isDisplayForm);
+    const { fountain, isDisplayEditForm } = this.props;
     // console.log("lol", this.props.fountain);
-    return !isDisplayForm ? null : (
+    return !isDisplayEditForm ? null : (
       <>
-        <div className="modal-overlay" onClick={() => this.props.hideForm()} />
+        <div
+          className="modal-overlay"
+          onClick={() => this.props.hideEditForm()}
+        />
         <div className="form-wrapper">
           <div className="modal-header">
             <button
@@ -84,7 +81,7 @@ export default class EditForm extends Component {
               className="modal-close-button"
               data-dismiss="modal"
               aria-label="Close"
-              onClick={() => this.props.hideForm()}
+              onClick={() => this.props.hideEditForm()}
             >
               <span aria-hidden="true">&times;</span>
             </button>

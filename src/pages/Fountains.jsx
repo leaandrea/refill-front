@@ -6,6 +6,7 @@ import APIHandler from ".././ApiHandler/apiHandler";
 import Footer from "../components/Footer";
 import EditForm from "../components/forms/EditForm";
 import { AuthConsumer } from "../auth/Guard";
+import CreateForm from "../components/forms/CreateForm";
 
 const apiHandler = new APIHandler();
 
@@ -15,7 +16,8 @@ export default class Foutains extends Component {
     offset: 0,
     ressourcesPerPage: 40,
     nbRessources: null,
-    isDisplayForm: false
+    isDisplayEditForm: false,
+    isDisplayCreateForm: false
   };
 
   componentDidMount() {
@@ -49,7 +51,6 @@ export default class Foutains extends Component {
       .then(dbRes => {
         const removedId = dbRes.data._id; // get the removed id
         const tmp = [...this.state.fountains]; // make a copy of the users array
-        //
         const remainingFountains = tmp.filter(
           fountain => fountain._id !== removedId
         );
@@ -87,42 +88,23 @@ export default class Foutains extends Component {
         this.getFontainsByOffset();
       });
     }
-    // let content = this.state.fountains.slice(0, 40).map((fountain, i) => {
-    //   console.log(fountain);
-
-    //   return (
-    //     <ul key={i}>
-    //       <li>{fountain.verified === true}</li>
-    //     </ul>
-    //   );
-    // });
-    // this.setState({ fountains: content });
-  };
-  // handleClick2 = () => {
-  //   this.state.fountains.slice(40, 42).map((fountain, i) => {
-  //     console.log("TWOO", fountain);
-
-  //     return (
-  //       <ul>
-  //         <li key={i}>{fountain.verified === true}</li>
-  //       </ul>
-  //     );
-  //   });
-  // };
-
-  doSomething = () => {
-    console.log("click");
   };
 
-  displayForm = i => {
-    this.setState({ isDisplayForm: true, selectedFountain: i }, () => {
+  displayEditForm = i => {
+    this.setState({ isDisplayEditForm: true, selectedFountain: i }, () => {
       console.log("bad index ?", this.state.selectedFountain);
       console.log(this.state.fountains[this.state.selectedFountain]);
     });
   };
-  hideForm = () => {
+  hideEditForm = () => {
     console.log("hide");
-    this.setState({ isDisplayForm: false });
+    this.setState({ isDisplayEditForm: false });
+  };
+  displayCreateForm = i => {
+    this.setState({ isDisplayCreateForm: true, selectedFountain: i }, () => {});
+  };
+  hideCreateForm = () => {
+    this.setState({ isDisplayCreateForm: false });
   };
 
   render() {
@@ -165,15 +147,15 @@ export default class Foutains extends Component {
                             <td>{oneFountain.address}</td>
                             <td>{oneFountain.type}</td>
                             <td>
-                              {oneFountain.verified.toString() &&
+                              {oneFountain.verified !== undefined &&
                                 oneFountain.verified.toString()}
                             </td>
                             <td>
-                              {oneFountain.gazeuse.toString() &&
+                              {oneFountain.gazeuse !== undefined &&
                                 oneFountain.gazeuse.toString()}
                             </td>
                             <td>
-                              {oneFountain.en_service.toString() &&
+                              {oneFountain.en_service !== undefined &&
                                 oneFountain.en_service.toString()}
                             </td>
                             <td>
@@ -190,7 +172,7 @@ export default class Foutains extends Component {
                         }}
                       > */}
                               <button
-                                onClick={() => this.displayForm(i)}
+                                onClick={() => this.displayEditForm(i)}
                                 className="editButton"
                               >
                                 <FontAwesomeIcon icon="edit" />
@@ -199,11 +181,14 @@ export default class Foutains extends Component {
                             </td>
 
                             <td>
-                              <Link to="/create-fountain">
-                                <button className="createButton">
-                                  <FontAwesomeIcon icon="plus" />
-                                </button>
-                              </Link>
+                              {/* <Link to="/create-fountain"> */}
+                              <button
+                                onClick={() => this.displayCreateForm(i)}
+                                className="createButton"
+                              >
+                                <FontAwesomeIcon icon="plus" />
+                              </button>
+                              {/* </Link> */}
                             </td>
 
                             <td>
@@ -222,10 +207,16 @@ export default class Foutains extends Component {
                     );
                   })}
                 </table>
+
+                <CreateForm
+                  isDisplayCreateForm={this.state.isDisplayCreateForm}
+                  hideCreateForm={this.hideCreateForm}
+                />
+
                 <EditForm
-                  isDisplayForm={this.state.isDisplayForm}
+                  isDisplayEditForm={this.state.isDisplayEditForm}
                   fountain={this.state.fountains[this.state.selectedFountain]}
-                  hideForm={this.hideForm}
+                  hideEditForm={this.hideEditForm}
                   getUpdateFountain={this.getFountains}
                 />
               </div>

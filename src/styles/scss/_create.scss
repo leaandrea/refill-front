@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   max-width: 50vw;
+  height: 85%;
   margin: auto;
   padding: 20px;
   align-items: center;
@@ -19,8 +20,8 @@
 
 .create-form input,
 .create-form select:nth-child(2),
-.create-form select:nth-child(10),
-.create-form select:nth-child(12) {
+.create-form select:nth-child(6),
+.create-form select:nth-child(8) {
   height: 32px;
   width: 80%;
   border: 1px solid;

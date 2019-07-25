@@ -25,6 +25,7 @@ export default class CreateForm extends Component {
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
+    console.log(this.state);
   };
 
   getLatLng(clbk) {
@@ -44,7 +45,6 @@ export default class CreateForm extends Component {
   }
 
   addToDb = () => {
-    console.log(this);
     const formData = new FormData();
     formData.append("gazeuse", this.state.gazeuse);
     formData.append("address", this.state.address);
@@ -55,12 +55,16 @@ export default class CreateForm extends Component {
     formData.append("en_service", this.state.en_service);
     formData.append("type", this.state.type);
     formData.append("name", this.state.name);
+
+    for (var element of formData) {
+      console.log(element);
+    }
+
     apiHandler
       .post(`/api/fontaines`, formData)
       .then(serverRes => {
-        console.log(serverRes);
+        console.log("ok", serverRes);
         this.setState({ dbError: false, noDbError: true });
-        this.props.history.push("/create-fountain");
       })
       .catch(serverErr => {
         this.setState({ noDbError: false, dbError: true });
@@ -74,30 +78,48 @@ export default class CreateForm extends Component {
   };
 
   render() {
-    return (
-      <div className="create-form-container">
-        <form
-          id="create_form"
-          className="create-form"
-          name="create-form"
-          onSubmit={this.handleSubmit}
-          onChange={this.handleChange}
-        >
-          <label>Still or sparkling water ?</label>
-          <select name="gazeuse">
-            <option value="false">Still</option>
-            <option value="true">Sparkling</option>
-          </select>
+    const { isDisplayCreateForm } = this.props;
+    return !isDisplayCreateForm ? null : (
+      <>
+        <div
+          className="modal-overlay"
+          onClick={() => this.props.hideCreateForm()}
+        />
+        <div className="create-form-container">
+          <div className="modal-header">
+            <button
+              type="button"
+              className="modal-close-button"
+              data-dismiss="modal"
+              aria-label="Close"
+              onClick={() => this.props.hideCreateForm()}
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form
+            id="create_form"
+            className="create-form"
+            name="create-form"
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+            encType="multipart/form-data"
+          >
+            <label>Still or sparkling water ?</label>
+            <select name="gazeuse">
+              <option value={this.state.gazeuse}>Still</option>
+              <option value="true">Sparkling</option>
+            </select>
 
-          <label htmlFor="address">Address</label>
-          <input
-            id="address"
-            name="address"
-            type="address"
-            defaultValue={this.state.address}
-          />
+            <label htmlFor="address">Address</label>
+            <input
+              id="address"
+              name="address"
+              type="address"
+              defaultValue={this.state.address}
+            />
 
-          {/* <label htmlFor="latitude">Latitude</label>
+            {/* <label htmlFor="latitude">Latitude</label>
 
           <input
             id="latitude"
@@ -115,48 +137,49 @@ export default class CreateForm extends Component {
             value={this.state.lng}
           /> */}
 
-          <label>Is the fountain in service?</label>
-          <select name="en_service">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
-          <label>Type of source?</label>
-          <select name="type">
-            <option value="commerce">Business</option>
-            <option value="fontaine">Fontaine</option>
-          </select>
-          {this.state.type === "commerce" ? (
-            <>
-              <label htmlFor="name">What's the name of the business?</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                defaultValue={this.state.name}
-              />
-            </>
+            <label>Is the fountain in service?</label>
+            <select name="en_service">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            <label>Type of source?</label>
+            <select name="type">
+              <option value="commerce">Business</option>
+              <option value="fontaine">Fontaine</option>
+            </select>
+            {this.state.type === "commerce" ? (
+              <>
+                <label htmlFor="name">What's the name of the business?</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  defaultValue={this.state.name}
+                />
+              </>
+            ) : (
+              <></>
+            )}
+
+            <button>Create</button>
+          </form>
+
+          {this.state.noDbError ? (
+            <div>
+              <p>Your source has been added to the database!</p>
+            </div>
           ) : (
-            <></>
+            ""
           )}
-
-          <button>Create</button>
-        </form>
-
-        {this.state.noDbError ? (
-          <div>
-            <p>Your source has been added to the database!</p>
-          </div>
-        ) : (
-          ""
-        )}
-        {this.state.dbError ? (
-          <div>
-            <p>There was a problem adding your source. Please try again.</p>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
+          {this.state.dbError ? (
+            <div>
+              <p>There was a problem adding your source. Please try again.</p>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      </>
     );
   }
 }
