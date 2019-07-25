@@ -34,7 +34,6 @@ const Home = props => {
     // console.log(geoState);
   };
 
-  //  let geolocBtn = "Get my location";
   return (
     <>
       {/* <hr className="top-home-line" /> */}
@@ -45,9 +44,8 @@ const Home = props => {
         display={"absolute"}
         color={"#FEFFFF"}
       />
-      {/* <hr className="top-home-line" /> */}
       <AboutSection />
-      {/* <hr className="top-home-thin-line" /> */}
+
       <TextsSection />
       <section className="home-map-section">
         <div className="home-map-section-wrapper-flex">
