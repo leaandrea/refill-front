@@ -8,15 +8,17 @@ const apiHandler = new APIHandler();
 
 export default class ContributeForm extends Component {
   state = {
-    type: "fontaine",
-    potable: 1,
-    en_service: true,
     gazeuse: false,
     address: "3 rue Jules César",
-    name: "Coucou",
     verified: false,
+    potable: 1,
     lat: null,
-    lng: null
+    lng: null,
+    en_service: true,
+    type: "fontaine",
+    name: "Coucou",
+    noDbError: false,
+    dbError: false
   };
 
   handleChange = evt => {
@@ -42,13 +44,27 @@ export default class ContributeForm extends Component {
 
   addToDb = () => {
     console.log(this);
+    const formData = new FormData();
+    formData.append("gazeuse", this.state.gazeuse);
+    formData.append("address", this.state.address);
+    formData.append("verified", this.state.verified);
+    formData.append("potable", this.state.potable);
+    formData.append("lat", this.state.lat);
+    formData.append("lng", this.state.lng);
+    formData.append("en_service", this.state.en_service);
+    formData.append("type", this.state.type);
+    formData.append("name", this.state.name);
     apiHandler
       .post(`/api/fontaines`, this.state)
       .then(serverRes => {
         console.log(serverRes);
+        this.setState({ dbError: false, noDbError: true });
         this.props.history.push("/contribute");
       })
-      .catch(serverErr => console.log(`server error: ${serverErr}`));
+      .catch(serverErr => {
+        this.setState({ noDbError: false, dbError: true });
+        console.log(`server error: ${serverErr}`);
+      });
   };
 
   handleSubmit = evt => {
@@ -113,6 +129,21 @@ export default class ContributeForm extends Component {
 
           <button>Send</button>
         </form>
+
+        {this.state.noDbError ? (
+          <div>
+            <p>Your source has been added to the database!</p>
+          </div>
+        ) : (
+          ""
+        )}
+        {this.state.dbError ? (
+          <div>
+            <p>There was a problem adding your source. Please try again.</p>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

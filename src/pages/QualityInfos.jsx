@@ -5,53 +5,68 @@ import Footer from "../components/Footer";
 export default function QualityInfos() {
   return (
     <>
-      <NavMain
-        state={{ color: "black" }}
-        // history={props.history}
-      />
-      <h1>Quality Info</h1>
-      <p>
-        Tap water is naturally greener than bottled water: it produces no
-        plastic waste and requires no transportation to get to the consumer. Its
-        quality is also on par with, if not better, bottled water.
-      </p>
-      <p>
-        De l'eau filtrée de qualité Mis au point par la NASA, le procédé
-        d'osmose inverse est le plus efficace pour filtrer l'eau.  L'eau passe
-        par trois filtres : - Le premier est un filtre à sédiments qui retient
-        les particules et les matières en suspension - Le deuxième est un filtre
-        à charbon actif qui élimine principalement le chlore - Le troisième est
-        le filtre de l'osmose inverse. L'eau passe à travers une membrane
-        semi-perméable et ultra fine, via des pores qui ont une taille comprise
-        entre 0,1 et 1 nanomètre (1 nanomètre = 1 milliardième de mètre). Pour
-        information : la taille d'un virus se situe entre 10 et 400 nanomètres,
-        celle d'un cheveu est de 40 000 à 100 000 nanomètres. L'eau est ainsi
-        débarrassée de près de 99 % de ses impuretés : molécules chimiques
-        (bactéries, pesticides, herbicides, nitrates ...) mais aussi métaux
-        lourds, (plomb, mercure), hormones, résidus médicamenteux... Parce que
-        ces processus modifient l'angle électromagnétique de l'eau, on dit
-        qu'elle est " déstructurée ".  La dynamisation va lui redonner le bon
-        angle électromagnétique (104,45°). Marcel Violet, un ingénieur français,
-        a mis au point un procédé de dynamisation de l'eau qui permet de la "
-        revitaliser", et d'obtenir ainsi une qualité comparable à celle des
-        sources de montagne ou des pluies d'orage.  Le système de dynamisation
-        injecte dans l'eau des ondes de très haute fréquence par le biais
-        d'électrodes d'argent. L'eau qui en résulte est d'une douceur
-        incomparable.
-      </p>
-
-      <p>
-        Le principe de base pour rendre potable l’eau des rivières consiste
-        d’abord à clarifier l’eau par trois étapes successives, selon un procédé
-        qui reproduit la filtration naturelle par le sol. Les phénomènes sont
-        accélérés pour garantir les quantités nécessaires aux besoins des
-        consommateurs. Vient ensuite un traitement de pointe aux ultraviolets
-        qui permet d’éliminer complètement les dernières traces de virus et de
-        bactéries. Pour les eaux souterraines, les usines d’Eau de Paris
-        traitent notamment les pesticides, les bactéries, les parasites et la
-        turbidité de l’eau grâce à un processus de décantation,
-        d’ultrafiltration et de désinfection.
-      </p>
+      <NavMain state={{ color: "black" }} />
+      <section>
+        <h1>Quality Info</h1>
+        <p>
+          Tap water is naturally greener than bottled water: it produces no
+          plastic waste and requires no transportation to get to the consumer.
+          Its quality is also on par with, if not better, bottled water. On this
+          page, you'll find all the information you need on the water you can
+          consume using Refill.
+        </p>
+      </section>
+      <section>
+        <h2>Public fountains in Paris</h2>
+        <p>
+          The free fountains you can find outdoors in Paris get their water from
+          underground sources and rivers. The water then undergoes a treatment
+          process in order to be made drinkable.
+        </p>
+        <p>
+          River water is clarified three times during a process that mimicks
+          natural underground filtration. The second step consists in a UV
+          treatment that eliminates any remaining traces of viruses or bacteria.
+        </p>
+        <p>
+          Underground water are treated for pesticides, bacteria, parasites and
+          turbidity using a process of decantation, ultrafiltration and
+          disinfection.
+        </p>
+      </section>
+      <section>
+        <h2>Sparkling water fountains</h2>
+        <p>
+          The city of Paris started implementing free sparkling water fountains
+          in 2010. The water quality of these fountains is the same as still
+          water fountains, with one extra step added to make the water
+          sparkling.
+        </p>
+        <p>
+          The water is carbonated directly inside the fountain. The fountain is
+          plugged to the public water system, then an ice bank cools the water
+          down to 12°C. Lastly, C02 in gas form is added to the cooled down
+          water.
+        </p>
+      </section>
+      <section>
+        <h2>Reverse osmosis filtered water</h2>
+        <p>
+          Some businesses in Paris may offer free water that has undergone a
+          reverse osmosis filtration process.
+        </p>
+        <p>
+          This process was created by NASA and is one of the most efficient ways
+          to filter water. The water undergoes two filters to get rid of
+          particules and chlorine. It then goes through a third filter for
+          reverse osmosis. This last ultrafine filter gets rid of 99% of
+          impurities (pesticides, nitrates, bacteria, lead, mercury,
+          hormones...) but it 'destructures' the water by changing its
+          electromagnetic angle. The water has to be revitalized via injection
+          of high frequency waves using silver electrodes. After this
+          dynamization process, the water quality is similar to moutain water.
+        </p>
+      </section>
       <Footer />
     </>
   );
