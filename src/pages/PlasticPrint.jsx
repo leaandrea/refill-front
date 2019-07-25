@@ -1,4 +1,4 @@
-import NavPages from "../components/NavPages";
+import NavMain from "../components/NavMain";
 import Footer from "../components/Footer";
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ export default class PlasticPrint extends Component {
   render() {
     return (
       <>
-        <NavPages />
+        <NavMain />
         <div className="pageContainer">
           <div className="firstContainer">
             <div className="featureContainer">

@@ -48,7 +48,11 @@ export default class NavMain extends Component {
                 </div>
               </NavLink>
 
-              <div className="burger" onClick={this.handleClick}>
+              <div
+                style={{ color: this.props.style.color }}
+                className="burger"
+                onClick={this.handleClick}
+              >
                 <FontAwesomeIcon icon="bars" className="btn-burger" />
               </div>
             </nav>
