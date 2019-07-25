@@ -7,10 +7,10 @@ export default function Auth(props) {
   return (
     <>
       <AuthConsumer>
-        {({ loginStatus }) =>
+        {({ loginStatus, username }) =>
           loginStatus ? (
             <>
-              <Fountains />
+              <Fountains state={{ username: username }} />
             </>
           ) : (
             <React.Fragment>

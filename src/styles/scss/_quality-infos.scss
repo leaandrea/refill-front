@@ -1,0 +1,51 @@
+@media (max-width: 720px) {
+  .quality-container {
+    min-width: 90vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .quality-container {
+    min-width: 85vw;
+  }
+}
+
+.gros-truc {
+  width: 100vw;
+}
+
+.quality-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70vw;
+  padding: 0 30px;
+  margin: auto;
+  border-left: 3px solid rgb(85, 165, 197);
+  border-right: 3px solid rgb(85, 165, 197);
+}
+
+.quality-container section {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  align-self: center;
+}
+
+.quality-container p {
+  font-family: GT-Walsheim-Pro-Light;
+  font-size: 22px;
+  text-align: justify;
+}
+
+.quality-container h1 {
+  font-family: GT-Walsheim-Pro-Light;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.quality-container h2 {
+  font-family: GT-Walsheim-Pro-Light;
+  font-size: 25px;
+  margin-bottom: 20px;
+}

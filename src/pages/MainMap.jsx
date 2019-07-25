@@ -157,34 +157,6 @@ export default class MapContainer extends Component {
     );
   };
 
-  // getTypeStore = () => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_BACKEND_URL}/api/fontaines`)
-  //     .then(fontaines => {
-  //       let fontainesEnService = fontaines.data.filter(
-  //         fontaine =>
-  //           fontaine.en_service && fontaine.potable && fontaine.verified
-  //       );
-  //       if (!this.state.displayTypeStore) {
-  //         let typeStore = fontainesEnService.filter(
-  //           oneFontaine => oneFontaine.type === "store"
-  //         );
-  //         this.setState({
-  //           markers: typeStore,
-  //           displayTypeStore: true,
-  //           buttonTypeStore: true
-  //         });
-  //       } else {
-  //         this.setState({
-  //           markers: fontainesEnService,
-  //           displayTypeStore: false,
-  //           buttonTypeStore: false
-  //         });
-  //       }
-  //     })
-  //     .catch(err => console.error(err));
-  // };
-
   render() {
     console.log(this.state);
     return (
@@ -199,65 +171,65 @@ export default class MapContainer extends Component {
           style={{ color: "black", background: "red" }}
           history={this.props.history}
         />
+        <div className="main-map-all">
+          <h1 className="google-map-title">
+            This fabulous map will help you find drinking water spots to refill
+            your water bottle.
+          </h1>
 
-        <h1 className="google-map-title">
-          This fabulous map will help you find drinking water spots to refill
-          your water bottle.
-        </h1>
+          <section className="map-and-filters">
+            {this.props.location.state ? (
+              <div className="google-map-container">
+                {this.props.location.state && (
+                  <GoogleMap
+                    markers={this.state.markers}
+                    initialCenter={{
+                      lat: this.props.location.state.initialLat,
+                      lng: this.props.location.state.initialLng
+                    }}
+                  />
+                )}
+              </div>
+            ) : (
+              <div className="google-map-container">
+                {this.state.marker && (
+                  <GoogleMap
+                    markers={this.state.markers}
+                    initialCenter={{
+                      lat: 48.858395,
+                      lng: 2.347913
+                    }}
+                  />
+                )}
+              </div>
+            )}
+            <Filters
+              getSparklingWater={this.getSparklingWater}
+              getTypeFountain={this.getTypeFountain}
+              getTypeStore={this.getTypeStore}
+              reset={this.reset}
+              getStillWater={this.getStillWater}
+              buttonSparklingActive={this.state.buttonSparklingActive}
+              buttonStillActive={this.state.buttonStillActive}
+              buttonTypeFountain={this.state.buttonTypeFountain}
+              buttonTypeStore={this.state.buttonTypeStore}
+            />
+          </section>
 
-        <section className="map-and-filters">
-          {this.props.location.state ? (
-            <div className="google-map-container">
-              {this.props.location.state && (
-                <GoogleMap
-                  markers={this.state.markers}
-                  initialCenter={{
-                    lat: this.props.location.state.initialLat,
-                    lng: this.props.location.state.initialLng
-                  }}
-                />
-              )}
-            </div>
-          ) : (
-            <div className="google-map-container">
-              {this.state.marker && (
-                <GoogleMap
-                  markers={this.state.markers}
-                  initialCenter={{
-                    lat: 48.858395,
-                    lng: 2.347913
-                  }}
-                />
-              )}
-            </div>
-          )}
-
-          <Filters
-            getSparklingWater={this.getSparklingWater}
-            getTypeFountain={this.getTypeFountain}
-            getTypeStore={this.getTypeStore}
-            reset={this.reset}
-            getStillWater={this.getStillWater}
-            buttonSparklingActive={this.state.buttonSparklingActive}
-            buttonStillActive={this.state.buttonStillActive}
-            buttonTypeFountain={this.state.buttonTypeFountain}
-            buttonTypeStore={this.state.buttonTypeStore}
-          />
-        </section>
-
-        <section className="legend-section">
-          <ul className="legend">
-            <li className="blue">
-              <p> Still water fountain</p>
-            </li>
-            <li className="green">
-              <p> Sparkling water fountain</p>
-            </li>
-            <li className="corail">
-              <p> Stores </p>
-            </li>
-          </ul>
-        </section>
+          <section className="legend-section">
+            <ul className="legend">
+              <li className="blue">
+                <p> Still water fountain</p>
+              </li>
+              <li className="green">
+                <p> Sparkling water fountain</p>
+              </li>
+              <li className="corail">
+                <p> Stores </p>
+              </li>
+            </ul>
+          </section>
+        </div>
         <Footer />
       </>
       // )

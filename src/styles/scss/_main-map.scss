@@ -1,32 +1,117 @@
-.google-map-title {
-  margin-top: 50px;
+@media (max-width: 720px) {
+  .map-and-filters {
+    flex-direction: column;
+  }
+  #root > div > div > section.map-and-filters > div.google-map-container {
+    width: 95vw;
+    margin: 0 auto 20px auto;
+  }
+
+  #root > div > div > section.map-and-filters > div.filters-container {
+    width: 95vw;
+    padding: 10px 0;
+  }
+
+  .filters-ctn {
+    margin: 5px 0;
+  }
 }
+
+@media (max-width: 1024px) {
+  .map-and-filters {
+    flex-direction: column;
+  }
+  #root > div > div > section.map-and-filters > div.google-map-container {
+    width: 95vw;
+    margin: 0 auto 20px auto;
+  }
+
+  #root > div > div > section.map-and-filters > div.filters-container {
+    width: 95vw;
+    padding: 10px 0;
+  }
+
+  .filters-ctn {
+    margin: 5px 0;
+  }
+}
+
+.main-map-all {
+  margin: 3%;
+}
+
+.google-map-title {
+  margin: 20px 0;
+  font-family: GT-Walsheim-Pro-Light;
+}
+
 .map-and-filters {
-  width: 100vw;
   display: flex;
+  justify-content: space-between;
 }
 
 .google-map-container {
   position: relative;
   height: 65vh;
-  width: 65vw;
+  width: 60vw;
   // border: 2px solid coral;
 }
 
-.filters-container {
-  width: 35vw;
-  // border: 2px solid greenyellow;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.filters-ctn {
+  font-family: GT-Walsheim-Pro-Light;
+  height: 15%;
 }
-.filters-left,
-.filters-right {
-  width: 40%;
-  height: 100%;
+
+.filters-container {
+  width: 30vw;
+  border: 2px solid #55a5c5;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.filters-1 {
+  color: black;
+}
+
+.filters-1,
+.filters-4,
+.filters-5 {
+  align-self: center;
+  text-align: center;
+  width: 90%;
+}
+
+.filters-2,
+.filters-3 {
+  display: flex;
   justify-content: space-around;
+}
+
+.filters-2 button,
+.filters-3 button {
+  width: 40%;
+}
+
+.button-filter {
+  font-family: GT-Walsheim-Pro-Light;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  height: 100%;
+  width: 100%;
+}
+.button-filter.is-active {
+  background-color: rgb(95, 134, 153);
+}
+
+.button-filter:active {
+  transform: scale(0.99);
+  background-color: #d8fcf7;
+}
+
+// LEGENDE DE LA CARTE
+.legend li p {
+  font-family: GT-Walsheim-Pro-Light;
 }
 
 li:first-child::before {
@@ -70,20 +155,4 @@ li:nth-child(3)::before {
 }
 .corail p {
   margin-top: 10px;
-}
-
-.button-filter {
-  border: 1px solid #0d062f;
-  font-size: 1.5rem;
-  height: 18%;
-}
-.button-filter.is-active {
-  background-color: red;
-  text-decoration: underline;
-  text-underline-position: below;
-}
-
-.button-filter:active {
-  transform: scale(0.99);
-  background-color: #d8fcf7;
 }

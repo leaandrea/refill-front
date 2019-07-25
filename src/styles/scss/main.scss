@@ -15,6 +15,7 @@
 @import "./plasticprint";
 @import "./modal";
 @import "./textssection";
+@import "./quality-infos";
 
 * {
   box-sizing: border-box;
@@ -44,7 +45,6 @@
   src: url(".././font/GTWalsheimProLightOblique.woff") format("opentype");
 }
 
-
 @font-face {
   font-family: GT-Walsheim-Pro-Light;
   // font-family: GT-Pressura-Pro-Mono-Regular;
@@ -70,10 +70,15 @@
 }
 
 @font-face {
+  font-family: GT-Walsheim-Pro-Thin;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProThin.woff") format("opentype");
+}
+
+@font-face {
   font-family: GT Walsheim Pro Medium Oblique;
   src: url(".././font/GTWalsheimProMediumOblique.woff") format("opentype");
 }
-
 
 .App {
   position: relative;
@@ -162,7 +167,7 @@ div.stat-group {
   margin: 0;
 }
 
-body>div.widget_planeto>div>div.stat.widget {
+body > div.widget_planeto > div > div.stat.widget {
   display: flex;
   width: 80vw;
 }

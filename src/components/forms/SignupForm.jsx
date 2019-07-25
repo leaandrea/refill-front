@@ -8,7 +8,8 @@ export default class Signup extends Component {
   state = {
     isPasswordOk: false,
     username: "toto",
-    password: "1234"
+    password: "1234",
+    signupError: false
     // passwordConfirm: "1234"
   };
 
@@ -38,44 +39,58 @@ export default class Signup extends Component {
       .post("/signup", { username, password }) // let's post the built formData object as a regular payload
       .then(serverRes => {
         // everything is fine, redirect to dashboard
-        console.log(this.props);
         this.props.history.push("/fountains");
         console.log(serverRes);
       })
-      .catch(serverErr => console.error(serverErr));
+      .catch(serverErr => {
+        this.setState({ signupError: true });
+        console.error(serverErr);
+      });
   };
 
   render() {
     const { handleChange, handleSubmit } = this;
     const { username, password } = this.state;
     return (
-      <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-        <h1 className="title">Signup</h1>
-        <label htmlFor="username">username</label>
-        <input
-          name="username"
-          id="username"
-          type="text"
-          defaultValue={username}
-        />
+      <>
+        <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
+          <h1 className="title">Signup</h1>
+          <label htmlFor="username">username</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            defaultValue={username}
+          />
 
-        <label htmlFor="password">password</label>
-        <input
-          name="password"
-          id="password"
-          type="password"
-          defaultValue={password}
-        />
-        {/* <label htmlFor="passwordConfirm">confirm password</label>
+          <label htmlFor="password">password</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            defaultValue={password}
+          />
+          {/* <label htmlFor="passwordConfirm">confirm password</label>
         <input
           name="passwordConfirm"
           id="passwordConfirm"
           type="password"
           defaultValue={passwordConfirm}
         /> */}
-        <hr />
-        <button className="btn">ok</button>
-      </form>
+          <hr />
+          <button className="btn">ok</button>
+        </form>
+        {this.state.signupError ? (
+          <div>
+            <p>
+              Sorry, we couldn't create your new account. Try using a longer
+              password.
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
+      </>
     );
   }
 }
