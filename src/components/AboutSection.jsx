@@ -11,14 +11,9 @@ export default function AboutSection() {
           {/* <NavMain /> */}
           <h2 className="about-title">
             Protect the environment, save money, stay hydrated.   </h2>
-          <h3 className="about-subtitle"> Refill helps you find all Paris'&nbsp;s free drinking water spots to refill
+          <h3 className="about-subtitle"> Refill helps you find all Paris's free drinking water spots to refill
                   your water bottle!
           </h3>
-
-
-
-
-
 
 
         </div>

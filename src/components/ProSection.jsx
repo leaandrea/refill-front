@@ -8,22 +8,23 @@ export default function ProSection() {
     <>
       <section className="pro">
         <h1 className="pro-title">
-          Restaurants, stores, communities: Join Refill!
+          Restaurants, stores, communities: join Refill!
         </h1>
         <div className="pro-flex-container">
           <div className="pro-left-side">
-            <FontAwesomeIcon icon={faPoo} className="icon-mouse-pointer" />
+            <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer1" />
             <p>
               <br />
               Are you a business owner interested in health and environmental
-              issues? You can help by registering your business on Refill.
+              issues? You can help by registering your business on Refill!
+              <Link to="/contribute" className="clickHerePro"> <br /> Click here to join Refill today!</Link>
             </p>
             <br />
-            <Link to="/contribute">Click here to join Refill today!</Link>
+
           </div>
           <div className="pro-right-side">
-            <FontAwesomeIcon icon={faPoo} className="icon-mouse-pointer" />
-            <p>
+            <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer" />
+            <p className="textProSection">
               <br />
               By joining Refill, you are making a commitment to give away
               drinking water to anyone who might ask for it, free of charge. No

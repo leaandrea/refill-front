@@ -6,13 +6,13 @@
 
   .textsSectionContainer {
 
-    height: 50vh;
+    height: 100vh;
   }
 
   .articles-container {
 
-    justify-content: center !important;
-    flex-direction: column;
+    display: inlmine-block;
+    justify-content: flex-start;
 
   }
 }
@@ -23,9 +23,8 @@
   width: 100vw;
   height: 82vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  // flex-wrap: wrap;
   max-height: 85%;
   padding: 1.7rem;
 
@@ -33,10 +32,10 @@
 
 .articles-container h2 {
   color: rgb(85, 165, 197);
-
   text-align: center;
   margin-bottom: 15px;
   font-size: 1.8rem;
+
 
 }
 
@@ -45,15 +44,33 @@
 .art3 {
 
   // background-color: rgba(255, 255, 255, 0.8);
+
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   width: 310px;
   height: 320px;
-  display: flex;
+  margin: 3rem;
   margin-bottom: 30px;
-  align-items: flex-start;
+
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
 
+
+}
+
+
+.gouttesContainer1,
+.gouttesContainer2,
+.gouttesContainer3 {
+  display: flex;
+  justify-content: center;
+}
+
+.gouttes {
+  margin: 1rem;
+  height: 10%;
+  width: 11%;
 }
 
 .art1 p,

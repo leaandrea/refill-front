@@ -7,7 +7,6 @@ export default class NavMain extends Component {
   state = {
     menuStatus: false,
     logoColor: true
-
     // menuOpen: false,
     // menuClose: true
   };
@@ -49,8 +48,8 @@ export default class NavMain extends Component {
                 {this.props.logoState ? (
                   <img className="mainLogo" src="./images/LOGO1.png" alt="" />
                 ) : (
-                  <img className="mainLogo" src="./images/LOGO2.png" alt="" />
-                )}
+                    <img className="mainLogo" src="./images/LOGO2.png" alt="" />
+                  )}
               </div>
             </NavLink>
 
