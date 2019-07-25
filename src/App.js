@@ -64,7 +64,6 @@ function App() {
         <Route path="/home" component={PageHome} />
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
-        {/* <Route path="/fountains" component={Fountains} /> */}
         <Route path="/edit-fountain/:id" component={EditForm} />
         <Route path="/create-fountain" component={CreateForm} />
         <Route path="/check-contributions" component={CheckContributions} />
@@ -83,7 +82,7 @@ function App() {
             return null;
           }}
         />
-        {/* Below, protected route /dashboard : (user must be signedin in backend ) */}
+        {/* Below, protected route /fountains : (user must be signedin in backend ) */}
         <ProtectedRoute path="/fountains" component={AllFountains} />
         {/* The 404 route must always be the last one */}
         <Route path="*" component={Page404} />
