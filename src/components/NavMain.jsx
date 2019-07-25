@@ -6,7 +6,7 @@ import Menu from "./Menu";
 export default class NavMain extends Component {
   state = {
     menuStatus: false,
-    logoColor: true,
+    logoColor: true
 
     // menuOpen: false,
     // menuClose: true
@@ -31,31 +31,39 @@ export default class NavMain extends Component {
           closeMenu={this.handleClose}
         />
 
-        <div>
-          <div className="navbar">
-            <nav className="nav">
-              <NavLink
-                style={{ color: this.state.color }}
-                activeClassName="is-active"
-                exact
-                to="/home"
-              >
-                <div className="nav-logo">
-                  {/* <img src="../../../images/refill1-logo.png" alt="refill-logo" /> */}
-                  {this.props.logoState ? (
-                    <img className="mainLogo" src="./images/LOGO1.png" alt="" />) : (<img className="mainLogo" src="./images/LOGO2.png" alt="" />)}
-                </div>
-              </NavLink>
-
-              <div
-                style={{ color: this.state.color }}
-                className="burger"
-                onClick={this.handleClick}
-              >
-                <FontAwesomeIcon icon="bars" className="btn-burger" />
+        <div
+          className="navbar"
+          style={{
+            position: this.props.display === "absolute" ? "absolute" : "static"
+          }}
+        >
+          <nav className="nav">
+            <NavLink
+              // style={{ color: this.state.color }}
+              activeClassName="is-active"
+              exact
+              to="/home"
+            >
+              <div className="nav-logo">
+                {/* <img src="../../../images/refill1-logo.png" alt="refill-logo" /> */}
+                {this.props.logoState ? (
+                  <img className="mainLogo" src="./images/LOGO1.png" alt="" />
+                ) : (
+                  <img className="mainLogo" src="./images/LOGO2.png" alt="" />
+                )}
               </div>
-            </nav>
-          </div>
+            </NavLink>
+
+            <div className="burger" onClick={this.handleClick}>
+              <FontAwesomeIcon
+                icon="bars"
+                className="btn-burger"
+                style={{
+                  color: this.props.color
+                }}
+              />
+            </div>
+          </nav>
         </div>
       </>
     );

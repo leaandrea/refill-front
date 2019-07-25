@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavMain from "../components/NavMain";
 import AboutSection from "../components/AboutSection";
-import TextsSection from "../components/TextsSection"
+import TextsSection from "../components/TextsSection";
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
 import Footer from "../components/Footer";
@@ -12,7 +12,6 @@ let geolocBtn = "Click here to get your location";
 const Home = props => {
   const [geoState, setGeoState] = useState(false);
   const [logoState, SetLogoNav] = useState(true);
-
 
   // const changeGeoState = () => {
 
@@ -25,10 +24,9 @@ const Home = props => {
     // // Update the document title using the browser API
     // SetLogoNav(false)
     if (props.history.location.pathname === "/home") {
-      SetLogoNav(true)
+      SetLogoNav(true);
     }
   }, []);
-
 
   const handleGeo = () => {
     // console.log("click");
@@ -36,16 +34,17 @@ const Home = props => {
     // console.log(geoState);
   };
 
-
-
-
-
   //  let geolocBtn = "Get my location";
   return (
     <>
       {/* <hr className="top-home-line" /> */}
 
-      <NavMain style={{ color: "white" }} history={props.history} logoState={logoState} />
+      <NavMain
+        history={props.history}
+        logoState={logoState}
+        display={"absolute"}
+        color={"#FEFFFF"}
+      />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}

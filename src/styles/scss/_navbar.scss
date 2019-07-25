@@ -1,5 +1,4 @@
 .navbar {
-  position: absolute;
   width: 100%;
   padding: 1.7rem 4.2rem;
   // background-color: rgb(250, 253, 253);
@@ -16,27 +15,6 @@
 .mainLogo {
   height: 23%;
   width: 23%;
-}
-
-.navbar-pages {
-  position: relative;
-  width: 100%;
-  padding: 0rem 2.5rem;
-  // background-color: rgb(250, 253, 253);
-  top: 20px;
-}
-
-.btn-burger-pages {
-  color: black;
-  cursor: pointer;
-  position: relative;
-  z-index: 1001;
-}
-
-.nav-pages {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 // .nav-logo img {
