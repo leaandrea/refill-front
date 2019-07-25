@@ -165,15 +165,15 @@ export default class Foutains extends Component {
                             <td>{oneFountain.address}</td>
                             <td>{oneFountain.type}</td>
                             <td>
-                              {oneFountain.verified &&
+                              {oneFountain.verified.toString() &&
                                 oneFountain.verified.toString()}
                             </td>
                             <td>
-                              {oneFountain.gazeuse &&
+                              {oneFountain.gazeuse.toString() &&
                                 oneFountain.gazeuse.toString()}
                             </td>
                             <td>
-                              {oneFountain.en_service &&
+                              {oneFountain.en_service.toString() &&
                                 oneFountain.en_service.toString()}
                             </td>
                             <td>
