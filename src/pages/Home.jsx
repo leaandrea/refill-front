@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavMain from "../components/NavMain";
 import AboutSection from "../components/AboutSection";
+import TextsSection from "../components/TextsSection"
 import HomeMap from "../components/HomeMap";
 import ProSection from "../components/ProSection";
 import Footer from "../components/Footer";
@@ -10,27 +11,45 @@ import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
 let geolocBtn = "Click here to get your location";
 const Home = props => {
   const [geoState, setGeoState] = useState(false);
+  const [logoState, SetLogoNav] = useState(true);
+
 
   // const changeGeoState = () => {
 
   //   console.log(geoState)
   //   setGeoState(true)
   // }
+
+  useEffect(() => {
+    // console.log(props, "hellooooo")
+    // // Update the document title using the browser API
+    // SetLogoNav(false)
+    if (props.history.location.pathname === "/home") {
+      SetLogoNav(true)
+    }
+  }, []);
+
+
   const handleGeo = () => {
     // console.log("click");
     setGeoState(true);
     // console.log(geoState);
   };
 
+
+
+
+
   //  let geolocBtn = "Get my location";
   return (
     <>
       {/* <hr className="top-home-line" /> */}
-      <NavMain style={{ color: "white" }} history={props.history} />
+
+      <NavMain style={{ color: "white" }} history={props.history} logoState={logoState} />
       {/* <hr className="top-home-line" /> */}
       <AboutSection />
       {/* <hr className="top-home-thin-line" /> */}
-
+      <TextsSection />
       <section className="home-map-section">
         <div className="home-map-section-wrapper-flex">
           <div className="home-map-container">

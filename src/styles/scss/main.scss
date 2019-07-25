@@ -14,6 +14,7 @@
 @import "./create";
 @import "./plasticprint";
 @import "./modal";
+@import "./textssection";
 
 * {
   box-sizing: border-box;
@@ -29,21 +30,50 @@
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProCondensedRegular.woff") format("opentype");
 }
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Bold;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProBold.woff") format("opentype");
+}
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Light-Oblique;
+  font-style: normal;
+  font-weight: normal;
+  src: url(".././font/GTWalsheimProLightOblique.woff") format("opentype");
+}
+
+
 @font-face {
   font-family: GT-Walsheim-Pro-Light;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProLight.woff") format("opentype");
 }
+
 @font-face {
   font-family: GT-Walsheim-Pro-Medium;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProMedium.woff") format("opentype");
 }
+
 @font-face {
   font-family: GT-Walsheim-Pro-Bold-Oblique;
   // font-family: GT-Pressura-Pro-Mono-Regular;
   src: url(".././font/GTWalsheimProBoldOblique.woff") format("opentype");
 }
+
+@font-face {
+  font-family: GT-Walsheim-Pro-Ultra-Light;
+  // font-family: GT-Pressura-Pro-Mono-Regular;
+  src: url(".././font/GTWalsheimProUltraLight.woff") format("opentype");
+}
+
+@font-face {
+  font-family: GT Walsheim Pro Medium Oblique;
+  src: url(".././font/GTWalsheimProMediumOblique.woff") format("opentype");
+}
+
 
 .App {
   position: relative;
@@ -114,6 +144,7 @@ button {
   border-radius: 20px;
   background: white;
 }
+
 .intro-section,
 .widget_plus,
 .intro-section,
@@ -126,13 +157,16 @@ button {
   display: flex;
   width: 100vw;
 }
+
 div.stat-group {
   margin: 0;
 }
-body > div.widget_planeto > div > div.stat.widget {
+
+body>div.widget_planeto>div>div.stat.widget {
   display: flex;
   width: 80vw;
 }
+
 div.stat-group div.stat .stat-chiffre {
   width: 100%;
 }

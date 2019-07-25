@@ -1,0 +1,74 @@
+.textsSectionContainer {
+  background-color: rgba(246, 250, 249, 0.877);
+}
+
+@media (max-width: 720px) {
+
+  .textsSectionContainer {
+
+    height: 50vh;
+  }
+
+  .articles-container {
+
+    justify-content: center !important;
+    flex-direction: column;
+
+  }
+}
+
+
+.articles-container {
+
+  width: 100vw;
+  height: 82vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  // flex-wrap: wrap;
+  max-height: 85%;
+  padding: 1.7rem;
+
+}
+
+.articles-container h2 {
+  color: rgb(85, 165, 197);
+
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+
+}
+
+.art1,
+.art2,
+.art3 {
+
+  // background-color: rgba(255, 255, 255, 0.8);
+  width: 310px;
+  height: 320px;
+  display: flex;
+  margin-bottom: 30px;
+  align-items: flex-start;
+  // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+
+}
+
+.art1 p,
+.art2 p,
+.art3 p {
+  text-align: justify;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: GT-Walsheim-Pro-Ultra-Light;
+
+}
+
+
+.aboutLinks {
+  color: rgba(93, 169, 204, 0.87);
+  font-family: GT-Walsheim-Pro-Light-Oblique;
+}
