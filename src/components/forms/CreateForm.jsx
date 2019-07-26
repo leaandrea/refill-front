@@ -10,13 +10,13 @@ const apiHandler = new APIHandler();
 export default class CreateForm extends Component {
   state = {
     gazeuse: false,
-    address: "3 rue Jules César",
+    address: "",
     verified: true,
     potable: 1,
     lat: null,
     lng: null,
     en_service: true,
-    type: "commerce",
+    type: "fontaine",
     name: "",
     noDbError: false,
     dbError: false

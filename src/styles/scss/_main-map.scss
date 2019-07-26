@@ -39,7 +39,7 @@
 
   #root > div > div > section.map-and-filters > div.filters-container {
     width: 85vw;
-    height: 40vh;
+    height: 50vh;
     padding: 10px 0;
   }
 
@@ -66,8 +66,9 @@
 .map-and-filters {
   display: flex;
   justify-content: space-around;
-  border: 2px solid #55a5c5;
+  border: 2.5px solid #55a5c5;
   padding: 2%;
+  background-color: rgba(241, 246, 247, 0.288);
 }
 
 .google-map-container {
@@ -90,15 +91,21 @@
 }
 
 .filters-1 {
-  color: black;
   font-family: GT-Walsheim-Pro-Light;
-  font-size: 1.3rem;
+  color: #0d062f;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
-.filter-4 {
-  font-size: 3rem;
+.filters-4 .button-filter {
+  background-color: #79a6c91a;
+  border: 2px solid #4f98b4;
+}
+
+.filters-5 .button-filter {
+  border: 2px solid #4f98b4;
+  background-color: #d8faf5c9;
 }
 
 .filters-1,
@@ -122,9 +129,11 @@
 
 .button-filter {
   font-family: GT-Walsheim-Pro-Light;
-  border: 1px solid #4f98b4;
-  font-size: 1rem;
-  height: 50%;
+  color: #0d062f;
+  border: 1.5px solid #4f98b4;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  height: 70%;
   width: 100%;
 }
 .button-filter.is-active {

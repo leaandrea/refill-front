@@ -10,14 +10,14 @@ const apiHandler = new APIHandler();
 export default class ContributeForm extends Component {
   state = {
     gazeuse: false,
-    address: "3 rue Jules César",
+    address: "",
     verified: false,
     potable: 1,
     lat: null,
     lng: null,
     en_service: true,
     type: "fontaine",
-    name: "Coucou",
+    name: "",
     noDbError: false,
     dbError: false
   };
@@ -135,7 +135,7 @@ export default class ContributeForm extends Component {
 
           {this.state.noDbError ? (
             <div>
-              <p>Your source has been added to the database!</p>
+              <p>Thank you for your submission!</p>
             </div>
           ) : (
             ""
