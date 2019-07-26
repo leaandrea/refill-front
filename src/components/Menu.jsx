@@ -8,6 +8,7 @@ export default function NavResponsive(props) {
   //   console.log("cli");
   // };
   // console.log(AuthConsumer);
+  console.log(props);
   return (
     <div className={`burger-container ${props.menuStatus ? "is-active" : ""}`}>
       <div className={`overlay ${props.menuStatus ? "is-active" : ""}`} />
@@ -26,8 +27,7 @@ export default function NavResponsive(props) {
             <li>
               <a className="burger-link" href="/">
                 Home
-          </a>
-
+              </a>
             </li>
             <li>
               <Link
@@ -41,28 +41,27 @@ export default function NavResponsive(props) {
                 }}
               >
                 Map
-          </Link>
+              </Link>
             </li>
 
             <li>
               <a className="burger-link" href="your-plastic-print">
                 Footprint Calculator
-          </a>
+              </a>
             </li>
 
             <li>
               <a className="burger-link" href="/quality-info">
                 Water Quality
-          </a>
+              </a>
             </li>
 
             <li>
               <a className="burger-link" href="/contribute">
                 Contribute
-          </a>
+              </a>
             </li>
           </ul>
-
         </div>
 
         <AuthConsumer>
@@ -79,8 +78,8 @@ export default function NavResponsive(props) {
                 <p className="burger-link-logout">Log out</p>
               </h2>
             ) : (
-                ""
-              )
+              ""
+            )
           }
         </AuthConsumer>
       </div>

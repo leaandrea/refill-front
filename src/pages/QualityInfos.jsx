@@ -2,10 +2,10 @@ import React from "react";
 import NavMain from "../components/NavMain";
 import Footer from "../components/Footer";
 
-export default function QualityInfos() {
+export default function QualityInfos(props) {
   return (
     <div className="gros-truc">
-      <NavMain state={{ color: "black" }} />
+      <NavMain state={{ color: "black" }} history={props.history} />
 
       <div className="quality-container">
         <section className="quality-intro">

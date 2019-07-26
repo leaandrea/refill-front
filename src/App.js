@@ -79,7 +79,10 @@ function App() {
         <Route path="/admin" component={Auth} />
         <Route path="/login" component={LoginForm} />
         <Route path="/signup" component={SignupForm} />
-        <Route path="/your-plastic-print" component={PlasticPrint} />
+        <Route
+          path="/your-plastic-print"
+          render={props => <PlasticPrint {...props} />}
+        />
         <Route
           path="/instagram"
           component={() => {
