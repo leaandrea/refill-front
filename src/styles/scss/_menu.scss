@@ -85,14 +85,14 @@
 
 .burger-link:hover {
   font-size: 1.55rem;
-
+  cursor: pointer;
 
 
 }
 
 .burger-link-logout:hover {
   font-size: 1.55rem;
-
+  cursor: pointer;
 
 
 }
@@ -116,5 +116,11 @@
 @media (max-width: 700px) {
   .menu {
     width: 100vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .burger-link-logout {
+    font-size: 1.5rem;
   }
 }
