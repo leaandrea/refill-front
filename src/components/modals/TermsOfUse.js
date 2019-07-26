@@ -34,27 +34,20 @@ const TermsOfUseModal = ({ isShowing, hide }) =>
                   Only Refill admistrators are authorized to create an account
                   on the website.
                   <br />
-                  You are authorised to view, store and download the content of
-                  our websites for private or journalistic purposes. Any
-                  reproduction, distribution and/or publication of the content
-                  for other purposes is subject to our prior written approval.
+                  French legislation on free expression and hate speech applies
+                  to the use of Refill's contribution and contact forms.
+                  <br />
+                  When using Refill's contribution form, please only submit a
+                  business if you are the owner or legal representative of said
+                  business. The submission of a public municipal fountain, on
+                  the other hand, is free for anyone.
+                  <br />
+                  We reserve the right to validate, delete or edit any
+                  contribution in a way that fits Refill's policy.
                   <br />
                   Do not use Refill if you do not agree to the Terms of Use
                   described above. Your use of Refill means you agree to these
-                  Terms of Use. This web application is operated by Refill. The
-                  website is intended to inform you about our service and
-                  activites. This legal notice regulates the use of our website.
-                  In specific cases, compliance with further regulations might
-                  be mandatory, for instance, when accessing routes which are
-                  only available to registered users. In such cases, you will
-                  find additional notes at the appropriate points. <br />
-                  You are authorised to view, store and download the content of
-                  our websites for private or journalistic purposes. Any
-                  reproduction, distribution and/or publication of the content
-                  for other purposes is subject to our prior written approval.
-                  <br />
-                  The Refill website may contain links to websites operated by
-                  third parties.
+                  Terms of Use.
                 </p>
               </div>
             </div>
