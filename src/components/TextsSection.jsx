@@ -10,8 +10,8 @@ export default function AboutSection() {
           <h2>How?</h2>
           <p>
             Stop buying plastic bottles! Take your reusable water bottle and use
-            our fabulous map to find free water spots near you. There are
-            even sparkling water fountains and businesses willing to offer you water for free!
+            our fabulous map to find free water spots near you. There are even
+            sparkling water fountains and stores willing to offer you water!
           </p>
           <div className="gouttesContainer1">
             <img className="gouttes" src="./images/GOUTTE3.png" alt="goutte" />
