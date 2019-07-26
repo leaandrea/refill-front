@@ -49,6 +49,9 @@
   text-underline-position: below;
   font-size: 1.4rem;
 }
+#root > div > div > div > div > div > form > hr {
+  display: none;
+}
 
 @media all and (max-width: 720px) {
   .auth-text-content {
