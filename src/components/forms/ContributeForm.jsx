@@ -137,22 +137,22 @@ export default class ContributeForm extends Component {
             />
 
             <button>Send</button>
-          </form>
 
-          {this.state.noDbError ? (
-            <div>
-              <p>Thank you for your submission!</p>
-            </div>
-          ) : (
-            ""
-          )}
-          {this.state.dbError ? (
-            <div>
-              <p>There was a problem adding your source. Please try again.</p>
-            </div>
-          ) : (
-            ""
-          )}
+            {this.state.noDbError ? (
+              <div>
+                <p>Thank you for your submission!</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {this.state.dbError ? (
+              <div>
+                <p>There was a problem adding your source. Please try again.</p>
+              </div>
+            ) : (
+              ""
+            )}
+          </form>
         </div>
         <Footer />
       </>
