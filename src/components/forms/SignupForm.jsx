@@ -7,8 +7,8 @@ const apiHandler = new APIHandler();
 export default class Signup extends Component {
   state = {
     isPasswordOk: false,
-    username: "toto",
-    password: "1234",
+    username: "",
+    password: "",
     signupError: false
     // passwordConfirm: "1234"
   };
@@ -59,12 +59,12 @@ export default class Signup extends Component {
             <div className="auth-content">
               <div className="signup-content">
                 <form
-                  className="form"
+                  className="signup-form"
                   onSubmit={handleSubmit}
                   onChange={handleChange}
                 >
-                  <h1 className="title">Signup</h1>
-                  <label htmlFor="username">username</label>
+                  <h1 className="signup-title">Signup</h1>
+                  <label htmlFor="username">Username</label>
                   <input
                     name="username"
                     id="username"
@@ -72,7 +72,7 @@ export default class Signup extends Component {
                     defaultValue={username}
                   />
 
-                  <label htmlFor="password">password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     name="password"
                     id="password"
@@ -88,18 +88,17 @@ export default class Signup extends Component {
         /> */}
                   <hr />
                   <button className="btn">ok</button>
+                  {this.state.signupError ? (
+                    <div>
+                      <p>
+                        Sorry, we couldn't create your new account. Try using a
+                        longer password.
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </form>
-
-                {this.state.signupError ? (
-                  <div>
-                    <p>
-                      Sorry, we couldn't create your new account. Try using a
-                      longer password.
-                    </p>
-                  </div>
-                ) : (
-                  ""
-                )}
               </div>
             </div>
           </div>

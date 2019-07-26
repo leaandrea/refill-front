@@ -115,7 +115,7 @@ export default class EditForm extends Component {
               defaultValue={fountain ? fountain.address : ""}
             />
 
-            <label>En service ?</label>
+            <label>In use ?</label>
             <select
               defaultValue={fountain ? fountain.en_service : ""}
               name="en_service"
@@ -134,25 +134,24 @@ export default class EditForm extends Component {
               <option value="true">True</option>
             </select>
             <button>edit</button>
+            {this.state.noDbError ? (
+              <div>
+                <p>Successfully modified !</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {this.state.dbError ? (
+              <div>
+                <p>
+                  There was a problem editing your source. Please try again.
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
           </form>
-          {this.state.noDbError ? (
-            <div>
-              <p>Successfully modified !</p>
-            </div>
-          ) : (
-            ""
-          )}
-          {this.state.dbError ? (
-            <div>
-              <p>There was a problem editing your source. Please try again.</p>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
-
-        <a href="/check-contributions">Go to check board</a>
-        <a href="/fountains">Go to admin board</a>
       </>
     );
   }
