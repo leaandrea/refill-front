@@ -114,7 +114,7 @@
   font-family: GT-Walsheim-Pro-Light;
 }
 
-li:first-child::before {
+.blue::before {
   content: "•";
   color: blue;
   font-size: 4rem;
@@ -126,7 +126,7 @@ li:first-child::before {
 .blue p {
   margin-top: 10px;
 }
-li:nth-child(2)::before {
+.green::before {
   content: "•";
   color: aquamarine;
   font-size: 4rem;
@@ -144,7 +144,7 @@ ul.legend {
   justify-content: flex-start;
   align-items: center;
 }
-li:nth-child(3)::before {
+.corail::before {
   content: "•";
   color: coral;
   font-size: 4rem;

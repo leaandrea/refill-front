@@ -64,10 +64,12 @@ function App() {
         <Route path="/home" component={PageHome} />
         <Route path="/main-map" component={PageMainMap} />
         <Route path="/quality-info" component={PageQualityInfos} />
-        <Route path="/edit-fountain/:id" component={EditForm} />
-        <Route path="/create-fountain" component={CreateForm} />
-        <Route path="/check-contributions" component={CheckContributions} />
-        <Route path="/fountains" component={AllFountains} />
+        <ProtectedRoute path="/edit-fountain/:id" component={EditForm} />
+        <ProtectedRoute path="/create-fountain" component={CreateForm} />
+        <ProtectedRoute
+          path="/check-contributions"
+          component={CheckContributions}
+        />
         <Route path="/contribute" component={ContributeForm} />
         <Route path="/contact" component={ContactForm} />
         <Route path="/admin" component={Auth} />

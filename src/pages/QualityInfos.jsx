@@ -70,8 +70,8 @@ export default function QualityInfos() {
             dynamization process, the water quality is similar to moutain water.
           </p>
         </section>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
