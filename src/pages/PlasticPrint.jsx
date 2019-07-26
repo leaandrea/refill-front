@@ -61,7 +61,7 @@ export default class PlasticPrint extends Component {
 
                 <div className="response">
                   <h4>
-                    Your footprint corresponds to: </h4>
+                    Your footprint amounts to: </h4>
                 </div>
                 <div className="imagesContainer">
                   <div className="prompt1"> <div className="promptsContainers1">  <img className="responseImg1" src="./images/poubelle1.png" alt="drop" /><h4>{this.state.unrecycledValue * this.state.inputValue} grams of unrecycled plastic  </h4> </div>
@@ -71,7 +71,7 @@ export default class PlasticPrint extends Component {
                   <div className="prompt3">     <div className="promptsContainers5"> <img className="responseImg5" src="./images/earth.png" alt="drop5" /><h4>{this.state.timeValue} years of plastic on earth</h4></div>
                     <div className="promptsContainers6"> <img className="responseImg6" src="./images/gaz.png" alt="drop6" /><h4>{this.state.gazValue * this.state.inputValue} liters of gaz spent</h4></div>  </div>
                 </div>
-                <h4 className="responseText"> It's good! Your use of water bottles is lower than that of the average French person. But we know you can do even better! Do you know all <Link className="linksPlasticFeature" to="/main-map"> Paris's fabulous spots to refill your water bottle?</Link> They're great, and free. Try them! </h4>
+                <h4 className="responseText"> It's good! Your use of water bottles is lower than that of the average French person. But we know you can do even better! Do you know Paris has <Link className="linksPlasticFeature" to="/main-map"> fabulous spots to refill your water bottle?</Link> They're great, and free. Try them! </h4>
               </div>
             ) : (
                 <></>
@@ -79,7 +79,7 @@ export default class PlasticPrint extends Component {
             {this.state.inputValue === "3" ? (
               <div>
                 <div className="response">
-                  <h4> Your footprint corresponds to: </h4>
+                  <h4> Your footprint amounts to: </h4>
                 </div>
                 <div className="imagesContainer">
                   <div className="promptsContainers1">  <img className="responseImg1" src="./images/poubelle1.png" alt="drop" /><h4>{this.state.unrecycledValue * this.state.inputValue} grams of unrecycled plastic  </h4> </div>
@@ -88,7 +88,7 @@ export default class PlasticPrint extends Component {
                   <div className="promptsContainers4"> <img className="responseImg4" src="./images/charbon.png" alt="drop4" /> <h4>{this.state.charbonValue * this.state.inputValue} grams of coal produced</h4></div>
                   <div className="promptsContainers5"> <img className="responseImg5" src="./images/earth.png" alt="drop5" /><h4>{this.state.timeValue} years of plastic on earth</h4></div>
                   <div className="promptsContainers6"> <img className="responseImg6" src="./images/gaz.png" alt="drop6" /><h4>{this.state.gazValue * this.state.inputValue} liters of gaz spent</h4></div></div>
-                <h4 className="responseText"> You're using the same amount of water bottles than the average French person. And it's not really great. But we know you can do better! Do you know all <Link className="linksPlasticFeature" to="/main-map">Paris's fabulous spots to refill your water bottle?</Link> Try them!</h4>
+                <h4 className="responseText"> You're using the same amount of water bottles than the average French person. And it's not really great. But we know you can do better! Do you know Paris has <Link className="linksPlasticFeature" to="/main-map"> fabulous spots to refill your water bottle?</Link> Try them!</h4>
               </div>
             ) : (
                 <></>
@@ -97,7 +97,7 @@ export default class PlasticPrint extends Component {
               <div>
 
                 <div className="response">
-                  <h4>Your footprint corresponds to: </h4>
+                  <h4>Your footprint amounts to: </h4>
                 </div>
                 <div className="imagesContainer">
                   <div className="promptsContainers1">  <img className="responseImg1" src="./images/poubelle1.png" alt="drop" /><h4>{this.state.unrecycledValue * this.state.inputValue} grams of unrecycled plastic </h4> </div>
@@ -116,8 +116,8 @@ export default class PlasticPrint extends Component {
             {this.state.inputValue === "0" ? (
               <div>
                 <div className="response">
-                  <h2> Congratulations! You have no ecological plastic bottles footprint! It's really great! Do you know all
-                    <Link className="linksPlasticFeature" to="/main-map"> Paris's fabulous water sources ?</Link>
+                  <h2> Congratulations! You have no ecological plastic bottles footprint! It's really great! Do you know all of
+                    <Link className="linksPlasticFeature" to="/main-map"> Paris's fabulous water sources?</Link>
                     <img className="smilingDrop" src="./images/smilingdrop.png" alt="smilingdrop" />  </h2>
                 </div>
               </div>

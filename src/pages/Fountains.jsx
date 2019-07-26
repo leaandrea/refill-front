@@ -159,10 +159,10 @@ export default class Foutains extends Component {
                       <thead className="table-head">
                         <tr>
                           <th className="thead-address">Address</th>
-                          <th> Fountain's type</th>
+                          <th>Type of source</th>
                           <th>Verified</th>
-                          <th>Gazeuse?</th>
-                          <th>En service ?</th>
+                          <th>Sparkling?</th>
+                          <th>In use?</th>
                           <th colSpan="2">CRUD</th>
                         </tr>
                       </thead>
