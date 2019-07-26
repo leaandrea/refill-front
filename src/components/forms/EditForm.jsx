@@ -99,10 +99,10 @@ export default class EditForm extends Component {
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
           >
-            <label>Is-it sparkling water ?</label>
+            <label>Still or sparkling water?</label>
             {fountain && (
               <select defaultValue={fountain.gazeuse} name="gazeuse">
-                <option value="false">Plate</option>
+                <option value="false">Still</option>
                 <option value="true">Sparkling</option>
               </select>
             )}
@@ -115,7 +115,7 @@ export default class EditForm extends Component {
               defaultValue={fountain ? fountain.address : ""}
             />
 
-            <label>In use ?</label>
+            <label>In use?</label>
             <select
               defaultValue={fountain ? fountain.en_service : ""}
               name="en_service"
@@ -123,10 +123,10 @@ export default class EditForm extends Component {
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
-            <label>Type of source ?</label>
+            <label>Type of source?</label>
             <select defaultValue={fountain ? fountain.type : ""} name="type">
-              <option value="commerce">Commerce</option>
-              <option value="fontaine">Fontaine</option>
+              <option value="commerce">Business</option>
+              <option value="fontaine">Fountain</option>
             </select>
             <label>Verified</label>
             <select name="verified">
@@ -136,7 +136,7 @@ export default class EditForm extends Component {
             <button>Update</button>
             {this.state.noDbError ? (
               <div>
-                <p>Successfully modified !</p>
+                <p>Successfully modified!</p>
               </div>
             ) : (
               ""

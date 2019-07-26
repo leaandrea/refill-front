@@ -63,8 +63,8 @@ export default class Signup extends Component {
                   onSubmit={handleSubmit}
                   onChange={handleChange}
                 >
-                  <h1 className="signup-title">Signup</h1>
-                  <label htmlFor="username">Username</label>
+                  <h1 className="signup-title">Sign up</h1>
+                  <label htmlFor="username">username</label>
                   <input
                     name="username"
                     id="username"
@@ -72,7 +72,7 @@ export default class Signup extends Component {
                     defaultValue={username}
                   />
 
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">password</label>
                   <input
                     name="password"
                     id="password"

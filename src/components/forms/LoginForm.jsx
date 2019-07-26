@@ -42,7 +42,7 @@ export default class Login extends Component {
                         onSubmit={evt => handleSubmit(evt, signin)}
                         onChange={handleChange}
                       >
-                        <h1 className="login-title">login</h1>
+                        <h1 className="login-title">Log in</h1>
                         <label htmlFor="username">username</label>
                         <input
                           id="username"
