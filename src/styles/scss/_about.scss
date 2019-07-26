@@ -40,6 +40,46 @@
   align-items: center;
 }
 
+@media all and (max-width: 900px) {
+  .about-subtitle {
+    font-size: 1.2rem;
+    margin-top: 70px;
+  }
+}
+
+
+@media all and (max-width: 720px) {
+  .about {
+    height: 720px;
+    min-height: 100vh;
+
+  }
+
+  .mainLogo {
+    width: 50%;
+    height: 50%;
+  }
+
+  .about-title {
+    padding: 2rem;
+    font-size: 1.3rem;
+    height: 13%;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
+
+  .about-subtitle {
+    font-size: 1.2rem;
+    margin-top: 40px;
+  }
+
+  .inner-border {
+    width: 95vw;
+    height: 95%;
+  }
+}
+
 .inner-border {
   width: 95vw;
   height: 90%;

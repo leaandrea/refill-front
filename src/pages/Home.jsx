@@ -81,9 +81,11 @@ const Home = props => {
                 />
               </div>
             </button>
-            {geoState ? <GeoLoc /> : null}
+
             Click here to <br /> get your location.
-            </h2>
+
+          </h2>
+          {geoState ? <GeoLoc /> : null}
 
         </div>
       </div>

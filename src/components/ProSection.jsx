@@ -14,7 +14,7 @@ export default function ProSection() {
 
 
           <div className="pro-left-side">
-            <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer1" />
+            <img src="./images/ecologo2.png" alt="ecologo" className="icon-mouse-pointer1" />
             <p>
               <br />
               Are you a business owner interested in health and environmental
@@ -26,7 +26,7 @@ export default function ProSection() {
           </div>
 
           <div className="pro-right-side">
-            <img src="./images/ecologo5.png" alt="ecologo" className="icon-mouse-pointer" />
+            <img src="./images/ecologo1.png" alt="ecologo" className="icon-mouse-pointer" />
             <p className="textProSection">
               <br />
               By joining Refill, you are making a commitment to give away
