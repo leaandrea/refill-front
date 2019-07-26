@@ -17,6 +17,11 @@ export default function QualityInfos() {
             this page, you'll find all the information you need on the water you
             can consume using Refill.
           </p>
+          <img
+            src="./images/paris.svg"
+            alt="paris-icon"
+            className="paris-icon"
+          />
         </section>
         <section>
           <h2>Public fountains in Paris</h2>

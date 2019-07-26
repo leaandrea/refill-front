@@ -41,7 +41,9 @@ import {
   faBars,
   faMousePointer,
   faPlus,
-  faChevronUp
+  faChevronUp,
+  faBullseye,
+  faMapMarker
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -51,7 +53,9 @@ library.add(
   faTimes,
   faMousePointer,
   faPlus,
-  faChevronUp
+  faChevronUp,
+  faBullseye,
+  faMapMarker
 );
 
 function App() {

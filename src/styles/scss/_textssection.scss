@@ -9,9 +9,7 @@
 //     height: 100vh;
 //   }
 
-
 // }
-
 
 .articles-container {
   // border: 1px solid red;
@@ -22,7 +20,6 @@
   align-items: center;
   // max-height: 85%;
   padding: 1.7rem;
-
 }
 
 .articles-container h2 {
@@ -30,8 +27,6 @@
   text-align: center;
   margin-bottom: 15px;
   font-size: 1.8rem;
-
-
 }
 
 .art1,
@@ -51,10 +46,7 @@
 
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
-
-
 }
-
 
 .gouttesContainer1,
 .gouttesContainer2,
@@ -76,10 +68,9 @@
   color: black;
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: GT-Walsheim-Pro-Ultra-Light;
-
+  font-family: GT-Walsheim-Pro-Light;
+  font-weight: 100;
 }
-
 
 .aboutLinks {
   color: rgba(93, 169, 204, 0.87);

@@ -1,17 +1,22 @@
-@media (max-width: 720px) {
+// @media (max-width: 720px) {
+//   .quality-container {
+//     min-width: 90vw;
+//   }
+// }
+
+@media (max-width: 1024px) {
   .quality-container {
     min-width: 90vw;
   }
 }
 
-@media (max-width: 1024px) {
-  .quality-container {
-    min-width: 85vw;
-  }
-}
-
 .gros-truc {
   width: 100vw;
+}
+
+.paris-icon {
+  margin-top: 30px;
+  height: 10vh;
 }
 
 .quality-container {
@@ -28,7 +33,7 @@
 .quality-container section {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin: 20px;
   align-self: center;
 }
 

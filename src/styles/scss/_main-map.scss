@@ -1,3 +1,4 @@
+// RESPONSIVE SETTINGS
 @media (max-width: 720px) {
   .map-and-filters {
     flex-direction: column;
@@ -15,6 +16,15 @@
   .filters-ctn {
     margin: 5px 0;
   }
+
+  #root
+    > div
+    > div.main-map-all
+    > section.map-and-filters
+    > div.filters-container
+    > h2 {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -22,49 +32,58 @@
     flex-direction: column;
   }
   #root > div > div > section.map-and-filters > div.google-map-container {
-    width: 95vw;
+    width: 85vw;
+    height: 65vh;
     margin: 0 auto 20px auto;
   }
 
   #root > div > div > section.map-and-filters > div.filters-container {
-    width: 95vw;
+    width: 85vw;
+    height: 40vh;
     padding: 10px 0;
   }
 
   .filters-ctn {
     margin: 5px 0;
   }
+
+  .button-filter {
+    min-height: 6vh;
+  }
 }
 
+// FULL SIZE PAGE SETTINGS:
 .main-map-all {
   margin: 3%;
+  margin-top: 0;
 }
 
 .google-map-title {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   font-family: GT-Walsheim-Pro-Light;
 }
 
 .map-and-filters {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  border: 2px solid #55a5c5;
+  padding: 2%;
 }
 
 .google-map-container {
   position: relative;
-  height: 65vh;
+  height: 75vh;
   width: 60vw;
   // border: 2px solid coral;
 }
 
 .filters-ctn {
   font-family: GT-Walsheim-Pro-Light;
-  height: 15%;
+  height: 17%;
 }
 
 .filters-container {
-  width: 30vw;
-  border: 2px solid #55a5c5;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -72,6 +91,14 @@
 
 .filters-1 {
   color: black;
+  font-family: GT-Walsheim-Pro-Light;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.filter-4 {
+  font-size: 3rem;
 }
 
 .filters-1,
@@ -95,18 +122,25 @@
 
 .button-filter {
   font-family: GT-Walsheim-Pro-Light;
-  border: 1px solid black;
-  font-size: 1.2rem;
-  height: 100%;
+  border: 1px solid #4f98b4;
+  font-size: 1rem;
+  height: 50%;
   width: 100%;
 }
 .button-filter.is-active {
-  background-color: rgb(95, 134, 153);
+  background-color: #79a6c9;
+  color: white;
 }
 
 .button-filter:active {
   transform: scale(0.99);
-  background-color: #d8fcf7;
+  background-color: #a1c1da;
+  color: white;
+}
+
+.tiny-dot-icon {
+  font-size: 1rem;
+  margin-left: 6px;
 }
 
 // LEGENDE DE LA CARTE
