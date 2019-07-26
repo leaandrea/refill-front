@@ -66,7 +66,7 @@ export class GoogleMap extends Component {
                 position={{ lat: marker.lat, lng: marker.lng }}
                 icon={{
                   url: "/images/gazeuse_icon.png",
-                  scaledSize: new this.props.google.maps.Size(11, 11)
+                  scaledSize: new this.props.google.maps.Size(14, 14)
                 }}
                 gazeuse={marker.gazeuse}
               />
