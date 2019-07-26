@@ -28,32 +28,39 @@ export default class Login extends Component {
     const { handleChange, handleSubmit } = this;
     const { username, password } = this.state;
     return (
-      <AuthConsumer>
-        {({ signin }) => (
-          <form
-            className="form"
-            onSubmit={evt => handleSubmit(evt, signin)}
-            onChange={handleChange}
-          >
-            <h1 className="title">login</h1>
-            <label htmlFor="username">username</label>
-            <input
-              id="username"
-              name="username"
-              type="username"
-              defaultValue={username}
-            />
-            <label htmlFor="password">password</label>
-            <input
-              name="password"
-              id="password"
-              type="password"
-              defaultValue={password}
-            />
-            <button className="btn">ok</button>
-          </form>
-        )}
-      </AuthConsumer>
+      <>
+        <AuthConsumer>
+          {({ signin }) => (
+            <>
+              <hr className="top-home-line" />
+              <div className="signin-big-wrapper">
+                <form
+                  className="form"
+                  onSubmit={evt => handleSubmit(evt, signin)}
+                  onChange={handleChange}
+                >
+                  <h1 className="title">login</h1>
+                  <label htmlFor="username">username</label>
+                  <input
+                    id="username"
+                    name="username"
+                    type="username"
+                    defaultValue={username}
+                  />
+                  <label htmlFor="password">password</label>
+                  <input
+                    name="password"
+                    id="password"
+                    type="password"
+                    defaultValue={password}
+                  />
+                  <button className="btn">ok</button>
+                </form>
+              </div>
+            </>
+          )}
+        </AuthConsumer>
+      </>
     );
   }
 }

@@ -48,7 +48,7 @@ export default function Footer() {
 
           <FontAwesomeIcon
             icon={faChevronUp}
-            className="contact-icon"
+            className="chevron-icon"
             onClick={handleScroll}
           />
         </section>

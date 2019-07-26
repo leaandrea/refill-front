@@ -15,6 +15,7 @@
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
+  padding-top: 30px;
 }
 .legal-blabla {
   width: 50%;
@@ -22,6 +23,7 @@
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
+  padding-top: 30px;
 }
 .legal-blabla button {
   border: none;
@@ -38,4 +40,26 @@
 }
 .contact-icon {
   cursor: pointer;
+  margin-left: 10px;
+}
+.chevron-icon {
+  cursor: pointer;
+}
+.chevron-icon:active {
+  transform: translateY(2px);
+}
+
+// ---------------------------------------
+// MEDIA QUERIES
+//----------------------------------------
+@media all and (max-width: 720px) {
+  .footer {
+    max-height: 100vw;
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+  .social-icons,
+  .legal-blabla {
+    width: 100%;
+  }
 }
