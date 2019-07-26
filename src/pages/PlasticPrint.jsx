@@ -21,13 +21,18 @@ export default class PlasticPrint extends Component {
       <>
         <NavMain />
         <div className="pageContainer">
+
+
           <div className="firstContainer">
+
+
             <div className="featureContainer">
               <h3 className="mainText">
                 French people are among the largest consumers of plastic bottles in the world.
            In Paris, less than one in three plastic bottle is collected and recycled! The rest is either polluting the ground or the oceans.
               </h3>
             </div>
+
             <div className="plasticPrintInput">
               <label className="questionLabel" htmlFor="inputBottles">How many plastic bottles do you buy each week ? We'll tell you about your plastic bottle footprint.</label>
               <input
@@ -38,11 +43,22 @@ export default class PlasticPrint extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <hr className="hrBorder" />
+
+
+            {/* <hr className="hrBorder" /> */}
+
           </div>
+
+
+
           <div className="secondContainer">
+
+
             {this.state.inputValue < 3 && this.state.inputValue >= 1 ? (
               <div>
+
+
+
                 <div className="response">
                   <h4>
                     Your footprint corresponds to </h4>
@@ -79,6 +95,7 @@ export default class PlasticPrint extends Component {
               )}
             {this.state.inputValue > 3 ? (
               <div>
+
                 <div className="response">
                   <h4>Your footprint corresponds to </h4>
                 </div>

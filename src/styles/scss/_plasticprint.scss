@@ -1,12 +1,13 @@
 //containers
 
 .pageContainer {
-  height: 90vh;
+
   justify-content: center;
-  // border: 2px solid #008000;
+  min-height: 50vh;
   width: 80vw;
   margin: 0 auto;
   margin-top: 4%;
+  margin-bottom: 80px;
 
 }
 
@@ -21,7 +22,7 @@
 .firstContainer {
   margin-top: 5%;
   margin-bottom: 4%;
-
+  border: 2px solid #008000;
   flex-direction: column;
   align-content: center;
   justify-content: center;
