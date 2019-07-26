@@ -32,7 +32,7 @@ export default function AboutSection() {
           {/* <div className="why-text-container"> */}
           <h2>Why?</h2>
           <p>
-            Plastic bottles are the main waste in oceans and kill wildlife. And 80% of it is thrown on land. Plus, tap water is 400 times cheaper ! Let's save that money and help the planet.
+            Plastic bottles are the main waste in oceans and kill wildlife. And 80% of it is thrown on land. Plus, tap water is 400 times cheaper! Let's save that money and help the planet.
                 <br />
             <div className="gouttesContainer2">
               <img className="gouttes" src="./images/GOUTTE4.png" alt="goutte" /> </div>
