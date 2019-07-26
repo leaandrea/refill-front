@@ -19,7 +19,7 @@ export default class PlasticPrint extends Component {
   render() {
     return (
       <>
-        <NavMain />
+        <NavMain history={this.props.history} />
         <div className="pageContainer">
 
 

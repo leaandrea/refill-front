@@ -76,7 +76,7 @@ export default class ContributeForm extends Component {
   render() {
     return (
       <>
-        <NavMain color={"#2E4379"} />
+        <NavMain color={"#2E4379"} history={this.props.history} />
         <div className="contribute-section">
           <div className="contribute-text">
             <h3>Help other Refill users find free water close to them!</h3>

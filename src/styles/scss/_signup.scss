@@ -1,0 +1,14 @@
+.signup-content {
+  align-items: center;
+  height: 80%;
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  margin-top: -53px;
+  margin-left: 53px;
+}
+@media all and (max-width: 720px) {
+  .signup-content {
+    margin-left: 23px;
+  }
+}

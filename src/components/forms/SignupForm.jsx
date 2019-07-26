@@ -53,43 +53,57 @@ export default class Signup extends Component {
     const { username, password } = this.state;
     return (
       <>
-        <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-          <h1 className="title">Signup</h1>
-          <label htmlFor="username">username</label>
-          <input
-            name="username"
-            id="username"
-            type="text"
-            defaultValue={username}
-          />
+        <hr className="top-home-line" />
+        <div className="auth-big-wrapper">
+          <div className="auth-wrapper">
+            <div className="auth-content">
+              <div className="signup-content">
+                <form
+                  className="form"
+                  onSubmit={handleSubmit}
+                  onChange={handleChange}
+                >
+                  <h1 className="title">Signup</h1>
+                  <label htmlFor="username">username</label>
+                  <input
+                    name="username"
+                    id="username"
+                    type="text"
+                    defaultValue={username}
+                  />
 
-          <label htmlFor="password">password</label>
-          <input
-            name="password"
-            id="password"
-            type="password"
-            defaultValue={password}
-          />
-          {/* <label htmlFor="passwordConfirm">confirm password</label>
+                  <label htmlFor="password">password</label>
+                  <input
+                    name="password"
+                    id="password"
+                    type="password"
+                    defaultValue={password}
+                  />
+                  {/* <label htmlFor="passwordConfirm">confirm password</label>
         <input
           name="passwordConfirm"
           id="passwordConfirm"
           type="password"
           defaultValue={passwordConfirm}
         /> */}
-          <hr />
-          <button className="btn">ok</button>
-        </form>
-        {this.state.signupError ? (
-          <div>
-            <p>
-              Sorry, we couldn't create your new account. Try using a longer
-              password.
-            </p>
+                  <hr />
+                  <button className="btn">ok</button>
+                </form>
+
+                {this.state.signupError ? (
+                  <div>
+                    <p>
+                      Sorry, we couldn't create your new account. Try using a
+                      longer password.
+                    </p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
           </div>
-        ) : (
-          ""
-        )}
+        </div>
       </>
     );
   }

@@ -4,11 +4,14 @@
   width: 100vw;
   margin-bottom: 80px;
 }
-.table {
-  table-layout: auto;
-  width: 80vh;
+.table-content {
   width: 82vw;
   margin: 0 auto;
+}
+.table {
+  width: 82vw;
+  margin: 0 auto;
+  table-layout: auto;
 }
 .table th {
   padding: 2rem;
@@ -47,9 +50,15 @@ td {
 .create-fountain-text {
   display: flex;
   justify-content: flex-end;
-  width: 89%;
+  width: 50%;
   align-items: flex-end;
   margin-bottom: 10px;
+  padding-right: 10px;
+}
+.check-text {
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .create-button {
   margin-left: 5px;
@@ -66,6 +75,28 @@ td {
 
 .username {
   color: #55a5c5;
+}
+.admin-headline {
+  display: flex;
+  justify-content: space-between;
+}
+.go-admin-board-link {
+  padding: 0.5rem;
+  font-size: 1.15rem;
+}
+.go-checkboard-link {
+  padding-left: 0.5rem;
+  font-size: 1.15rem;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.go-admin-board-link:hover,
+.go-checkboard-link:hover {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-underline-position: below;
 }
 
 @media all and (max-width: 720px) {

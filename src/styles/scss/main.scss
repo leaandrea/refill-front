@@ -16,12 +16,13 @@
 @import "./modal";
 @import "./textssection";
 @import "./quality-infos";
+@import "./auth";
+@import "./signup";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: GT-Walsheim-Pro-Medium;
 
   // font-family: GT-Pressura-Pro-Mono-Regular;
 }
@@ -90,7 +91,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   min-width: 320px;
-  font-family: "Montserrat", sans-serif;
+  font-family: GT-Walsheim-Pro-Medium, "Montserrat", sans-serif, arial;
   background-color: rgb(250, 253, 253);
   color: #0d062f;
   overflow-x: hidden;

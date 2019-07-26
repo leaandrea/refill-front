@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditForm from "../components/forms/EditForm";
 import APIHandler from "../ApiHandler/apiHandler";
+import Footer from "../components/Footer";
 
 const apiHandler = new APIHandler();
 export default class Foutains extends Component {
@@ -64,41 +65,46 @@ export default class Foutains extends Component {
       <>
         <hr className="top-home-line" />
         <NavMain color={"#2E4379"} history={this.props.history} />
-        <h1>Check Contributions</h1>
-        <div className="table-container">
-          <table className="table">
-            <thead className="table-head">
-              <tr>
-                <th>Address</th>
-                <th>Fountain's type</th>
-                <th>Verified</th>
-                <th>Gazeuse?</th>
-                <th>En service ?</th>
-                <th colSpan={3}>CRUD</th>
-              </tr>
-            </thead>
+        <h2 className="check-text">Check Contributions</h2>
 
-            {this.state.fountains.map((oneFountain, i) => {
-              return (
-                <tbody key={i}>
-                  {oneFountain && (
-                    <tr>
-                      <td>{oneFountain.address}</td>
-                      <td>{oneFountain.type}</td>
-                      <td>
-                        {oneFountain.verified !== undefined &&
-                          oneFountain.verified.toString()}
-                      </td>
-                      <td>
-                        {oneFountain.gazeuse !== undefined &&
-                          oneFountain.gazeuse.toString()}
-                      </td>
-                      <td>
-                        {oneFountain.en_service !== undefined &&
-                          oneFountain.en_service.toString()}
-                      </td>
-                      <td>
-                        {/* <Link
+        <div className="table-container">
+          <div className="table-content">
+            <a className="go-admin-board-link" href="/fountains">
+              Go to admin board
+            </a>
+            <table className="table">
+              <thead className="table-head">
+                <tr>
+                  <th className="thead-address">Address</th>
+                  <th>Fountain's type</th>
+                  <th>Verified</th>
+                  <th>Gazeuse?</th>
+                  <th>En service ?</th>
+                  <th colSpan={2}>CRUD</th>
+                </tr>
+              </thead>
+
+              {this.state.fountains.map((oneFountain, i) => {
+                return (
+                  <tbody key={i}>
+                    {oneFountain && (
+                      <tr>
+                        <td>{oneFountain.address}</td>
+                        <td>{oneFountain.type}</td>
+                        <td>
+                          {oneFountain.verified !== undefined &&
+                            oneFountain.verified.toString()}
+                        </td>
+                        <td>
+                          {oneFountain.gazeuse !== undefined &&
+                            oneFountain.gazeuse.toString()}
+                        </td>
+                        <td>
+                          {oneFountain.en_service !== undefined &&
+                            oneFountain.en_service.toString()}
+                        </td>
+                        <td>
+                          {/* <Link
                         to={{
                           pathname: `/edit-fountain/${oneFountain._id}`,
                           state: {
@@ -110,38 +116,38 @@ export default class Foutains extends Component {
                           }
                         }}
                       > */}
-                        <button
-                          onClick={() => this.displayEditForm(i)}
-                          className="btn-crud"
-                        >
-                          <FontAwesomeIcon icon="edit" />
-                        </button>
-                        {/* </Link> */}
-                      </td>
+                          <button
+                            onClick={() => this.displayEditForm(i)}
+                            className="btn-crud"
+                          >
+                            <FontAwesomeIcon icon="edit" />
+                          </button>
+                          {/* </Link> */}
+                        </td>
 
-                      <td>
-                        <button
-                          className="btn-crud"
-                          onClick={() => this.deleteFountain(oneFountain._id)}
-                        >
-                          <FontAwesomeIcon icon="trash" />
-                        </button>
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              );
-            })}
-          </table>
+                        <td>
+                          <button
+                            className="btn-crud"
+                            onClick={() => this.deleteFountain(oneFountain._id)}
+                          >
+                            <FontAwesomeIcon icon="trash" />
+                          </button>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                );
+              })}
+            </table>
+          </div>
           <EditForm
             isDisplayEditForm={this.state.isDisplayEditForm}
             fountain={this.state.fountains[this.state.selectedFountain]}
             hideEditForm={this.hideEditForm}
             getUpdateFountain={this.getFountains}
           />
-
-          <a href="/fountains">Go to admin board</a>
         </div>
+        <Footer />
       </>
     );
   }
