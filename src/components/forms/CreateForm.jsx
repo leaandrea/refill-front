@@ -25,7 +25,6 @@ export default class CreateForm extends Component {
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
-    console.log(this.state);
   };
 
   getLatLng(clbk) {
@@ -35,7 +34,6 @@ export default class CreateForm extends Component {
           lat: response.results[0].geometry.location.lat,
           lng: response.results[0].geometry.location.lng
         });
-        console.log(this.state);
         clbk();
       },
       error => {
@@ -55,10 +53,6 @@ export default class CreateForm extends Component {
     formData.append("en_service", this.state.en_service);
     formData.append("type", this.state.type);
     formData.append("name", this.state.name);
-
-    for (var element of formData) {
-      console.log(element);
-    }
 
     apiHandler
       .post(`/api/fontaines`, formData)

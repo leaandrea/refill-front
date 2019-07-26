@@ -8,7 +8,6 @@ export default function NavResponsive(props) {
   //   console.log("cli");
   // };
   // console.log(AuthConsumer);
-  console.log(props);
   return (
     <div className={`burger-container ${props.menuStatus ? "is-active" : ""}`}>
       <div className={`overlay ${props.menuStatus ? "is-active" : ""}`} />
