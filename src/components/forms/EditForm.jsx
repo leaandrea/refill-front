@@ -133,7 +133,7 @@ export default class EditForm extends Component {
               <option value="false">False</option>
               <option value="true">True</option>
             </select>
-            <button>edit</button>
+            <button>Update</button>
             {this.state.noDbError ? (
               <div>
                 <p>Successfully modified !</p>

@@ -162,22 +162,21 @@ export default class CreateForm extends Component {
             )}
 
             <button>Create</button>
+            {this.state.noDbError ? (
+              <div>
+                <p>Your source has been added to the database!</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {this.state.dbError ? (
+              <div>
+                <p>There was a problem adding your source. Please try again.</p>
+              </div>
+            ) : (
+              ""
+            )}
           </form>
-
-          {this.state.noDbError ? (
-            <div>
-              <p>Your source has been added to the database!</p>
-            </div>
-          ) : (
-            ""
-          )}
-          {this.state.dbError ? (
-            <div>
-              <p>There was a problem adding your source. Please try again.</p>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
       </>
     );
