@@ -191,18 +191,18 @@ export default class MapContainer extends Component {
                 )}
               </div>
             ) : (
-              <div className="google-map-container">
-                {this.state.marker && (
-                  <GoogleMap
-                    markers={this.state.markers}
-                    initialCenter={{
-                      lat: 48.858395,
-                      lng: 2.347913
-                    }}
-                  />
-                )}
-              </div>
-            )}
+                <div className="google-map-container">
+                  {this.state.marker && (
+                    <GoogleMap
+                      markers={this.state.markers}
+                      initialCenter={{
+                        lat: 48.858395,
+                        lng: 2.347913
+                      }}
+                    />
+                  )}
+                </div>
+              )}
             <Filters
               getSparklingWater={this.getSparklingWater}
               getTypeFountain={this.getTypeFountain}
