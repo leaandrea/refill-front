@@ -32,6 +32,7 @@
 
 .contribute-form input,
 .contribute-form select:nth-child(2),
+.contribute-form select:nth-child(4),
 .contribute-form select:nth-child(10),
 .contribute-form select:nth-child(6),
 .contribute-form select:nth-child(8),
@@ -42,20 +43,44 @@
 .edit-form select:nth-child(8) {
   height: 32px;
   width: 80%;
-  border: 1px solid;
+
   margin-bottom: 10px;
   outline: none;
   padding: 3px 0 3px 20px;
+
+  border: 2px solid #2f4f80;
+}
+.edit-form select,
+.contribute-form select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 .contribute-form button,
 .edit-form button {
-  border: 1px solid black;
+  border: 3px solid white;
   height: 32px;
-  width: 200px;
+  width: 20%;
+  margin-top: 10px;
   padding: 4px;
-  margin: 0 auto;
   cursor: pointer;
-  border-radius: 0.3rem;
+  transition: 0.3s;
+  color: #2f4f80;
+  font-size: 1rem;
+  // background-color: rgba(103, 190, 224, 0.644);
+  border-color: #2f4f80;
+  margin-bottom: 15px;
+}
+.contribute-form button:hover,
+.edit-form button:hover {
+  background-color: #cffdf7;
+
+  font-size: 1rem;
+  color: #2f4f80;
+  // border-color: rgba(103, 190, 224, 0.644);
+}
+.contribute-form button:active,
+.edit-form button:active {
+  transform: translateY(2px);
 }
 .form-wrapper,
 .create-form-container {
@@ -66,5 +91,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: aliceblue;
-  border: 20px solid dodgerblue;
+  border: 10px solid rgba(103, 190, 224, 0.644);
+}
+.modal-close-button {
+  color: #0d062f;
 }

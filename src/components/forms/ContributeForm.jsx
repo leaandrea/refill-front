@@ -76,6 +76,7 @@ export default class ContributeForm extends Component {
   render() {
     return (
       <>
+        <hr className="top-home-line" />
         <NavMain color={"#2E4379"} history={this.props.history} />
         <div className="contribute-section">
           <div className="contribute-text">

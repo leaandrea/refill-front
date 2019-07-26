@@ -9,23 +9,15 @@
   background: rgba(91, 177, 226, 0.425);
   border: 5px solid rgb(130, 178, 206);
   width: 50%;
-
-
+  margin-bottom: 50px;
 }
 
-
-
 .formContainer {
-
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   // margin-bottom: 20px;
-
-
-
-
 }
 
 .contact-form-borders {
@@ -35,7 +27,6 @@
   align-items: center;
 
   align-content: center;
-
 }
 
 .contact-form label {
@@ -95,16 +86,14 @@
 }
 
 .contact-form button:hover {
-
   background-color: rgb(242, 246, 248);
 
   font-size: 1rem;
   color: rgba(103, 190, 224, 0.644);
-
 }
 
 .formIntroText {
-  color: #304F80;
+  color: #304f80;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -113,11 +102,13 @@
   transform: translateY(3px);
 }
 
+.send-button {
+  margin-bottom: 15px;
+}
 
 @media only screen and (max-width: 700px) {
   .contact-form {
     margin-bottom: 60px;
     width: 80%;
   }
-
 }

@@ -33,29 +33,35 @@ export default class Login extends Component {
           {({ signin }) => (
             <>
               <hr className="top-home-line" />
-              <div className="signin-big-wrapper">
-                <form
-                  className="form"
-                  onSubmit={evt => handleSubmit(evt, signin)}
-                  onChange={handleChange}
-                >
-                  <h1 className="title">login</h1>
-                  <label htmlFor="username">username</label>
-                  <input
-                    id="username"
-                    name="username"
-                    type="username"
-                    defaultValue={username}
-                  />
-                  <label htmlFor="password">password</label>
-                  <input
-                    name="password"
-                    id="password"
-                    type="password"
-                    defaultValue={password}
-                  />
-                  <button className="btn">ok</button>
-                </form>
+              <div className="auth-big-wrapper">
+                <div className="auth-wrapper">
+                  <div className="auth-content">
+                    <div className="signup-content">
+                      <form
+                        className="login-form"
+                        onSubmit={evt => handleSubmit(evt, signin)}
+                        onChange={handleChange}
+                      >
+                        <h1 className="login-title">login</h1>
+                        <label htmlFor="username">username</label>
+                        <input
+                          id="username"
+                          name="username"
+                          type="username"
+                          defaultValue={username}
+                        />
+                        <label htmlFor="password">password</label>
+                        <input
+                          name="password"
+                          id="password"
+                          type="password"
+                          defaultValue={password}
+                        />
+                        <button className="btn">ok</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           )}
