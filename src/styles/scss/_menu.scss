@@ -29,7 +29,7 @@
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.36);
   opacity: 0;
   display: none;
   // transform: translate3d(100%, 0px, 0px);
@@ -67,13 +67,30 @@
 }
 
 .burger-link {
-  margin: 30px 10px;
+  margin-left: 3px;
+  margin-top: 50px;
   color: rgb(74, 149, 192);
 
 
 }
 
+.burger-link-logout {
+  margin-left: 8px;
+  margin-top: 50px;
+  color: rgb(74, 149, 192);
+
+
+}
+
+
 .burger-link:hover {
+  font-size: 1.55rem;
+
+
+
+}
+
+.burger-link-logout:hover {
   font-size: 1.55rem;
 
 
@@ -92,4 +109,12 @@
 
   margin-left: 3px;
   margin-top: 50px;
+}
+
+
+
+@media (max-width: 700px) {
+  .menu {
+    width: 100vw;
+  }
 }

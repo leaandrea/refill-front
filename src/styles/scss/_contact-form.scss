@@ -3,22 +3,57 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
   max-width: 540px;
   padding: 20px;
-  background: tomato;
+  background: rgba(91, 177, 226, 0.425);
+  border: 5px solid rgb(130, 178, 206);
+  width: 50%;
+
+
+}
+
+
+
+.formContainer {
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // margin-bottom: 20px;
+
+
+
+
+}
+
+.contact-form-borders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  align-content: center;
+
 }
 
 .contact-form label {
+  color: white;
   cursor: pointer;
-  margin-bottom: 10px;
-  font-weight: bold;
+  // margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-family: GT-Walsheim-Pro-Medium;
+  margin-bottom: 5px;
 }
 
 .contact-form input {
+  background: rgba(103, 190, 224, 0.644);
+  margin-bottom: 5px;
   height: 32px;
-  width: 80%;
-  border: 1px solid;
-  margin-bottom: 10px;
+  width: 65%;
+  border: 3px solid white;
+  // margin-bottom: 10px;
   outline: none;
   padding: 3px 0 3px 20px;
   // border-top-right-radius: 0.3rem;
@@ -26,9 +61,9 @@
 }
 
 .contact-form select {
-  width: 80%;
-  border: 1px solid black;
-  margin-bottom: 10px;
+  border: 3px solid white;
+  width: 65%;
+
   height: 32px;
   outline: none;
   min-height: 120px;
@@ -36,23 +71,53 @@
 }
 
 .contact-form textarea {
-  width: 80%;
-  border: 1px solid black;
-  margin-bottom: 10px;
+  border: 3px solid white;
+  background: rgba(103, 190, 224, 0.644);
+  width: 65%;
+  margin-bottom: 5px;
+
   outline: none;
   min-height: 120px;
   padding: 20px;
 }
 
 .contact-form button {
-  border: 1px solid black;
+  border: 3px solid white;
   height: 32px;
-  width: 200px;
+  width: 50%;
+  margin-top: 10px;
   padding: 4px;
   cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  font-size: 1rem;
+  background-color: rgba(103, 190, 224, 0.644);
 }
 
 .contact-form button:hover {
-  background: black;
-  color: white;
+
+  background-color: rgb(242, 246, 248);
+
+  font-size: 1rem;
+  color: rgba(103, 190, 224, 0.644);
+
+}
+
+.formIntroText {
+  color: #304F80;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-form button:active {
+  transform: translateY(3px);
+}
+
+
+@media only screen and (max-width: 700px) {
+  .contact-form {
+    margin-bottom: 60px;
+    width: 80%;
+  }
+
 }

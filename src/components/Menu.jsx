@@ -52,7 +52,7 @@ export default function NavResponsive(props) {
 
             <li>
               <a className="burger-link" href="/quality-info">
-                Quality Info
+                Water Quality
           </a>
             </li>
 
@@ -62,6 +62,7 @@ export default function NavResponsive(props) {
           </a>
             </li>
           </ul>
+
         </div>
 
         <AuthConsumer>
@@ -75,7 +76,7 @@ export default function NavResponsive(props) {
                   })
                 }
               >
-                <p className="burger-link">Log out</p>
+                <p className="burger-link-logout">Log out</p>
               </h2>
             ) : (
                 ""
