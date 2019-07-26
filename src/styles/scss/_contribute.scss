@@ -1,12 +1,31 @@
 .contribute-section {
-  margin-top: 70px;
+  width: 70vw;
+  margin-top: 60px;
   min-height: 60vh;
+  border-left: 2px solid rgba(103, 190, 224, 0.644);
+  border-right: 2px solid rgba(103, 190, 224, 0.644);
+  margin: auto;
 }
 
 .contribute-text {
   display: flex;
   flex-direction: column;
   align-content: center;
+  width: 80%;
+  margin: auto;
+}
+.contr-title {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.paragraphes {
+  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 20vh;
+  width: 68%;
+  margin: auto;
 }
 
 .contribute-form,
@@ -16,7 +35,7 @@
   justify-content: center;
   max-width: 50vw;
   height: 85%;
-  margin: auto;
+  margin: 15px auto;
   padding: 20px;
   align-items: center;
 }
@@ -57,7 +76,7 @@
 }
 .contribute-form button,
 .edit-form button {
-  border: 3px solid white;
+  border: 2px solid white;
   height: 32px;
   width: 20%;
   margin-top: 10px;
@@ -69,6 +88,7 @@
   // background-color: rgba(103, 190, 224, 0.644);
   border-color: #2f4f80;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 .contribute-form button:hover,
 .edit-form button:hover {
@@ -95,4 +115,13 @@
 }
 .modal-close-button {
   color: #0d062f;
+}
+@media all and (max-width: 720px) {
+  .edit-form button,
+  .contribute-form button {
+    width: 30%;
+  }
+  .paragraphes {
+    margin-bottom: 50px;
+  }
 }

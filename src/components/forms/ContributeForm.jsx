@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import APIHandler from "../../ApiHandler/apiHandler";
 import Geocode from "react-geocode";
 import NavMain from "../../components/NavMain";
+import Footer from "../../components/Footer";
 
 Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 
@@ -80,17 +81,21 @@ export default class ContributeForm extends Component {
         <NavMain color={"#2E4379"} history={this.props.history} />
         <div className="contribute-section">
           <div className="contribute-text">
-            <h3>Help other Refill users find free water close to them!</h3>
-            <p>
-              You can use the form below to submit a new source of water that we
-              might have missed.
-            </p>
-            <p>Feel free to submit a public fountain!</p>
-            <p>
-              If you own a restaurant or a business and you're willing to give
-              away free water to Refill users, we will gladly add your company
-              to our database.
-            </p>
+            <h2 className="contr-title">
+              Help other Refill users find free water close to them!
+            </h2>
+            <div className="paragraphes">
+              <p>
+                You can use the form below to submit a new source of water that
+                we might have missed.
+              </p>
+              <p>Feel free to submit a public fountain!</p>
+              <p>
+                If you own a restaurant or a business and you're willing to give
+                away free water to Refill users, we will gladly add your company
+                to our database.
+              </p>
+            </div>
           </div>
           <form
             id="contribute_form"
@@ -149,6 +154,7 @@ export default class ContributeForm extends Component {
             ""
           )}
         </div>
+        <Footer />
       </>
     );
   }
