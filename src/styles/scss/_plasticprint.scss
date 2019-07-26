@@ -4,20 +4,25 @@
 
   justify-content: center;
   min-height: 50vh;
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
-  margin-top: 4%;
+
   margin-bottom: 80px;
 
 }
 
 .mainText {
   margin-bottom: 20px;
-  font-family: GT-Walsheim-Pro-Light;
+  // font-family: GT-Walsheim-Pro-Light;
+  font-size: 1.3rem;
+  color: rgb(10, 23, 70);
 }
 
 .questionLabel {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: GT-Walsheim-Pro-Light;
 
 
 
@@ -31,16 +36,23 @@
 
 .plasticPrintInput input[type="number"] {
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .firstContainer {
   margin-top: 5%;
 
-  border: 5px solid #6FB3CE;
+
+  background-color: rgba(241, 246, 247, 0.37);
+  border-top: 5px solid rgba(81, 169, 190, 0.61);
+  border-left: 5px solid rgba(81, 169, 190, 0.61);
+  border-right: 5px solid rgba(81, 169, 190, 0.61);
+  // border-radius: 4px;
+
   padding: 2.5rem 1rem 1rem 1rem;
-  width: 70%;
+  width: 90%;
   margin: auto;
-  border-radius: 1px;
+  // border-radius: 1px;
   flex-direction: column;
   align-content: center;
   justify-content: center;
@@ -49,20 +61,22 @@
 
 }
 
-.hrBorder {
-  border-top: 4px solid rgb(34, 111, 226);
-  width: 40%;
-}
+
 
 .secondContainer {
-  width: 60%;
+  width: 90%;
+  ;
 
-
-  // border: 2px solid orange;
+  background-color: rgba(241, 246, 247, 0.37);
+  border-bottom: 5px solid rgba(81, 169, 190, 0.61);
+  border-left: 5px solid rgba(81, 169, 190, 0.61);
+  border-right: 5px solid rgba(81, 169, 190, 0.61);
+  // border-radius: 4px;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   display: flex;
+
   align-items: center;
   margin: 0 auto;
 
@@ -73,13 +87,13 @@
 
 .featureContainer {
 
-  // border: 2px solid violet;
+
   text-align: center;
-  width: 60%;
+  width: 90%;
 }
 
 .responseBigContainer {
-  border: 5px solid red;
+
   width: 90%;
 
   display: flex;
@@ -87,17 +101,18 @@
   align-items: center;
   align-content: center;
 
+
 }
 
 
 .input {
   width: 15%;
-  height: 25px;
-  border: 2px solid black;
+  height: 35px;
+  border: 2px solid rgb(11, 62, 92);
   border-radius: 3px;
   -webkit-appearance: none;
   text-decoration: none;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -122,7 +137,8 @@ input[type=number]::-webkit-inner-spin-button {
   // border: 1px solid violet;
 
   text-align: center;
-  margin-top: 35px;
+  margin-bottom: 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +148,24 @@ input[type=number]::-webkit-inner-spin-button {
 .response img {
   margin-top: 20px;
 }
+
+.response h4 {
+  // font-family: GT-Walsheim-Pro-Light;
+  color: rgb(10, 23, 70);
+  font-size: 1.4rem;
+}
+
+
+.response h2 {
+  // font-family: GT-Walsheim-Pro-Light;
+  color: rgb(10, 23, 70);
+  font-size: 1.4rem;
+}
+
+
+
+
+
 
 .responseImg1,
 .responseImg2,
@@ -149,34 +183,69 @@ input[type=number]::-webkit-inner-spin-button {
 .promptsContainers4,
 .promptsContainers5,
 .promptsContainers6 {
-  // border: 1px solid green;
-  width: 100px;
-  margin: 30px 3px;
+  color: rgb(10, 23, 70);
+  width: 120px;
+  margin: 10px 25px;
 
-  height: 90px;
+  height: 110px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-family: GT-Walsheim-Pro-Light;
+}
+
+
+.promptsContainers1 h4,
+.promptsContainers2 h4,
+.promptsContainers3 h4,
+.promptsContainers4 h4,
+.promptsContainers5 h4,
+.promptsContainers6 h4 {
+  color: rgb(10, 23, 70);
+  font-size: 1.2rem;
+  font-family: GT-Walsheim-Pro-Light;
+}
+
+.prompt1,
+.prompt2,
+.prompt3 {
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  font-family: GT-Walsheim-Pro-Light;
 }
 
 .imagesContainer {
+
   // border: 1px solid red;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 60%;
+  // flex-wrap: wrap;
+  // width: 100vw;
   align-items: center;
   margin: 0 auto;
 
 }
 
+@media (max-width: 720px) {
+  .imagesContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+
+
 
 
 .promptsContainers1 {
-
+  font-family: GT-Walsheim-Pro-Light;
   animation: cssAnimation 0s 0.8s forwards;
   visibility: hidden;
 
@@ -273,5 +342,10 @@ input[type=number]::-webkit-inner-spin-button {
 .responseText {
   margin-top: 30px;
   text-align: center;
+  font-family: GT-Walsheim-Pro-Light;
+
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  padding: 20px 40px;
 
 }
