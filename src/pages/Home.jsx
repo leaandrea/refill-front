@@ -26,7 +26,8 @@ const Home = props => {
     if (props.history.location.pathname === "/home") {
       SetLogoNav(true);
     }
-  }, []);
+
+  }, []); // eslint-disable-line
 
   const handleGeo = () => {
     // console.log("click");

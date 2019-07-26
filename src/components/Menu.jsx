@@ -20,44 +20,50 @@ export default function NavResponsive(props) {
             onClick={props.closeMenu}
           />
         </div>
-        <h2>
-          <a className="burger-link" href="/">
-            Home
-          </a>
-        </h2>
 
-        <h2>
-          <Link
-            className="burger-link"
-            to={{
-              pathname: "/main-map",
-              state: {
-                initialLat: 48.858395,
-                initialLng: 2.347913
-              }
-            }}
-          >
-            Map
+        <div className="burgerListContainer">
+          <ul className="burgerList">
+            <li>
+              <a className="burger-link" href="/">
+                Home
+          </a>
+
+            </li>
+            <li>
+              <Link
+                className="burger-link"
+                to={{
+                  pathname: "/main-map",
+                  state: {
+                    initialLat: 48.858395,
+                    initialLng: 2.347913
+                  }
+                }}
+              >
+                Map
           </Link>
-        </h2>
+            </li>
 
-        <h2>
-          <a className="burger-link" href="your-plastic-print">
-            Footprint Calculator
+            <li>
+              <a className="burger-link" href="your-plastic-print">
+                Footprint Calculator
           </a>
-        </h2>
+            </li>
 
-        <h2>
-          <a className="burger-link" href="/quality-info">
-            Quality Info
+            <li>
+              <a className="burger-link" href="/quality-info">
+                Quality Info
           </a>
-        </h2>
+            </li>
 
-        <h2>
-          <a className="burger-link" href="/contribute">
-            Contribute
+            <li>
+              <a className="burger-link" href="/contribute">
+                Contribute
           </a>
-        </h2>
+            </li>
+          </ul>
+        </div>
+
         <AuthConsumer>
           {({ signout, loginStatus }) =>
             loginStatus ? (
