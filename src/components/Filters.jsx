@@ -15,12 +15,12 @@ export default class Filters extends Component {
   };
 
   handleGeoLoc = evt => {
-    console.log("click");
+    // console.log("click");
     this.setState({ geoloc: true }, () => {
       window.location = "/main-map";
 
       // this.props.history.replace("/main-map")
-      console.log(this.state.geoloc);
+      // console.log(this.state.geoloc);
     });
   };
 
@@ -32,7 +32,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonStillActive ? "is-active" : ""
-              } `}
+            } `}
             onClick={this.props.getStillWater}
           >
             Still Water
@@ -40,7 +40,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonSparklingActive ? "is-active" : ""
-              } `}
+            } `}
             onClick={this.props.getSparklingWater}
           >
             Sparkling Water
@@ -50,7 +50,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonTypeFountain ? "is-active" : ""
-              } `}
+            } `}
             onClick={this.props.getTypeFountain}
           >
             Fountains
@@ -58,7 +58,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonTypeStore ? "is-active" : ""
-              } `}
+            } `}
             onClick={this.props.getTypeStore}
           >
             Stores
