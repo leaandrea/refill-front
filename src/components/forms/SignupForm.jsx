@@ -24,7 +24,7 @@ export default class Signup extends Component {
   handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   handleSubmit = evt => {

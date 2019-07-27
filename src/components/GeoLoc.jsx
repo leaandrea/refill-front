@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { geolocated } from "react-geolocated";
 import { Redirect } from "react-router-dom";
 
-
 class GeoLoc extends Component {
-
   // state = {
   //   geoloc: false
   // }
@@ -13,19 +11,12 @@ class GeoLoc extends Component {
   //   this.setState({ geoloc: true })
   // }
 
-
-
   render() {
-
-
     return !this.props.isGeolocationAvailable ? (
       <p>Your browser does not support Geolocation</p>
-    ) : !this.props.isGeolocationEnabled ? (
-      null
-    ) : this.props.coords ? (
+    ) : !this.props.isGeolocationEnabled ? null : this.props.coords ? (
       <>
-        {console.log("yo ")}
-        {console.log("here papy", this.props.history)}
+        {/* {console.log("here papy", this.props.history)} */}
         <Redirect
           to={{
             pathname: "/main-map",
@@ -35,11 +26,8 @@ class GeoLoc extends Component {
             }
           }}
         />
-
       </>
-    ) : (
-            null
-          );
+    ) : null;
   }
 }
 

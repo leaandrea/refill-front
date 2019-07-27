@@ -51,8 +51,8 @@ export default class Foutains extends Component {
 
   displayEditForm = i => {
     this.setState({ isDisplayEditForm: true, selectedFountain: i }, () => {
-      console.log("bad index ?", this.state.selectedFountain);
-      console.log(this.state.fountains[this.state.selectedFountain]);
+      // console.log("bad index ?", this.state.selectedFountain);
+      // console.log(this.state.fountains[this.state.selectedFountain]);
     });
   };
   hideEditForm = () => {

@@ -17,7 +17,7 @@ export default class EditForm extends Component {
     const edit = { ...this.state.edit };
     edit[evt.target.name] = evt.target.value;
     this.setState({ edit }, () => {
-      console.log(this.state);
+      // console.log(this.state);
     });
   };
 
@@ -49,7 +49,7 @@ export default class EditForm extends Component {
           lat: response.results[0].geometry.location.lat,
           lng: response.results[0].geometry.location.lng
         });
-        console.log(this.state);
+        // console.log(this.state);
         clbk();
       },
       error => {
@@ -57,9 +57,6 @@ export default class EditForm extends Component {
       }
     );
   }
-  testClick = () => {
-    console.log("yoyo");
-  };
 
   addToDb = () => {
     console.log(this);

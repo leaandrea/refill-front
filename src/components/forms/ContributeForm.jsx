@@ -35,7 +35,7 @@ export default class ContributeForm extends Component {
           lat: response.results[0].geometry.location.lat,
           lng: response.results[0].geometry.location.lng
         });
-        console.log(this.state);
+        // console.log(this.state);
         clbk();
       },
       error => {
@@ -45,7 +45,7 @@ export default class ContributeForm extends Component {
   }
 
   addToDb = () => {
-    console.log(this);
+    // console.log(this);
     const formData = new FormData();
     formData.append("gazeuse", this.state.gazeuse);
     formData.append("address", this.state.address);

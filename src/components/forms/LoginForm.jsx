@@ -13,7 +13,7 @@ export default class Login extends Component {
     // 2 - the signin function, passed by the AuthConsumer
     evt.preventDefault();
     signin(status => {
-      console.log(status);
+      // console.log(status);
       // this callback is executed inside the Provider !!!
       this.props.history.push("/fountains");
     }, this.state);

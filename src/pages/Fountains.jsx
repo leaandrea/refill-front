@@ -89,13 +89,10 @@ export default class Foutains extends Component {
     }
   };
   displayEditForm = i => {
-    this.setState({ isDisplayEditForm: true, selectedFountain: i }, () => {
-      console.log("bad index ?", this.state.selectedFountain);
-      console.log(this.state.fountains[this.state.selectedFountain]);
-    });
+    this.setState({ isDisplayEditForm: true, selectedFountain: i }, () => {});
   };
   hideEditForm = () => {
-    console.log("hide");
+    // console.log("hide");
     this.setState({ isDisplayEditForm: false });
   };
   displayCreateForm = i => {
@@ -106,7 +103,6 @@ export default class Foutains extends Component {
   };
 
   render() {
-    console.log(this.props);
     // const { fountains } = this.state;
     return (
       <>

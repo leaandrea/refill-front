@@ -27,7 +27,6 @@ export default class MapContainer extends Component {
       .get(`/api/fontaines`)
       .then(fontaines => {
         let fontainesEnService = fontaines.data.filter(fontaine => {
-          console.log("LAAAA", fontaine.type);
           return fontaine.en_service && fontaine.potable && fontaine.verified
             ? true
             : false;
@@ -158,7 +157,7 @@ export default class MapContainer extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       //  !this.props.isGeolocationAvailable ? (
       //   <p>Your browser does not support Geolocation</p>
