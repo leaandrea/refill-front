@@ -23,11 +23,7 @@ export default class ContactForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
 
-    // axios
-    //   .post(`${process.env.REACT_APP_BACKEND_URL}/contact`, this.state.form)
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err));
-    console.log(this.state.form);
+    // console.log(this.state.form);
     apiHandler
       .post(`/contact`, this.state.form)
       .then(serverRes => {
@@ -48,7 +44,7 @@ export default class ContactForm extends Component {
           <div className="contact-frame">
             <div className="contact-form-borders">
               <h3 className="formIntroText">
-                We're here to help and answer any question you might have!{" "}
+                We're here to help and answer any question you might have!
                 <br /> We look forward to hearing from you!
               </h3>
 

@@ -125,7 +125,7 @@ export default class Foutains extends Component {
                     {user &&
                       user.username.charAt(0).toUpperCase() +
                         user.username.slice(1)}
-                  </span>{" "}
+                  </span>
                   ! Welcome to the admin board
                 </h2>
 
