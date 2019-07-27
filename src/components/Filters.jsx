@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GeoLoc from "../components/GeoLoc";
+import GeoLoc2 from "../components/GeoLoc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,7 +32,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonStillActive ? "is-active" : ""
-            } `}
+              } `}
             onClick={this.props.getStillWater}
           >
             Still Water
@@ -40,7 +40,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonSparklingActive ? "is-active" : ""
-            } `}
+              } `}
             onClick={this.props.getSparklingWater}
           >
             Sparkling Water
@@ -50,7 +50,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonTypeFountain ? "is-active" : ""
-            } `}
+              } `}
             onClick={this.props.getTypeFountain}
           >
             Fountains
@@ -58,7 +58,7 @@ export default class Filters extends Component {
           <button
             className={`button-filter ${
               this.props.buttonTypeStore ? "is-active" : ""
-            } `}
+              } `}
             onClick={this.props.getTypeStore}
           >
             Stores
@@ -71,7 +71,7 @@ export default class Filters extends Component {
         </div>
         <div className="filters-ctn filters-5">
           <button onClick={this.handleGeoLoc} className="button-filter">
-            Around me {this.state.geoloc ? <GeoLoc /> : null}
+            Around me {this.state.geoloc ? <GeoLoc2 /> : null}
             <FontAwesomeIcon icon={faMapMarker} className="tiny-dot-icon" />
           </button>
         </div>
