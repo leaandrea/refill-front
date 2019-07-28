@@ -34,8 +34,10 @@
   // align-content: center;
   // align-items: center;
   width: 310px;
-  margin-top: 1.5rem;
-  margin-bottom: 75px;
+  // margin-top: 1.5rem;
+  // margin: 3rem;
+  // margin-bottom: 75px;
+  margin: 3rem 3rem 70px 3rem;
 
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
@@ -80,7 +82,8 @@
   .art1,
   .art2,
   .art3 {
-    padding: 5px;
-    margin-bottom: 1.5rem;
+    margin: 0.9rem 2rem 1.2rem 2rem;
+    width: 100%;
+    padding: 0 1.5rem;
   }
 }
