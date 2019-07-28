@@ -1,19 +1,19 @@
+.main-title-cont {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  justify-content: space-evenly;
+}
 .about-title {
   font-size: 1rem;
   text-align: center;
-  padding: 2.5rem 2rem;
-
+  padding: 0 1.5rem;
   color: white;
   font-size: 2.1rem;
-  height: 10%;
   margin-top: 8.7rem;
   font-family: GT-Walsheim-Pro-Light;
 }
-
-
-
-
-
 
 .about-subtitle {
   font-size: 1.9rem;
@@ -22,11 +22,7 @@
   margin-top: 0.5rem;
   color: white;
   font-family: GT-Walsheim-Pro-Ultra-Light;
-
 }
-
-
-
 
 .about {
   width: 100vw;
@@ -39,52 +35,51 @@
   display: flex;
   align-items: center;
 }
-
-@media all and (max-width: 900px) {
-  .about-subtitle {
-    font-size: 1.2rem;
-    margin-top: 70px;
-  }
-}
-
-
-@media all and (max-width: 720px) {
-  .about {
-    height: 720px;
-    min-height: 100vh;
-
-  }
-
-  .mainLogo {
-    width: 50%;
-    height: 50%;
-  }
-
-  .about-title {
-    padding: 2rem;
-    font-size: 1.3rem;
-    height: 13%;
-    margin-top: 6rem;
-    margin-bottom: 4rem;
-  }
-
-
-  .about-subtitle {
-    font-size: 1.2rem;
-    margin-top: 40px;
-  }
-
-  .inner-border {
-    width: 95vw;
-    height: 95%;
-  }
-}
-
 .inner-border {
   width: 95vw;
   height: 90%;
   border: 4px solid rgb(255, 255, 255);
   margin: auto;
-  display: flex;
-  flex-direction: column;
+}
+
+// @media all and (max-width: 900px) {
+//   .about-subtitle {
+//     font-size: 1.2rem;
+//     margin-top: 70px;
+//   }
+// }
+
+@media all and (max-width: 720px) {
+  .about {
+    min-height: 70vh;
+  }
+
+  // .mainLogo {
+  //   width: 50%;
+  //   height: 50%;
+  // }
+
+  .main-title-cont {
+    height: 60%;
+    margin-top: 2rem;
+    justify-content: space-evenly;
+  }
+  .about-title {
+    font-size: 1.5rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.3rem;
+    // margin-top: 40px;
+  }
+
+  .inner-border {
+    width: 93vw;
+    height: 95%;
+  }
+
+  .navbar {
+    padding: 1.7rem 2rem;
+  }
 }

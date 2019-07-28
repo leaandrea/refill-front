@@ -46,10 +46,18 @@ export default class NavMain extends Component {
               <div className="nav-logo">
                 {/* <img src="../../../images/refill1-logo.png" alt="refill-logo" /> */}
                 {this.props.logoState ? (
-                  <img className="mainLogo" src="./images/LOGO4.png" alt="" />
+                  <img
+                    className="mainLogo"
+                    src="./images/LOGO4.png"
+                    alt="refill-logo"
+                  />
                 ) : (
-                    <img className="mainLogo" src="./images/LOGO8.png" alt="" />
-                  )}
+                  <img
+                    className="mainLogo"
+                    src="./images/LOGO8.png"
+                    alt="refill-logo"
+                  />
+                )}
               </div>
             </NavLink>
 
