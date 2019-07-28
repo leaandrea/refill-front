@@ -43,7 +43,7 @@ const Home = props => {
         logoState={logoState}
         display={"absolute"}
         color={"#FEFFFF"}
-        padding={"1.7rem 4.2rem"}
+        paddingTop={"1.7rem"}
       />
       <AboutSection />
 

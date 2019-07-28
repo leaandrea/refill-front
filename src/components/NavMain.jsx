@@ -34,10 +34,7 @@ export default class NavMain extends Component {
           className="navbar"
           style={{
             position: this.props.display === "absolute" ? "absolute" : "static",
-            padding:
-              this.props.padding === "1.7rem 4.2rem"
-                ? "1.7rem 4.2rem"
-                : "2.7rem 4.2rem"
+            paddingTop: this.props.paddingTop === "1.7rem" ? "1.7rem" : "2.7rem"
           }}
         >
           <nav className="nav">

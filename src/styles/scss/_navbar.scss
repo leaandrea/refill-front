@@ -1,6 +1,8 @@
 .navbar {
   width: 100%;
   // padding: 1.7rem 4.2rem;
+  padding-left: 4.2rem;
+  padding-right: 4.2rem;
   // background-color: rgb(250, 253, 253);
 
   top: 20px;
@@ -31,4 +33,28 @@
   font-size: 2.5rem;
   // color: rgb(255, 255, 255);
   font-weight: bold;
+}
+
+//-----------------------------
+//MEDIA QUERIES
+//-----------------------------
+
+@media all and (max-width: 720px) {
+  .nav {
+    margin-top: -10px;
+    padding-left: 7px;
+  }
+  .navbar {
+    padding: 1.7rem 2rem;
+  }
+  .nav a {
+    margin-left: -15px;
+  }
+
+  .burger {
+    padding-right: 0.2rem;
+  }
+  .times-container {
+    margin-top: 15px;
+  }
 }
