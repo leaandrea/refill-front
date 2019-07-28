@@ -19,6 +19,7 @@ export default class PlasticPrint extends Component {
   render() {
     return (
       <>
+        <hr className="top-home-line" />
         <NavMain history={this.props.history} />
         <div className="pageContainer">
           <div className="firstContainer">

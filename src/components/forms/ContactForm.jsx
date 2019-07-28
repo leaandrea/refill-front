@@ -39,52 +39,54 @@ export default class ContactForm extends Component {
   render() {
     return (
       <>
+        <hr className="top-home-line" />
         <NavMain />
-        <section className="formContainer">
-          <div className="contact-frame">
-            <div className="contact-form-borders">
-              <h3 className="formIntroText">
-                We're here to help and answer any question you might have!
-                <br /> We look forward to hearing from you!
-              </h3>
-
-              <form
-                className="contact-form"
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-              >
-                <label htmlFor="firstname">First name</label>
-                <input type="text" name="firstname" />
-                <label htmlFor="lastname">Last name</label>
-                <input type="text" name="lastname" />
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
-                <label htmlFor="subject">Subject</label>
-                <input type="text" name="subject" />
-                <label htmlFor="message">Message</label>
-                <textarea type="text" name="message" />
-                <button className="send-button">Send</button>
-                {this.state.noDbError ? (
-                  <div>
-                    <p>Thank you for contacting us!</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-                {this.state.dbError ? (
-                  <div>
-                    <p>
-                      There was a problem sending your message. Please try
-                      again.
-                    </p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </form>
+        <h3 className="formIntroText">
+          We're here to help and answer any question you might have!
+          <br /> We look forward to hear from you!
+        </h3>
+        <div className="contact-wrapper">
+          <div className="contact-first-frame">
+            <div className="contact-second-frame">
+              <div className="contact-content">
+                <form
+                  className="contact-form"
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                >
+                  <label htmlFor="firstname">First name</label>
+                  <input type="text" name="firstname" />
+                  <label htmlFor="lastname">Last name</label>
+                  <input type="text" name="lastname" />
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" />
+                  <label htmlFor="subject">Subject</label>
+                  <input type="text" name="subject" />
+                  <label htmlFor="message">Message</label>
+                  <textarea type="text" name="message" />
+                  <button className="send-button">Send</button>
+                  {this.state.noDbError ? (
+                    <div>
+                      <p>Thank you for contacting us!</p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  {this.state.dbError ? (
+                    <div>
+                      <p>
+                        There was a problem sending your message. Please try
+                        again.
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </form>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
         <Footer />
       </>
     );
