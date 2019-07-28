@@ -1,7 +1,6 @@
 .pro {
   width: 100vw;
   // height: 62vh;
-
 }
 
 .pro-title {
@@ -21,18 +20,8 @@
   align-items: center;
 }
 
-@media (max-width: 800px) {
-  .pro-flex-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0rem;
-  }
-}
-
 .pro-left-side,
 .pro-right-side {
-
   width: 40%;
   padding: 0 4rem;
   min-height: 30vh;
@@ -42,11 +31,9 @@
   margin-bottom: 50px;
   flex-direction: column;
   align-items: center;
-
 }
 
 @media (max-width: 800px) {
-
   .pro-left-side,
   .pro-right-side {
     width: 100%;
@@ -73,4 +60,25 @@
 .icon-mouse-pointer1 {
   width: 50px;
   height: 50px;
+}
+@media (max-width: 800px) {
+  .pro-flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0rem;
+  }
+
+  .pro-left-side {
+    margin-top: 45px;
+    margin-bottom: 10px;
+  }
+
+  .pro-right-side {
+    margin-top: 20px;
+    margin-bottom: 17px;
+  }
+  .pro-title {
+    margin-top: 3.4rem;
+  }
 }

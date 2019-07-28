@@ -1,16 +1,6 @@
 .textsSectionContainer {
   background-color: rgba(246, 250, 249, 0.877);
 }
-
-// @media (max-width: 720px) {
-
-//   .articles-container {
-
-//     height: 100vh;
-//   }
-
-// }
-
 .articles-container {
   // border: 1px solid red;
   width: 100vw;
@@ -44,9 +34,8 @@
   // align-content: center;
   // align-items: center;
   width: 310px;
-
-  margin: 3rem;
-  margin-bottom: 90px;
+  margin-top: 1.5rem;
+  margin-bottom: 75px;
 
   // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   // box-shadow:  0 3px 0 rgba(0, 0, 0, 0.2);
@@ -86,4 +75,12 @@
 .aboutLinks {
   color: rgba(93, 169, 204, 0.87);
   font-family: GT-Walsheim-Pro-Light-Oblique;
+}
+@media (max-width: 720px) {
+  .art1,
+  .art2,
+  .art3 {
+    padding: 5px;
+    margin-bottom: 1.5rem;
+  }
 }
