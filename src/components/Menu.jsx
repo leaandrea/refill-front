@@ -74,7 +74,10 @@ export default function NavResponsive(props) {
                   })
                 }
               >
-                <p className="burger-link-logout">Log out</p>
+                <p className="burger-link-logout">
+                  Log out{" "}
+                  <FontAwesomeIcon className="fa-power-off" icon="power-off" />
+                </p>
               </h2>
             ) : (
               ""

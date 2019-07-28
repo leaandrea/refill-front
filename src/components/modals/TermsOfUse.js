@@ -12,9 +12,10 @@ const TermsOfUseModal = ({ isShowing, hide }) =>
             aria-hidden
             tabIndex={-1}
             role="dialog"
+            onClick={hide}
           >
-            <div className="modal">
-              <div className="modal-header">
+            <div className="tu-modal">
+              <div className="tu-modal-header">
                 <button
                   type="button"
                   className="modal-close-button"
@@ -25,7 +26,7 @@ const TermsOfUseModal = ({ isShowing, hide }) =>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-content">
+              <div className="tu-modal-content">
                 <h1>Terms of use</h1>
                 <p>
                   Refill's services are restricted to the geographical area of

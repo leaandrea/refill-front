@@ -43,7 +43,8 @@ import {
   faPlus,
   faChevronUp,
   faBullseye,
-  faMapMarker
+  faMapMarker,
+  faPowerOff
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -55,7 +56,8 @@ library.add(
   faPlus,
   faChevronUp,
   faBullseye,
-  faMapMarker
+  faMapMarker,
+  faPowerOff
 );
 
 function App() {

@@ -26,7 +26,6 @@ const Home = props => {
     if (props.history.location.pathname === "/home") {
       SetLogoNav(true);
     }
-
   }, []); // eslint-disable-line
 
   const handleGeo = () => {
@@ -44,6 +43,7 @@ const Home = props => {
         logoState={logoState}
         display={"absolute"}
         color={"#FEFFFF"}
+        padding={"1.7rem 4.2rem"}
       />
       <AboutSection />
 
@@ -51,15 +51,12 @@ const Home = props => {
       {/* <section className="home-map-section"> */}
 
       <div className="home-map-section-wrapper-flex">
-
         <div className="home-map-container">
           <HomeMap />
         </div>
 
         <div className="txt-container-flex-column">
-
           {/* <div className="pick-container"> */}
-
 
           <h2 className="choose">
             <div className="icon-cont">
@@ -69,9 +66,7 @@ const Home = props => {
               />
             </div>
             Pick an arrondissement <br /> on the map
-              </h2>
-
-
+          </h2>
 
           <h2 className="choose">
             <button className="geoloc-btn" onClick={handleGeo}>
@@ -82,15 +77,11 @@ const Home = props => {
                 />
               </div>
             </button>
-
             Click here to <br /> get your location.
-
           </h2>
           {geoState ? <GeoLoc /> : null}
-
         </div>
       </div>
-
 
       {/* </div> */}
       {/* </section> */}

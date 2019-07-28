@@ -12,9 +12,10 @@ const LegalNoticeModal = ({ isShowing, hide }) =>
             aria-hidden
             tabIndex={-1}
             role="dialog"
+            onClick={hide}
           >
-            <div className="modal">
-              <div className="modal-header">
+            <div className="legal-modal">
+              <div className="legal-modal-header">
                 <button
                   type="button"
                   className="modal-close-button"
@@ -25,7 +26,7 @@ const LegalNoticeModal = ({ isShowing, hide }) =>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-content">
+              <div className="legal-modal-content">
                 <h1>Legal Notice</h1>
                 <p>
                   This web application is operated by Refill.
