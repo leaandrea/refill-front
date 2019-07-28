@@ -23,7 +23,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 20vh;
   width: 68%;
   margin: auto;
 }
@@ -122,6 +121,9 @@
     width: 30%;
   }
   .paragraphes {
-    margin-bottom: 50px;
+    width: 100%;
+  }
+  .contribute-form {
+    max-width: 100%;
   }
 }

@@ -88,8 +88,9 @@ export default class ContributeForm extends Component {
               <p>
                 You can use the form below to submit a new source of water that
                 we might have missed.
-              </p>
-              <p>Feel free to submit a public fountain!</p>
+              </p>{" "}
+              <br />
+              <p>Feel free to submit a public fountain!</p> <br />
               <p>
                 If you own a restaurant or a business and you're willing to give
                 away free water to Refill users, we will gladly add your company

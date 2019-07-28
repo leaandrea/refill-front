@@ -1,18 +1,6 @@
-// @media (max-width: 720px) {
-//   .quality-container {
-//     min-width: 90vw;
-//   }
+// .gros-truc {
+//   width: 100vw;
 // }
-
-@media (max-width: 1024px) {
-  .quality-container {
-    min-width: 90vw;
-  }
-}
-
-.gros-truc {
-  width: 100vw;
-}
 
 .paris-icon {
   margin-top: 30px;
@@ -25,7 +13,7 @@
   align-items: center;
   max-width: 70vw;
   padding: 0 30px;
-  margin: auto;
+  margin: 20px auto 60px auto;
   border-left: 3px solid rgb(85, 165, 197);
   border-right: 3px solid rgb(85, 165, 197);
 }
@@ -39,7 +27,7 @@
 
 .quality-container p {
   font-family: GT-Walsheim-Pro-Light;
-  font-size: 22px;
+  font-size: 1.2rem;
   text-align: justify;
 }
 
@@ -53,4 +41,14 @@
   font-family: GT-Walsheim-Pro-Light;
   font-size: 25px;
   margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .quality-container {
+    min-width: 90vw;
+    padding: 0 5px;
+    margin: 20px auto;
+  }
+  .quality-container p {
+    font-size: 1rem;
+  }
 }
