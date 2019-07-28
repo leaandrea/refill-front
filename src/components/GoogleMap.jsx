@@ -35,6 +35,80 @@ export class GoogleMap extends Component {
           lng: this.props.initialCenter.lng
         }}
         gestureHandling="cooperative"
+        styles={[
+          {
+            featureType: "administrative.land_parcel",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#f4f5fb"
+              }
+            ]
+          },
+          {
+            featureType: "landscape.man_made",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#f4f5fb"
+              }
+            ]
+          },
+          {
+            featureType: "landscape.natural",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#fbfdfd"
+              }
+            ]
+          },
+          {
+            featureType: "landscape.natural",
+            elementType: "geometry.stroke",
+            stylers: [
+              {
+                weight: 0.5
+              }
+            ]
+          },
+          {
+            featureType: "poi.park",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#e4fded"
+              }
+            ]
+          },
+          {
+            featureType: "poi.park",
+            elementType: "labels.text.fill",
+            stylers: [
+              {
+                color: "#040022"
+              }
+            ]
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#f3fdea"
+              }
+            ]
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [
+              {
+                color: "#f3fdea"
+              }
+            ]
+          }
+        ]}
       >
         {this.props.markers.map((marker, i) =>
           marker.type === "fontaine" ? (
