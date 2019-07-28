@@ -23,14 +23,14 @@ export default function Footer() {
       <footer className="footer">
         <section className="social-icons">
           <div className="contact">
-            Contact us!
             <Link to="/contact">
+              Contact us!
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
             </Link>
           </div>
           <div className="insta">
-            #refill on instagram
             <Link to="/instagram">
+              #refill on instagram
               <FontAwesomeIcon icon={faInstagram} className="contact-icon" />
             </Link>
           </div>
