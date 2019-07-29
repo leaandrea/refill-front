@@ -1,4 +1,20 @@
 // RESPONSIVE SETTINGS
+@media (max-width: 450px) {
+  .legend {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .legend li {
+    align-self: flex-start;
+  }
+
+  .legend li p {
+    margin: 0;
+  }
+}
+
 @media (max-width: 720px) {
   .map-and-filters {
     flex-direction: column;
@@ -28,6 +44,10 @@
   .google-map-title {
     padding: 0 0.5rem;
   }
+
+  .filters-container .button-filter {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -42,7 +62,7 @@
 
   #root > div > div > section.map-and-filters > div.filters-container {
     width: 85vw;
-    height: 50vh;
+    height: 60vh;
     padding: 10px 0;
   }
 
