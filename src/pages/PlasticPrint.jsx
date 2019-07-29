@@ -148,8 +148,8 @@ export default class PlasticPrint extends Component {
                 </h4>
               </div>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
             {this.state.inputValue === "3" ? (
               <div>
                 <div className="response">
@@ -228,8 +228,8 @@ export default class PlasticPrint extends Component {
                 </div>
                 <h4 className="responseText">
                   {" "}
-                  You're using the same amount of water bottles than the average
-                  French person. And it's not really great. But we know you can
+                  You're using the same amount of water bottles as the average
+                  French person. And it's not great. But we know you can
                   do better! Do you know Paris has{" "}
                   <Link className="linksPlasticFeature" to="/main-map">
                     {" "}
@@ -239,8 +239,8 @@ export default class PlasticPrint extends Component {
                 </h4>
               </div>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
             {this.state.inputValue > 3 ? (
               <div>
                 <div className="response">
@@ -318,9 +318,9 @@ export default class PlasticPrint extends Component {
                   </div>
                 </div>
                 <h4 className="responseText">
-                  Your use of water bottles is larger than that of the average
-                  French person. And it's really a lot! Let's do better, here
-                  are all{" "}
+                  Your use of water bottles is higher than that of the average
+                    French person. And it's too much! Let's do better, here
+                    are all{" "}
                   <Link className="linksPlasticFeature" to="/main-map">
                     Paris's fabulous spots to refill your water bottle to help
                     you.
@@ -329,8 +329,8 @@ export default class PlasticPrint extends Component {
                 </h4>
               </div>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
             {this.state.inputValue === "0" ? (
               <div>
                 <div className="response">
@@ -351,8 +351,8 @@ export default class PlasticPrint extends Component {
                 </div>
               </div>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
             {this.state.inputValue === "" ? <></> : <></>}
           </div>
         </div>
