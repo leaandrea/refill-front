@@ -16,7 +16,7 @@
     "mapbox-gl": "^1.1.1",
     "material-ui": "^1.0.0-beta.47",
     "material-ui-flat-pagination": "^3.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-geocode": "^0.1.2",
